@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<HTML>
+<style>
+    BODY {
+        background-image: url(/Images/BackroundIdea.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    header {
+
+        height: 100vh;
+        background-size: 100% 96%;
+    }
+
+    .Tech {
+        top: 40%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 17px;
+        font-family:sans-serif
+    }
+
+    #Release {
+        color: white;
+        font-size: 40px;
+        word-spacing: 10px;
+    }
+</style>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<BODY>
+    <header>
+        <div class="Tech">
+            <img src="Images/image 5-fococlipping-standard (2).png">
+             
+            <h2>COMING SOON</h2>
+
+            <p id="Release"></p>
+
+
+        </div>
+    </header>
+
+ 
+
+    <script>
+        // Set the date of launching
+        var RemainingTime = new Date("Jan 20, 2023 00:00:00");
+
+        var RemainingTime = RemainingTime.getTime();
+
+        // Update the count down every second
+        var x = setInterval(function () {
+
+            // Get current date and time
+            var now = new Date().getTime();
+            var distance = RemainingTime - now;
+
+            // Days, hours, minutes and seconds time calculations
+            var days_remaining = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours_remaining = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var x1 = distance % (1000 * 60 * 60);
+            var minutes = Math.floor(x1 / (1000 * 60));
+            var x2 = distance % (1000 * 60);
+            var seconds = Math.floor(x2 / 1000);
+
+            // Display the results
+            document.getElementById("Release").innerHTML =
+                days_remaining +
+                " Days : " + hours_remaining + " Hrs : " + minutes +
+                " Min: " + seconds;
+
+            // Text after count down is over
+            if (distance < 0) {
+                clearinterval(x);
+                document.getElementById("Release").
+                    innerHTML = "Development Is Done";
+            }
+
+        }, 1000);
+    </script>
+</BODY>
+
+</HTML>
