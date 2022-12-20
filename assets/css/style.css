@@ -94,7 +94,7 @@ body {
 	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
-	color: #272b41;
+	color: #0a7321;
 	font-weight: 500;
 }
 .h1, h1 {
@@ -2612,22 +2612,22 @@ html.menu-opened body {
     padding-right: 3px;
 }
 .view-btn {
-    color: #18d431;
+    color: #17af2b;
     font-size: 13px;
-    border: 2px solid #18d431;
+    border: 2px solid #17af2b;
     text-align: center;
     display: block;
     font-weight: 500;
 	padding: 6px;
 }
 .view-btn:hover, .view-btn:focus {
-	background-color: #032327;
-	border: 2px solid #032327;
+	background-color: #18d431;
+	border: 2px solid #18d431;
 	color: #fff;
 }
 .book-btn {
-	background-color: #18d431;
-    border: 2px solid #18d431;
+	background-color: #032327;
+    border: 2px solid #032327;
     color: #fff;
     font-size: 13px;
     text-align: center;
