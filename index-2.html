@@ -94,8 +94,6 @@
 							<li class="has-submenu">
 								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
 								<ul class="submenu">
-									<li><a href="voice-call.html">Voice Call</a></li>
-									<li><a href="video-call.html">Video Call</a></li>
 									<li><a href="search.html">Search Doctors</a></li>
 									<li><a href="calendar.html">Calendar</a></li>
 									<li><a href="components.html">Components</a></li>
@@ -126,8 +124,10 @@
 								<i class="far fa-hospital"></i>							
 							</div>
 							<div class="header-contact-detail">
-								<p class="contact-header">Contact</p>
-								<p class="contact-info-header"> +1 315 369 5943</p>
+								<p class="contact-header">Welcome <?php echo $_SESSION["name"]; ?> </p>
+								<p>
+									<a herf = "logout.php" class = "btn btn-secondary btn-lg active" role = "button" aria-pressed="true"> Log Out</a>
+								</p>
 							</div>
 						</li>
 						<li class="nav-item">
