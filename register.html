@@ -19,7 +19,6 @@
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -156,18 +155,36 @@
 										</div>
 										
 										<!-- Register Form -->
-										<form action="https://dreamguys.co.in/demo/doccure/doctor-dashboard.html">
+										<form action="#" id="RegisterForm" onsubmit="">
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating">
+												<input type="text" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
 												<label class="focus-label">Name</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating">
-												<label class="focus-label">Mobile Number</label>
+												<input type="text" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only">
+												<label class="focus-label">Surname</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="password" class="form-control floating">
+												<input type="text" class="form-control floating" required
+														pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
+														title="Example: name@email.com"
+														required>
+												<label class="focus-label">Email</label>
+											</div>
+											<div class="form-group form-focus">
+												<input type="text" class="form-control floating" pattern="[0-9]+" maxlength="10" oninvalid="setCustomValidity('It must be a valid phone number')">
+												<label class="focus-label">Mobile Number</label>
+
+											</div>
+											<div class="form-group form-focus">
+												<input type="password" id="password" class="form-control floating" required 
+													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
+													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">
 												<label class="focus-label">Create Password</label>
+											</div>
+											<div class="form-group form-focus">
+												<input type="password" class="form-control floating" id="retype-password">
+												<label class="focus-label">Confirm Password</label>
 											</div>
 											<div class="text-right">
 												<a class="forgot-link" href="login.html">Already have an account?</a>
@@ -326,7 +343,8 @@
 		
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
-		
+		<script src="assets/js/Register.js"></script>
+
 	</body>
 
 <!-- doccure/register.html  30 Nov 2019 04:12:20 GMT -->
