@@ -6,8 +6,8 @@ require_once "session.php";
 $error = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
 
-    $email = trim ($_POST['email']);
-    $password = trim($_POST['password']);
+    $email = trim ($_POST['p_email']); // giving the name you called input in html another name
+    $password = trim($_POST['p_password']);
 
     //validate if email is empty
     if (empty($email)) {
@@ -38,8 +38,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
             }
             $query -> close();
         }
-    }
+
+//registration $sql = "INSERT INTO MyGuests// name of table (firstname, lastname, email) // name of coloums
+
+//VALUES ($email, $password)";//
+
+
+//if ($conn->query($sql) === TRUE) {
+// echo "New record created successfully";
+//} else {
+
+//   echo "Error: " . $sql . "<br>" . $conn->error;
+//}
+ //   }
+
+
+
     //Close connection
-    mysqi_close($db);
+    mysqi_close($db); // always remember to close the db
 }
 ?>
