@@ -147,7 +147,7 @@
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-md-7 col-lg-6 login-left">
-										<img src="assets/img/login-banner.png" class="img-fluid" alt="Doccure Register">	
+										<img src="bookmia/assets/img/login-banner.png" class="img-fluid" alt="Doccure Register">	
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
@@ -155,29 +155,31 @@
 										</div>
 										
 										<!-- Register Form -->
-										<form action="#" id="RegisterForm" onsubmit="">
+										<form action="register.php" id="RegisterForm" method="post" onsubmit="">
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
+												<input type="text" name="name" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
 												<label class="focus-label">Name</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only">
+												<input type="text" name="surname" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only">
 												<label class="focus-label">Surname</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating" required
+												<input type="text" class="form-control floating" name="email" required
 														pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
 														title="Example: name@email.com"
 														required>
 												<label class="focus-label">Email</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="text" class="form-control floating" pattern="[0-9]+" maxlength="10" oninvalid="setCustomValidity('It must be a valid phone number')">
+												<input type="text" class="form-control floating" name="phone"
+												       pattern="[0-9]+" maxlength="10" oninvalid="setCustomValidity('It must be a 10 digit phone number')">
 												<label class="focus-label">Mobile Number</label>
+												
 
 											</div>
 											<div class="form-group form-focus">
-												<input type="password" id="password" class="form-control floating" required 
+												<input type="password" id="password" name="password" class="form-control floating" required 
 													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
 													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">
 												<label class="focus-label">Create Password</label>
