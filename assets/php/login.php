@@ -4,9 +4,9 @@ require_once "config.php";
 require_once "session.php";
 
 $error = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
-    $email = trim ($_POST['email']);
+    $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
     //validate if email is empty
@@ -20,12 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
     }
 
     if (empty($error)) {
-        if ($query = $db -> prepare("SELECT * FROM user WHERE email = ?")){
-            $query -> bind_param('s', $email);
-            $query -> execute();
-            $row = $query -> fetch();
-            if ($row){
-                if (password_verify($password, $row['password'])){
+        if ($query = $db->prepare("SELECT * FROM user WHERE email = ?")) {
+            $query->bind_param('s', $email);
+            $query->execute();
+            $row = $query->fetch();
+            if ($row) {
+                if (password_verify($password, $row['password'])) {
                     $_SESSION["userid"] = $row['id'];
                     $_SESSION["user"] = $row;
 
@@ -36,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
                     $error .= '<p class = "error"> No user exist with that email address .</p>';
                 }
             }
-            $query -> close();
+            $query->close();
         }
     }
     //Close connection
-    mysqi_close($db);
+    mysqli_close($db);
 }
 ?>
