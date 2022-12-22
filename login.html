@@ -124,10 +124,6 @@
 							<div class="header-contact-img">
 								<i class="far fa-hospital"></i>							
 							</div>
-							<div class="header-contact-detail">
-								<p class="contact-header">Contact</p>
-								<p class="contact-info-header"> +1 315 369 5943</p>
-							</div>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link header-login" href="login.html">login / Signup </a>
@@ -152,15 +148,15 @@
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Login <span>BookMia</span></h3>
+											<h3>Login <span>BookMia</span><a href="doctor-login.html">Are you a Doctor?</a></h3>
 										</div>
-										<form action="https://dreamguys.co.in/demo/doccure/index.html">
+										<form name = "p_login" action="login.php"> <!--name form and action the php file -->
 											<div class="form-group form-focus">
-												<input type="email" class="form-control floating" required>
+												<input type="email" name = "p_email" class="form-control floating" required> <!--create names for input-->
 												<label class="focus-label">Email</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="password" class="form-control floating" required>
+												<input type="password" name = "p_password" class="form-control floating" required> <!--create name for input-->
 												<label class="focus-label">Password</label>
 											</div>
 											<div class="text-right">
@@ -169,7 +165,7 @@
 											<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
 											<div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div>
 										</form>
-										<script src="Login_validation.js"></script>
+										<script src="Login_validation.js"></script> <!--after form call the javascript stuff-->
 									</div>
 								</div>
 							</div>
