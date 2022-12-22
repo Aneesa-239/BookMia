@@ -38,22 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])){
             }
             $query -> close();
         }
-
-//registration $sql = "INSERT INTO MyGuests// name of table (firstname, lastname, email) // name of coloums
-
-//VALUES ($email, $password)";//
-
-
-//if ($conn->query($sql) === TRUE) {
-// echo "New record created successfully";
-//} else {
-
-//   echo "Error: " . $sql . "<br>" . $conn->error;
-//}
- //   }
-
-
-
     //Close connection
     mysqi_close($db); // always remember to close the db
 }
