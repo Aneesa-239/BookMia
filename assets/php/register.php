@@ -1,5 +1,8 @@
 <?php
+<<<<<<< Updated upstream
 echo "register is called";
+=======
+>>>>>>> Stashed changes
 //call the database config file, with the database connection
 require_once "config.php";
 $Name = $_POST['name'];
@@ -8,6 +11,7 @@ $Email = $_POST['email'];
 $Phone = $_POST['phone'];
 $Password = $_POST['password'];
 
+<<<<<<< Updated upstream
 echo "$Name, $Surname,$Email', '$Phone, $Password";
 //database SQL insert code
 /*$sql = "INSERT INTO User (UserCode, FirstName, EmailAddress, PhoneNumber, Password) 
@@ -46,4 +50,16 @@ if ($run) {
 
 mysqli_close($conn);
 
+=======
+//database SQL insert code
+$sql = "INSERT INTO `User` (`UserCode`, `FirstName`, `EmailAddress`, `PhoneNumber`, `Password`) 
+        VALUES ('#US002', '$Name', $Surname','$Email', '$Phone', '$Password')";
+//Insert into the database
+$rs = mysqli_query($con, $sql);
+
+if ($rs) {
+    echo "Contact Records Inserted";
+}
+
+>>>>>>> Stashed changes
 ?>
