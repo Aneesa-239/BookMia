@@ -13,10 +13,8 @@ if (isset($_POST["submit"])) {
     $Phone = $_POST['phone'];
     $Password = $_POST['password'];
 
-
-
-    $query = "insert into User(UserCode,FirstName,Lastname,EmailAddress,PhoneNumber,UserPassword) 
-            values('#US002', '$Name', $Surname','$Email', '$Phone', '$Password')";
+    $query = "insert into User(FirstName,Lastname,EmailAddress,PhoneNumber,UserPassword) 
+            values('$Name', $Surname','$Email', '$Phone', '$Password')";
 
     echo "$Name, $Surname,$Email', '$Phone, $Password";
     mysqli_query($conn, $query);
