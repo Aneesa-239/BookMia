@@ -1,10 +1,9 @@
 <!DOCTYPE html> 
 <html lang="en">
-	
-<!-- doccure/register.html  30 Nov 2019 04:12:20 GMT -->
+
 <head>
 		<meta charset="utf-8">
-		<title>Doccure</title>
+		<title>BookMia</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
@@ -42,13 +41,13 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index-2.html" class="navbar-brand logo">
+						<a href="index.html" class="navbar-brand logo">
 							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index-2.html" class="menu-logo">
+							<a href="index.html" class="menu-logo">
 								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -57,64 +56,7 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.html">Home</a>
-							</li>
-							<li class="has-submenu">
-								<a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
-									<li><a href="appointments.html">Appointments</a></li>
-									<li><a href="schedule-timings.html">Schedule Timing</a></li>
-									<li><a href="my-patients.html">Patients List</a></li>
-									<li><a href="patient-profile.html">Patients Profile</a></li>
-									<li><a href="chat-doctor.html">Chat</a></li>
-									<li><a href="invoices.html">Invoices</a></li>
-									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
-									<li><a href="reviews.html">Reviews</a></li>
-									<li><a href="doctor-register.html">Doctor Register</a></li>
-								</ul>
-							</li>	
-							<li class="has-submenu">
-								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="search.html">Search Doctor</a></li>
-									<li><a href="doctor-profile.html">Doctor Profile</a></li>
-									<li><a href="booking.html">Booking</a></li>
-									<li><a href="checkout.html">Checkout</a></li>
-									<li><a href="booking-success.html">Booking Success</a></li>
-									<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
-									<li><a href="favourites.html">Favourites</a></li>
-									<li><a href="chat.html">Chat</a></li>
-									<li><a href="profile-settings.html">Profile Settings</a></li>
-									<li><a href="change-password.html">Change Password</a></li>
-								</ul>
-							</li>	
-							<li class="has-submenu active">
-								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="voice-call.html">Voice Call</a></li>
-									<li><a href="video-call.html">Video Call</a></li>
-									<li><a href="search.html">Search Doctors</a></li>
-									<li><a href="calendar.html">Calendar</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li class="has-submenu">
-										<a href="invoices.html">Invoices</a>
-										<ul class="submenu">
-											<li><a href="invoices.html">Invoices</a></li>
-											<li><a href="invoice-view.html">Invoice View</a></li>
-										</ul>
-									</li>
-									<li><a href="blank-page.html">Starter Page</a></li>
-									<li><a href="login.html">Login</a></li>
-									<li class="active"><a href="register.html">Register</a></li>
-									<li><a href="forgot-password.html">Forgot Password</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="admin/index.html" target="_blank">Admin</a>
-							</li>
-							<li class="login-link">
-								<a href="login.html">Login / Signup</a>
+								<a href="index.html">Home</a>
 							</li>
 						</ul>
 					</div>		 
@@ -129,7 +71,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link header-login" href="login.html">login / Signup </a>
+							<a class="nav-link header-login" href="login.php">login / Signup </a>
 						</li>
 					</ul>
 				</nav>
@@ -147,7 +89,7 @@
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-md-7 col-lg-6 login-left">
-										<img src="bookmia/assets/img/login-banner.png" class="img-fluid" alt="Doccure Register">	
+										<img src="assets/img/login-banner.png" class="img-fluid" alt="BookMia Register">	
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
@@ -155,55 +97,39 @@
 										</div>
 										
 										<!-- Register Form -->
-										<form action="register.php" id="RegisterForm" method="post" onsubmit="">
-											<div class="form-group form-focus">
+										<form action="assets/php/register.php" id="RegisterForm" method="post" onsubmit="">
+											   <div class="form-group card-label">
+														<label>Name</label>
 												<input type="text" name="name" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
-												<label class="focus-label">Name</label>
 											</div>
-											<div class="form-group form-focus">
+											   <div class="form-group card-label">
+														<label>Surname</label>
 												<input type="text" name="surname" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only">
-												<label class="focus-label">Surname</label>
 											</div>
-											<div class="form-group form-focus">
+											   <div class="form-group card-label">
+														<label>Email Address</label>
 												<input type="text" class="form-control floating" name="email" required
-														pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
-														title="Example: name@email.com"
-														required>
-												<label class="focus-label">Email</label>
+														pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" title="Example: name@email.com" placeholder="name@email.com">
 											</div>
-											<div class="form-group form-focus">
+											   <div class="form-group card-label">
+														<label>Mobile Number</label>
 												<input type="text" class="form-control floating" name="phone"
 												       pattern="[0-9]+" maxlength="10" title="Enter a 10 digit phone number">
-												<label class="focus-label">Mobile Number</label>
-												
-
 											</div>
-											<div class="form-group form-focus">
+											   <div class="form-group card-label">
+														<label>Password</label>
 												<input type="password" id="password" name="password" class="form-control floating" required 
 													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
 													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">
-												<label class="focus-label">Create Password</label>
 											</div>
-											<div class="form-group form-focus">
+										   <div class="form-group card-label">
+														<label>Confirm Password</label>
 												<input type="password" class="form-control floating" id="retype-password">
-												<label class="focus-label">Confirm Password</label>
 											</div>
 											<div class="text-right">
-												<a class="forgot-link" href="login.html">Already have an account?</a>
+												<a class="forgot-link" href="login.php">Already have an account?</a>
 											</div>
 											<button class="btn btn-primary btn-block btn-lg login-btn" name = "submit" type="submit">Signup</button>
-											<div class="login-or">
-												<span class="or-line"></span>
-												<span class="span-or">or</span>
-											</div>
-											<div class="row form-row social-login">
-												<div class="col-6">
-													<a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>
-												</div>
-												<div class="col-6">
-													<a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
-												</div>
-											</div>
 										</form>
 										<!-- /Register Form -->
 										
