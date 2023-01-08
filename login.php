@@ -1,6 +1,12 @@
+<?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html> 
 <html lang="en">
-
+	
 <head>
 		<meta charset="utf-8">
 		<title>BookMia</title>
@@ -15,7 +21,10 @@
 		<!-- Fontawesome CSS -->
 		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
 		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-	
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		
 	</head>
 	<body class="account-page">
 
@@ -50,14 +59,11 @@
 							<li>
 								<a href="index.php">Home</a>
 							</li>
+							
 						</ul>
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-
-							<div class="header-contact-detail">
-
-							</div>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link header-login" href="login.php">login / Signup </a>
@@ -73,59 +79,57 @@
 					
 					<div class="row">
 						<div class="col-md-8 offset-md-2">
-								
-							<!-- Register Content -->
+
+		<?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+							
+							<!-- Login Tab Content -->
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-md-7 col-lg-6 login-left">
-										<img src="assets/img/login-banner.png" class="img-fluid" alt="BookMia Register">	
+										<img src="assets/img/login-banner.png" class="img-fluid" alt="BookMia Login">	
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Patient Register </h3>
+											<h3>Login<a href="doctor-login.php">Are you a Doctor?</a></h3>
 										</div>
-										
-										<!-- Register Form -->
-										<form action="assets/php/register.php" id="RegisterForm" method="post" onsubmit="">
-											   <div class="form-group card-label">
-														<label>Name</label>
-												<input type="text" name="name" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
-											</div>
-											   <div class="form-group card-label">
-														<label>Surname</label>
-												<input type="text" name="surname" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only">
-											</div>
-											   <div class="form-group card-label">
+										<form action="assets/php/authenticate.php" method="post">
+										    
+	<div class="form-group card-label">
 														<label>Email Address</label>
-												<input type="text" class="form-control floating" name="email" required
-														pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" title="Example: name@email.com" placeholder="name@email.com">
-											</div>
-											   <div class="form-group card-label">
-														<label>Mobile Number</label>
-												<input type="text" class="form-control floating" name="phone"
-												       pattern="[0-9]+" maxlength="10" title="Enter a 10 digit phone number">
-											</div>
-											   <div class="form-group card-label">
-														<label>Password</label>
-												<input type="password" id="password" name="password" class="form-control floating" required 
-													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
+    <input type="text" name="p_email" placeholder="Email" id="username" class="form-control floating" required	pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" title="Example: name@email.com" placeholder="name@email.com">
+    
+    </div>
+    
+    <div class="form-group card-label">
+														<label>Password</label></label>
+
+    <input type="password" name="p_password" placeholder="Password" id="password" class="form-control floating" requiredpattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
 													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">
-											</div>
-										   <div class="form-group card-label">
-														<label>Confirm Password</label>
-												<input type="password" class="form-control floating" id="retype-password">
-											</div>
-											<div class="text-right">
-												<a class="forgot-link" href="login.php">Already have an account?</a>
-											</div>
-											<button class="btn btn-primary btn-block btn-lg login-btn" name = "submit" type="submit">Signup</button>
-										</form>
-										<!-- /Register Form -->
-										
+	</div>
+	
+	<div class="text-right">
+		<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
+	</div>
+	
+	<div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" hidden>
+	    <strong>Error!</strong>A <a herf="#" class="alert-link">problem</a> has been occured while submitting your data.
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	        <span aria-hidden="true">&times;</span>
+	    </button>
+	</div>
+	
+    <button class="btn btn-primary btn-block btn-lg login-btn" onclick="show()" type="submit" value="Login">Login</button>
+    
+    <div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div>
+										<script src="assets/js/Login_validation.js"></script> <!--after form call the javascript stuff-->
 									</div>
 								</div>
 							</div>
-							<!-- /Register Content -->
+							<!-- /Login Tab Content -->
 								
 						</div>
 					</div>
@@ -245,9 +249,9 @@
 				</div>
 				<!-- /Footer Bottom -->
 				
-			 </footer>
+			</footer>
 			<!-- /Footer -->
-		  
+		   
 		</div>
 		<!-- /Main Wrapper -->
 	  
@@ -260,8 +264,6 @@
 		
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
-		<script src="assets/js/Register.js"></script>
-
+		
 	</body>
-
 </html>
