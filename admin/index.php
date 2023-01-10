@@ -288,7 +288,7 @@
                                     <div class="dash-count">
                                         <?php
 										//connect to the database
-										require_once "config.php";
+										require_once "assets/php/config.php";
 
 										//pull the required data from the database
 										$query = "SELECT COUNT(*) FROM Doctor";
@@ -331,7 +331,7 @@
                                     <div class="dash-count">
                                         <?php
 										//connect to the database
-										require_once "config.php";
+                                        require_once "assets/php/config.php";
 
 										//pull the required data from the database
 										$query = "SELECT COUNT(*) FROM Patient";
@@ -377,7 +377,7 @@
                                     <div class="dash-count">
                                         <?php
 										//connect to the database
-										require_once "config.php";
+                                        require_once "assets/php/config.php";
 
 										//pull the required data from the database
 										$query = "SELECT COUNT(*) FROM Booking";
@@ -420,7 +420,7 @@
                                     <div class="dash-count">
                                         <?php
 										//connect to the database
-										require_once "config.php";
+                                        require_once "assets/php/config.php";
 
 										//pull the required data from the database
 										$query = "SELECT SUM(PaymentAmount)From Payment where PaymentStatus ='Paid'";
@@ -495,7 +495,7 @@
                             <div class="card-body">
                                 <?php
                                 //connect to the database
-                                require_once "config.php";
+                                require_once "assets/php/config.php";
 
                                 //pull the required data from the database
                                 $query = "SELECT Doctor.DoctorCode, 
@@ -558,7 +558,7 @@
                             <div class="card-body">
                                 <?php
                                 //connect to the database
-                                require_once "config.php";
+                                require_once "assets/php/config.php";
 
                                 //pull the required data from the database
                                 $query = "SELECT Patient.PatientCode, 
@@ -619,11 +619,11 @@
                             <div class="card-body">
                                 <?php
                                 //connect to the database
-                                require_once "config.php";
+                                require_once "assets/php/config.php";
 
                                 //pull the required data from the database
-                                $query = "SELECT Booking.BookingCode,DoctorCode, PatientCode, BookingDate, StartTime, 
-                                            EndTime, BookingStatus, Payment.PaymentAmount 
+                                $query = "SELECT booking.BookingCode,DoctorCode, PatientCode, StartDate, 
+                                            EndDate, BookingStatus, Payment.PaymentAmount 
                                             FROM Booking 
                                             INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode 
                                             INNER JOIN Payment ON Invoice.InvoiceCode = Payment.InvoiceCode";
@@ -658,9 +658,14 @@
                                                 <td><?php echo $rows['BookingCode']; ?></td>
                                                 <td><?php echo $rows['DoctorCode']; ?></td>
                                                 <td><?php echo $rows['PatientCode']; ?></td>
-                                                <td><?php echo $rows['BookingDate']; ?>
+                                                <td><?php
+                                                        $time = new DateTime($rows['StartDate']);
+                                                        $date = $time->format('Y-M-d'); 
+                                                 echo $date ?>
                                                     <span class="text-primary d-block">
-                                                        <?php echo "{$rows['StartTime']} - {$rows['EndTime']}";?>
+                                                        <?php 
+
+                                                        echo "{$rows['StartTime']} - {$rows['EndTime']}";?>
                                                     </span>
                                                 </td>
                                                 <?php if($rows['BookingStatus'] == "Active"){ ?>
