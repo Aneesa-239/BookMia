@@ -10,6 +10,21 @@ echo "register is called";
 //call the database config file, with the database connection
 require_once "config.php";
 
+$patientcount = "Select COUNT(*) from patient";
+$last = mysqli_query($conn, $patientcount);
+$row = [];
+
+if ($last->num_rows > 0) {
+    // fetch all data from db into array 
+    $row = $last->fetch_all(MYSQLI_ASSOC);
+}
+if (!empty($row))
+    foreach ($row as $rows) {
+        $number = $rows['COUNT(*)'] + 1;
+    }
+
+
+
 if (isset($_POST["submit"])) {
 
     $Name = $_POST['name'];
@@ -18,14 +33,19 @@ if (isset($_POST["submit"])) {
     $Phone = $_POST['phone'];
     $Password = $_POST['password'];
 
-    $query = "INSERT INTO User ( FirstName, LastName, EmailAddress, PhoneNumber, UserPassword, IsAdmin) 
+    $query1 = "INSERT INTO User ( FirstName, LastName, EmailAddress, PhoneNumber, UserPassword, IsAdmin) 
             VALUES ('$Name', '$Surname', '$Email', '$Phone', '$Password', '0')";
+    $query2 = "INSERT INTO Patient SET 
+                PatientCode = '#PT00$number',UserCode = (SELECT UserCode
+         FROM User
+        WHERE EmailAddress = '$Email')";
 
     //when Patient logs in they will have to be saved into the Patient Table.
 
     echo "$Name, $Surname, $Email, $Phone, $Password";
 
-    mysqli_query($conn, $query);
+    mysqli_query($conn, $query1);
+    mysqli_query($conn, $query2);
 
     mysqli_close($conn);
 
