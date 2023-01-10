@@ -87,7 +87,7 @@
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/doctors/doctor-thumb-01.jpg">
+                                                    src="assets/img/Doctors/Doctor-thumb-01.jpg">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span>
@@ -103,7 +103,7 @@
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/patients/patient1.jpg">
+                                                    src="assets/img/Patients/Patient1.jpg">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Charlene Reed</span>
@@ -120,7 +120,7 @@
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/patients/patient2.jpg">
+                                                    src="assets/img/Patients/Patient2.jpg">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Travis Trimble</span>
@@ -137,11 +137,11 @@
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/patients/patient3.jpg">
+                                                    src="assets/img/Patients/Patient3.jpg">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Carl Kelly</span> send
-                                                    a message <span class="noti-title"> to his doctor</span></p>
+                                                    a message <span class="noti-title"> to his Doctor</span></p>
                                                 <p class="noti-time"><span class="notification-time">12 mins ago</span>
                                                 </p>
                                             </div>
@@ -205,10 +205,10 @@
                             <a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
                         </li>
                         <li>
-                            <a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+                            <a href="Doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
                         </li>
                         <li>
-                            <a href="patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
+                            <a href="Patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
                         </li>
                         <li>
                             <a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
@@ -224,7 +224,7 @@
                             <a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span
                                     class="menu-arrow"></span></a>
                             <ul style="display: none;">
-                                <li><a href="invoice-report.html">Invoice Reports</a></li>
+                                <li><a href="Invoice-report.html">Invoice Reports</a></li>
                             </ul>
                         </li>
                         <li class="menu-title">
@@ -423,7 +423,7 @@
 										require_once "config.php";
 
 										//pull the required data from the database
-										$query = "SELECT SUM(PaymentAmount)From Payment where PaymentStatus ='paid'";
+										$query = "SELECT SUM(PaymentAmount)From Payment where PaymentStatus ='Paid'";
 										$result = mysqli_query($conn, $query);
 										$row = [];
 
@@ -493,123 +493,59 @@
                                 <h4 class="card-title">Doctors List</h4>
                             </div>
                             <div class="card-body">
+                                <?php
+                                //connect to the database
+                                require_once "config.php";
+
+                                //pull the required data from the database
+                                $query = "SELECT Doctor.DoctorCode, 
+                                          user.FirstName,
+                                          user.LastName,DoctorType.DoctorTitle,
+                                          user.PhoneNumber, 
+                                          user.EmailAddress FROM user 
+                                          INNER JOIN Doctor ON user.UserCode = Doctor.UserCode 
+                                          INNER JOIN DoctorType ON DoctorType.DocTypeID = Doctor.DoctorType";
+                                $result = mysqli_query($conn, $query);
+                                $row = [];
+
+                                if ($result->num_rows > 0) {
+                                    // fetch all data from db into array 
+                                    $row = $result->fetch_all(MYSQLI_ASSOC);
+                                }
+                                ?>
                                 <div class="table-responsive">
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
+                                                <th>Doctor Code</th>
                                                 <th>Doctor Name</th>
+                                                <th>Doctor Surname</th>
                                                 <th>Speciality</th>
-                                                <th>Earned</th>
-                                                <th>Reviews</th>
+                                                <th>Email</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                                 if(!empty($row))
+                                                foreach($row as $rows)
+                                                    { 
+                                            ?>
                                             <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-01.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Ruby Perrin</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Dental</td>
-                                                <td>$3200.00</td>
-                                                <td>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star-o text-secondary"></i>
-                                                </td>
+                                                <td><?php echo $rows['DoctorCode']; ?></td>
+                                                <td><?php echo $rows['FirstName']; ?></td>
+                                                <td><?php echo $rows['LastName']; ?></td>
+                                                <td><?php echo $rows['DoctorTitle']; ?></td>
+                                                <td><?php echo $rows['EmailAddress']; ?></td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-02.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Darren Elder</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Dental</td>
-                                                <td>$3100.00</td>
-                                                <td>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star-o text-secondary"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-03.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Deborah Angel</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Cardiology</td>
-                                                <td>$4000.00</td>
-                                                <td>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star-o text-secondary"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-04.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Sofia Brient</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Urology</td>
-                                                <td>$3200.00</td>
-                                                <td>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star-o text-secondary"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-05.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Marvin Campbell</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Orthopaedics</td>
-                                                <td>$3500.00</td>
-                                                <td>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star text-warning"></i>
-                                                    <i class="fe fe-star-o text-secondary"></i>
-                                                </td>
-                                            </tr>
+                                            <?php } ?>
+
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- /Recent Orders -->
+                        <!-- /Doctors -->
 
                     </div>
                     <div class="col-md-6 d-flex">
@@ -620,87 +556,49 @@
                                 <h4 class="card-title">Patients List</h4>
                             </div>
                             <div class="card-body">
+                                <?php
+                                //connect to the database
+                                require_once "config.php";
+
+                                //pull the required data from the database
+                                $query = "SELECT Patient.PatientCode, 
+                                          user.FirstName,
+                                          user.LastName,
+                                          user.PhoneNumber
+                                          FROM user 
+                                          INNER JOIN Patient ON user.UserCode = Patient.UserCode";
+                                $result = mysqli_query($conn, $query);
+                                $row = [];
+
+                                if ($result->num_rows > 0) {
+                                    // fetch all data from db into array 
+                                    $row = $result->fetch_all(MYSQLI_ASSOC);
+                                }
+                                ?>
                                 <div class="table-responsive">
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
+                                                <th>Patient Code</th>
                                                 <th>Patient Name</th>
-                                                <th>Phone</th>
-                                                <th>Last Visit</th>
-                                                <th>Paid</th>
+                                                <th>Patient Surname</th>
+                                                <th>Phone Number</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                                 if(!empty($row))
+                                                foreach($row as $rows)
+                                                    { 
+                                            ?>
                                             <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient1.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Charlene Reed </a>
-                                                    </h2>
-                                                </td>
-                                                <td>8286329170</td>
-                                                <td>20 Oct 2019</td>
-                                                <td class="text-right">$100.00</td>
+                                                <td><?php echo $rows['PatientCode']; ?></td>
+                                                <td><?php echo $rows['FirstName']; ?></td>
+                                                <td><?php echo $rows['LastName']; ?></td>
+                                                <td><?php echo $rows['PhoneNumber']; ?></td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient2.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Travis Trimble </a>
-                                                    </h2>
-                                                </td>
-                                                <td>2077299974</td>
-                                                <td>22 Oct 2019</td>
-                                                <td class="text-right">$200.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient3.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Carl Kelly</a>
-                                                    </h2>
-                                                </td>
-                                                <td>2607247769</td>
-                                                <td>21 Oct 2019</td>
-                                                <td class="text-right">$250.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient4.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html"> Michelle Fairfax</a>
-                                                    </h2>
-                                                </td>
-                                                <td>5043686874</td>
-                                                <td>21 Sep 2019</td>
-                                                <td class="text-right">$150.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient5.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Gina Moore</a>
-                                                    </h2>
-                                                </td>
-                                                <td>9548207887</td>
-                                                <td>18 Sep 2019</td>
-                                                <td class="text-right">$350.00</td>
-                                            </tr>
+                                            <?php } ?>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -719,181 +617,77 @@
                                 <h4 class="card-title">Appointment List</h4>
                             </div>
                             <div class="card-body">
+                                <?php
+                                //connect to the database
+                                require_once "config.php";
+
+                                //pull the required data from the database
+                                $query = "SELECT Booking.BookingCode,DoctorCode, PatientCode, BookingDate, StartTime, 
+                                            EndTime, BookingStatus, Payment.PaymentAmount 
+                                            FROM Booking 
+                                            INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode 
+                                            INNER JOIN Payment ON Invoice.InvoiceCode = Payment.InvoiceCode";
+                                $result = mysqli_query($conn, $query);
+                                $row = [];
+
+                                if ($result->num_rows > 0) {
+                                    // fetch all data from db into array 
+                                    $row = $result->fetch_all(MYSQLI_ASSOC);
+                                }
+                                ?>
+
                                 <div class="table-responsive">
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Doctor Name</th>
-                                                <th>Speciality</th>
-                                                <th>Patient Name</th>
+                                                <th>Booking Code</th>
+                                                <th>Doctor Code</th>
+                                                <th>Patient Code</th>
                                                 <th>Apointment Time</th>
                                                 <th>Status</th>
-                                                <th class="text-right">Amount</th>
+                                                <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                                 if(!empty($row))
+                                                foreach($row as $rows)
+                                                    { 
+                                            ?>
                                             <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-01.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Ruby Perrin</a>
-                                                    </h2>
+                                                <td><?php echo $rows['BookingCode']; ?></td>
+                                                <td><?php echo $rows['DoctorCode']; ?></td>
+                                                <td><?php echo $rows['PatientCode']; ?></td>
+                                                <td><?php echo $rows['BookingDate']; ?>
+                                                    <span class="text-primary d-block">
+                                                        <?php echo "{$rows['StartTime']} - {$rows['EndTime']}";?>
+                                                    </span>
                                                 </td>
-                                                <td>Dental</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient1.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Charlene Reed </a>
-                                                    </h2>
-                                                </td>
-                                                <td>9 Nov 2019 <span class="text-primary d-block">11.00 AM - 11.15
-                                                        AM</span></td>
+                                                <?php if($rows['BookingStatus'] == "Active"){ ?>
                                                 <td>
                                                     <div class="status-toggle">
-                                                        <input type="checkbox" id="status_1" class="check" checked>
-                                                        <label for="status_1" class="checktoggle">checkbox</label>
+                                                        <input type="checkbox" id="status" class="check" checked
+                                                            disabled>
+                                                        <label for="status" class="checktoggle">checkbox</label>
                                                     </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    $200.00
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-02.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Darren Elder</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Dental</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient2.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Travis Trimble </a>
-                                                    </h2>
                                                 </td>
 
-                                                <td>5 Nov 2019 <span class="text-primary d-block">11.00 AM - 11.35
-                                                        AM</span></td>
+                                                <?php }else{?>
+
                                                 <td>
                                                     <div class="status-toggle">
-                                                        <input type="checkbox" id="status_2" class="check" checked>
-                                                        <label for="status_2" class="checktoggle">checkbox</label>
+                                                        <input type="checkbox" id="status" class="check" unchecked
+                                                            disabled>
+                                                        <label for="status" class="checktoggle">checkbox</label>
                                                     </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    $300.00
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-03.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Deborah Angel</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Cardiology</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient3.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Carl Kelly</a>
-                                                    </h2>
-                                                </td>
-                                                <td>11 Nov 2019 <span class="text-primary d-block">12.00 PM - 12.15
-                                                        PM</span></td>
-                                                <td>
-                                                    <div class="status-toggle">
-                                                        <input type="checkbox" id="status_3" class="check" checked>
-                                                        <label for="status_3" class="checktoggle">checkbox</label>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    $150.00
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-04.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Sofia Brient</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Urology</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient4.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html"> Michelle Fairfax</a>
-                                                    </h2>
-                                                </td>
-                                                <td>7 Nov 2019<span class="text-primary d-block">1.00 PM - 1.20
-                                                        PM</span></td>
-                                                <td>
-                                                    <div class="status-toggle">
-                                                        <input type="checkbox" id="status_4" class="check" checked>
-                                                        <label for="status_4" class="checktoggle">checkbox</label>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    $150.00
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/doctors/doctor-thumb-05.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Dr. Marvin Campbell</a>
-                                                    </h2>
-                                                </td>
-                                                <td>Orthopaedics</td>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/img/patients/patient5.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="profile.html">Gina Moore</a>
-                                                    </h2>
                                                 </td>
 
-                                                <td>15 Nov 2019 <span class="text-primary d-block">1.00 PM - 1.15
-                                                        PM</span></td>
-                                                <td>
-                                                    <div class="status-toggle">
-                                                        <input type="checkbox" id="status_5" class="check" checked>
-                                                        <label for="status_5" class="checktoggle">checkbox</label>
-                                                    </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    $200.00
-                                                </td>
+                                                <?php }?>
+                                                <td><?php echo "R{$rows['PaymentAmount']}"; ?> </td>
+
                                             </tr>
+                                            <?php } ?>
+
                                         </tbody>
                                     </table>
                                 </div>
