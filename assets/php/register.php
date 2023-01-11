@@ -50,7 +50,6 @@ if (isset($_POST["submit"])) {
     mysqli_close($conn);
 
     header("Location: index-2.html");
-
     /*
     $run = mysqli_query($conn, $query) or die(mysqli_error());
     if ($run) {
