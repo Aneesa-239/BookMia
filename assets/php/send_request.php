@@ -31,6 +31,8 @@ if (!empty($bookingcode)) {
     ;
     $result = mysqli_query($conn, $query);
     header("Location: ../../appointments.php");
+    //add a way to alert the user that their request has been set successfully
+
     exit;
 }
 

@@ -29,9 +29,9 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+            <script src="assets/js/html5shiv.min.js"></script>
+            <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
 
 </head>
 
@@ -72,7 +72,7 @@
                             <a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
                                 <li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
-                                <li><a href="appointments.html">Appointments</a></li>
+                                <li><a href="appointments.php">Appointments</a></li>
                                 <li><a href="schedule-timings.html">Schedule Timing</a></li>
                                 <li><a href="my-patients.html">Patients List</a></li>
                                 <li><a href="patient-profile.html">Patients Profile</a></li>
@@ -175,34 +175,34 @@
 
                     <!-- Calendar Events -->
                     <!--    <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
-						<div class="card">
-							<div class="card-header">
-								<h4 class="card-title mb-0">Drag & Drop Event</h4>
-							</div>
-							<div class="card-body">
-								<div id="calendar-events" class="mb-3">
-									<div class="calendar-events" data-class="bg-info"><i
-											class="fas fa-circle text-info"></i> My Event One</div>
-									<div class="calendar-events" data-class="bg-success"><i
-											class="fas fa-circle text-success"></i> My Event Two</div>
-									<div class="calendar-events" data-class="bg-danger"><i
-											class="fas fa-circle text-danger"></i> My Event Three</div>
-									<div class="calendar-events" data-class="bg-warning"><i
-											class="fas fa-circle text-warning"></i> My Event Four</div>
-								</div>
-								<div class="checkbox mb-3">
-									<input id="drop-remove" type="checkbox">
-									<label for="drop-remove">
-										Remove after drop
-									</label>
-								</div>
-								<a href="#" data-toggle="modal" data-target="#add_new_event"
-									class="btn btn-primary btn-block">
-									<i class="fas fa-plus"></i> Add Category
-								</a>
-							</div>
-						</div>
-					</div> -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Drag & Drop Event</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="calendar-events" class="mb-3">
+                                    <div class="calendar-events" data-class="bg-info"><i
+                                            class="fas fa-circle text-info"></i> My Event One</div>
+                                    <div class="calendar-events" data-class="bg-success"><i
+                                            class="fas fa-circle text-success"></i> My Event Two</div>
+                                    <div class="calendar-events" data-class="bg-danger"><i
+                                            class="fas fa-circle text-danger"></i> My Event Three</div>
+                                    <div class="calendar-events" data-class="bg-warning"><i
+                                            class="fas fa-circle text-warning"></i> My Event Four</div>
+                                </div>
+                                <div class="checkbox mb-3">
+                                    <input id="drop-remove" type="checkbox">
+                                    <label for="drop-remove">
+                                        Remove after drop
+                                    </label>
+                                </div>
+                                <a href="#" data-toggle="modal" data-target="#add_new_event"
+                                    class="btn btn-primary btn-block">
+                                    <i class="fas fa-plus"></i> Add Category
+                                </a>
+                            </div>
+                        </div>
+                    </div> -->
                     <!-- Calendar -->
                     <div class="col-md-7 col-lg-8 col-xl-9">
                         <div class="card">
@@ -450,13 +450,13 @@
     <script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
     <script src="assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
     <script>
-    $(window).resize(function() {
-        if (window.innerWidth < 800) {
-            $('#calendar').fullCalendar('changeView', 'agendaDay');
-        } else {
-            $('#calendar').fullCalendar('changeView', 'month');
-        }
-    });
+        $(window).resize(function () {
+            if (window.innerWidth < 800) {
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
+            } else {
+                $('#calendar').fullCalendar('changeView', 'month');
+            }
+        });
     </script>
 
     <!-- Custom JS -->
