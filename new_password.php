@@ -1,12 +1,8 @@
-<?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-?>
+
 
 <!DOCTYPE html> 
 <html lang="en">
-
+	
 <head>
 		<meta charset="utf-8">
 		<title>BookMia</title>
@@ -25,12 +21,7 @@ error_reporting(E_ALL);
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-	
+
 	</head>
 	<body class="account-page">
 
@@ -39,7 +30,7 @@ error_reporting(E_ALL);
 		
 			<!-- Header -->
 			<header class="header">
-				<nav class="navbar navbar-expand-lg header-nav">
+								<nav class="navbar navbar-expand-lg header-nav">
 					<div class="navbar-header">
 						<a id="mobile_btn" href="javascript:void(0);">
 							<span class="bar-icon">
@@ -65,16 +56,10 @@ error_reporting(E_ALL);
 							<li>
 								<a href="index.php">Home</a>
 							</li>
-							<li class="login-link">
-								<a href="login.php">Login / Signup</a>
-							</li>
 						</ul>	 
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							<div class="header-contact-img">
-								<i class="far fa-hospital"></i>							
-							</div>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link header-login" href="login.php">login / Signup </a>
@@ -87,9 +72,10 @@ error_reporting(E_ALL);
 			<!-- Page Content -->
 			<div class="content">
 				<div class="container-fluid">
+					
 					<div class="row">
 						<div class="col-md-8 offset-md-2">
-						
+							
 							<!-- Account Content -->
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
@@ -98,47 +84,33 @@ error_reporting(E_ALL);
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Welcome<span> Doctor!</span></h3>
-											</br>
-											<h5>Please enter Login credentials</h5>
+											<h3>New Password Form</h3>
+											
+					
+											
+											<p class="small text-muted">Enter your email to get a password reset link</p>
 										</div>
-							<?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-										
-										<!-- Login Form -->
-										<form action="assets/php/authenDoc.php" method="post">
-																					   <div class="form-group card-label">
-														<label>Email</label>
-												<input type="text" name="d_email" placeholder="Email" id="username" class="form-control floating" required>
-											</div>
-																						   <div class="form-group card-label">
-														<label>Password</label>
-												<input type="password" name="d_password" placeholder="Password" id="password" class="form-control floating" required>
-											</div>
-											<div class="text-right">
-												<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
+										<form class="login-form" action="assets/php/app_logic.php" method="POST">
+									
+											<div class="form-group card-label">
+														<label>New Password</label>
+												<input type="password" name="new_pass">
 											</div>
 											
-												<div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" hidden>
-	    <strong>Error!</strong>A <a herf="#" class="alert-link">problem</a> has been occured while submitting your data.
-	    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	        <span aria-hidden="true">&times;</span>
-	    </button>
-	</div>
+											<div class="form-group card-label">
+														<label>Confirm New Password</label>
+												<input type="password" name="new_pass_c" >
+											</div>
 											
-											<button class="btn btn-primary btn-block btn-lg login-btn" onclick="show()" type="submit">Login</button>
+											<div class="form-group">
+											<button type="submit" name ="Reset-Password" class="btn btn-primary btn-block btn-lg login-btn">submit</button
+											</div>
 										</form>
-										<script src="assets/js/Login_validation.js"></script>
-										<!-- /Login Form -->
-										
 									</div>
 								</div>
 							</div>
 							<!-- /Account Content -->
-								
+							
 						</div>
 					</div>
 
@@ -275,4 +247,5 @@ error_reporting(E_ALL);
 		
 	</body>
 
+<!-- doccure/forgot-password.html  30 Nov 2019 04:12:20 GMT -->
 </html>
