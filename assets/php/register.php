@@ -35,7 +35,8 @@ if (isset($_POST["submit"])) {
 
     $query1 = "INSERT INTO User ( FirstName, LastName, EmailAddress, PhoneNumber, UserPassword, IsAdmin) 
             VALUES ('$Name', '$Surname', '$Email', '$Phone', '$Password', '0')";
-    $query2 = "INSERT INTO Patient SET 
+    $string = "INSERT INTO Patient SET 
+
                 PatientCode = '#PT00$number',UserCode = (SELECT UserCode
          FROM User
         WHERE EmailAddress = '$Email')";
@@ -45,7 +46,9 @@ if (isset($_POST["submit"])) {
     echo "$Name, $Surname, $Email, $Phone, $Password";
 
     mysqli_query($conn, $query1);
-    mysqli_query($conn, $query2);
+
+    mysqli_query($conn, $string);
+
 
     mysqli_close($conn);
 
