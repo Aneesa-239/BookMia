@@ -31,9 +31,9 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+            <script src="assets/js/html5shiv.min.js"></script>
+            <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
 
 </head>
 
@@ -135,27 +135,27 @@
                             <i class="far fa-hospital"></i>
                             <?php
 
-							require_once('assets/php/config.php');
-							ini_set('display_errors', '1');
-							ini_set('display_startup_errors', '1');
-							error_reporting(E_ALL);
+                            require_once('assets/php/config.php');
+                            ini_set('display_errors', '1');
+                            ini_set('display_startup_errors', '1');
+                            error_reporting(E_ALL);
 
 
-							$authsess = $_SESSION['name'];
-							//pull the required data from the database
-							$query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-							$result = mysqli_query($conn, $query);
-							$row = [];
+                            $authsess = $_SESSION['name'];
+                            //pull the required data from the database
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
 
-							if ($result->num_rows > 0) {
-								// fetch all data from db into array 
-								$row = $result->fetch_all(MYSQLI_ASSOC);
-							} ?>
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            } ?>
 
                             <?php
-							if (!empty($row))
-								foreach ($row as $rows) {
-									?>
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
                         </div>
                         <div class="header-contact-detail">
                             <p class="contact-header">Contact</p>
@@ -247,7 +247,7 @@
                                 <nav class="dashboard-menu">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="patient-dashboard.php">
                                                 <i class="fas fa-columns"></i>
                                                 <span>Dashboard</span>
                                             </a>
@@ -553,45 +553,45 @@
 
 <!--<form method="post" action="assets/php/upload.php" enctype='multipart/form-data'>
 
-									<div class="row form-row">
-										<div class="col-12 col-md-12">
-											<div class="form-group">
-												<div class="change-avatar">
-													<div class="profile-img">
-														<img src='<?php echo $image_src; ?>' alt="User Image">
-													</div>
-													<div class="upload-img">
-														<div class="change-photo-btn">
-															<span><i class="fa fa-upload"></i> Upload Photo</span>
-										
+                                    <div class="row form-row">
+                                        <div class="col-12 col-md-12">
+                                            <div class="form-group">
+                                                <div class="change-avatar">
+                                                    <div class="profile-img">
+                                                        <img src='<?php echo $image_src; ?>' alt="User Image">
+                                                    </div>
+                                                    <div class="upload-img">
+                                                        <div class="change-photo-btn">
+                                                            <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                        
   <input type='submit' value='Save name' name='but_upload'>
-														</div>
-														<small class="form-text text-muted">Allowed JPG, GIF or PNG. Max
-															size of 2MB</small>
-													</div>
-												</div>
-											</div>
-										</div>
+                                                        </div>
+                                                        <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max
+                                                            size of 2MB</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-										
-		<?php
+                                        
+        <?php
 
-		require_once('assets/php/config.php');
-		ini_set('display_errors', '1');
-		ini_set('display_startup_errors', '1');
-		error_reporting(E_ALL);
+        require_once('assets/php/config.php');
+        ini_set('display_errors', '1');
+        ini_set('display_startup_errors', '1');
+        error_reporting(E_ALL);
 
 
-		$authsess = $_SESSION['name'];
-		//pull the required data from the database
-		$query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-		$result = mysqli_query($conn, $query);
-		$row = [];
+        $authsess = $_SESSION['name'];
+        //pull the required data from the database
+        $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+        $result = mysqli_query($conn, $query);
+        $row = [];
 
-		$image = $row['image'];
-		$image_src = "upload/" . $image;
+        $image = $row['image'];
+        $image_src = "upload/" . $image;
 
-		if ($result->num_rows > 0) {
-			// fetch all data from db into array 
-			$row = $result->fetch_all(MYSQLI_ASSOC);
-		} ?>
+        if ($result->num_rows > 0) {
+            // fetch all data from db into array 
+            $row = $result->fetch_all(MYSQLI_ASSOC);
+        } ?>
