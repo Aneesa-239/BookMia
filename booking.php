@@ -1,10 +1,22 @@
+<?php 
+    session_start(); 
+
+	require_once('assets/php/config.php');
+		ini_set('display_errors', '1');
+		ini_set('display_startup_errors', '1');
+		error_reporting(E_ALL);
+		
+		$authsess = $_SESSION['name'];
+?>
+
+
 <!DOCTYPE html> 
 <html lang="en">
 	
-<!-- doccure/booking.html  30 Nov 2019 04:12:16 GMT -->
+
 <head>
 		<meta charset="utf-8">
-		<title>Doccure</title>
+		<title>BookMia</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
@@ -20,12 +32,7 @@
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-	
+
 	</head>
 	<body>
 
@@ -43,14 +50,14 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index-2.html" class="navbar-brand logo">
-							<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+						<a href="index-2.php" class="navbar-brand logo">
+							<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index-2.html" class="menu-logo">
-								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							<a href="index-2.php" class="menu-logo">
+								<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -58,79 +65,41 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.html">Home</a>
+								<a href="index-2.php">Home</a>
 							</li>
-							<li class="has-submenu">
-								<a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
-									<li><a href="appointments.html">Appointments</a></li>
-									<li><a href="schedule-timings.html">Schedule Timing</a></li>
-									<li><a href="my-patients.html">Patients List</a></li>
-									<li><a href="patient-profile.html">Patients Profile</a></li>
-									<li><a href="chat-doctor.html">Chat</a></li>
-									<li><a href="invoices.html">Invoices</a></li>
-									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
-									<li><a href="reviews.html">Reviews</a></li>
-									<li><a href="doctor-register.html">Doctor Register</a></li>
-								</ul>
-							</li>	
 							<li class="has-submenu active">
 								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
 								<ul class="submenu">
-									<li><a href="search.html">Search Doctor</a></li>
-									<li><a href="doctor-profile.html">Doctor Profile</a></li>
-									<li class="active"><a href="booking.html">Booking</a></li>
-									<li><a href="checkout.html">Checkout</a></li>
-									<li><a href="booking-success.html">Booking Success</a></li>
-									<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
-									<li><a href="favourites.html">Favourites</a></li>
-									<li><a href="chat.html">Chat</a></li>
-									<li><a href="profile-settings.html">Profile Settings</a></li>
-									<li><a href="change-password.html">Change Password</a></li>
+									<li><a href="search.php">Search Doctor</a></li>
+									
+									<li><a href="patient-dashboard.php">Patient Dashboard</a></li>
+								
+									<li><a href="profile-settings.php">Profile Settings</a></li>
+								
 								</ul>
 							</li>	
 							<li class="has-submenu">
 								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
 								<ul class="submenu">
-									<li><a href="voice-call.html">Voice Call</a></li>
-									<li><a href="video-call.html">Video Call</a></li>
-									<li><a href="search.html">Search Doctors</a></li>
+						
 									<li><a href="calendar.html">Calendar</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li class="has-submenu">
-										<a href="invoices.html">Invoices</a>
-										<ul class="submenu">
-											<li><a href="invoices.html">Invoices</a></li>
-											<li><a href="invoice-view.html">Invoice View</a></li>
-										</ul>
+									
 									</li>
-									<li><a href="blank-page.html">Starter Page</a></li>
-									<li><a href="login.html">Login</a></li>
-									<li><a href="register.html">Register</a></li>
-									<li><a href="forgot-password.html">Forgot Password</a></li>
+									
 								</ul>
 							</li>
-							<li>
-								<a href="admin/index.html" target="_blank">Admin</a>
-							</li>
-							<li class="login-link">
-								<a href="login.html">Login / Signup</a>
-							</li>
+							
 						</ul>	 
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							<div class="header-contact-img">
-								<i class="far fa-hospital"></i>							
-							</div>
-							<div class="header-contact-detail">
-								<p class="contact-header">Contact</p>
-								<p class="contact-info-header"> +1 315 369 5943</p>
+	<div class="header-contact-detail">
+								<p class="contact-header">Welcome</p>
+								<p class="contact-info-header"> <?php echo $_SESSION['name'] . '!'?></p>
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link header-login" href="login.html">login / Signup </a>
+							<a class="nav-link header-login" href="assets/php/logout.php">logout</a>
 						</li>
 					</ul>
 				</nav>
@@ -144,7 +113,7 @@
 						<div class="col-md-12 col-12">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="index-2.php">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Booking</li>
 								</ol>
 							</nav>
@@ -164,28 +133,61 @@
 						
 							<div class="card">
 								<div class="card-body">
+														    						    
+						<?php
+						
+									
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        
+        $doctorchoosen = $_GET['id'];
+
+	  $query = "SELECT User.UserCode, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
+	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode 
+        	WHERE User.UserCode = Doctor.UserCode AND User.EmailAddress = '$doctorchoosen'";
+							
+	$result = mysqli_query($conn, $query);
+	$row = [];
+	
+	if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+
+								}        
+									
+						
+                                foreach ($row as $rows) {
+                                    $doctorchose = $rows['EmailAddress'];
+								    
+							?>
 									<div class="booking-doc-info">
 										<a href="doctor-profile.html" class="booking-doc-img">
-											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+											<img src="assets/img/<?php 
+														echo $rows['image'];
+													?>" alt="User Image">
 										</a>
 										<div class="booking-info">
-											<h4><a href="doctor-profile.html">Dr. Darren Elder</a></h4>
-											<div class="rating">
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star filled"></i>
-												<i class="fas fa-star"></i>
-												<span class="d-inline-block average-rating">35</span>
-											</div>
-											<p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i> Newyork, USA</p>
+											<h4><a href="doctor-profile.html">Dr.<?php 
+													echo $rows['FirstName']; 
+													echo $rows['LastName'];
+													?></a></h4>
+									
+											<p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i><?php 
+														echo $rows['Location'];
+													?></p>
 										</div>
 									</div>
 								</div>
+								
+									<?php } } ?>
 							</div>
 							
 							<!-- Schedule Widget -->
 							<div class="card booking-schedule schedule-widget">
+							    
+							    
+							    
+							    
+							   <!-- $pat_book=$rows['EmailAddress'] -->
 							
 								<!-- Schedule Header -->
 								<div class="schedule-header">
@@ -341,7 +343,7 @@
 							
 							<!-- Submit Section -->
 							<div class="submit-section proceed-btn text-right">
-								<a href="checkout.html" class="btn btn-primary submit-btn">Proceed to Pay</a>
+								<a href="checkout.php?id=<?BC002?>" class="btn btn-primary submit-btn">Proceed to Pay</a>
 							</div>
 							<!-- /Submit Section -->
 							
