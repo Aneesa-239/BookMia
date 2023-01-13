@@ -1,3 +1,4 @@
+<?php require_once "assets/php/config.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,81 +74,85 @@
                 <!-- Notifications -->
                 <li class="nav-item dropdown noti-dropdown">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
+                            <?php
+                            //pull the required data from the database
+                            $query = "SELECT COUNT(*) FROM cancellation where isResolved = 0";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+                            ?>
+                            <?php
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    echo $rows['COUNT(*)'];
+                                }
+                            ?>
+                        </span>
+
                     </a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span class="notification-title">Notifications</span>
                             <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
                         </div>
+                        <?php
+                            //pull the required data from the database
+                                $query = "SELECT * FROM cancellation 
+                                INNER JOIN doctor On cancellation.DoctorCode = doctor.DoctorCode
+                                INNER JOIN user ON doctor.UserCode = user.UserCode";
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = [];
+
+                                                    if ($result->num_rows > 0) {
+                                                        // fetch all data from db into array 
+                                                        $row = $result->fetch_all(MYSQLI_ASSOC);
+                                                    }
+                                                    ?>
                         <div class="noti-content">
+
+
                             <ul class="notification-list">
+                                <?php  
+                                if (!empty($row))
+                                    foreach ($row as $rows) {
+                                        ?>
                                 <li class="notification-message">
                                     <a href="#">
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/Doctors/Doctor-thumb-01.jpg">
+                                                    src="assets/img/aneesa.jpg">
                                             </span>
                                             <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span>
-                                                    Schedule <span class="noti-title">her appointment</span></p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName']?> requests that Booking
+                                                        Number</span>
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span></p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php 
+                                                    $time = new DateTime($rows["DateOfCancellation"]);
+                                                        $date = $time->format('d-M-Y');
+                                                        echo $date ?> </span>
+                                                    <span> <?php
+                                                            $time = new DateTime($rows["DateOfCancellation"]);
+                                                            $st = $time->format('H:m');
+                                                    echo $st; 
+
+                                                    ?></span>
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/Patients/Patient1.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Charlene Reed</span>
-                                                    has booked her appointment to <span class="noti-title">Dr. Ruby
-                                                        Perrin</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/Patients/Patient2.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Travis Trimble</span>
-                                                    sent a amount of $210 for his <span
-                                                        class="noti-title">appointment</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/Patients/Patient3.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Carl Kelly</span> send
-                                                    a message <span class="noti-title"> to his Doctor</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
@@ -199,7 +204,7 @@
                             <a href="index.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+                            <a href="appointment-list.php"><i class="fe fe-layout"></i> <span>Appointments</span></a>
                         </li>
                         <li>
                             <a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
@@ -307,7 +312,6 @@
 												foreach ($row as $rows) {
 													echo $rows['COUNT(*)'];
 												}
-
 											?>
                                         </h3>
                                     </div>
@@ -380,7 +384,9 @@
                                         require_once "assets/php/config.php";
 
 										//pull the required data from the database
-										$query = "SELECT COUNT(*) FROM Booking";
+										$query = "SELECT COUNT(*) FROM Booking 
+                                                    Inner Join Cancellation On Booking.BookingCode = Cancellation.BookingCode
+                                                    Where isResolved = 0";
 										$result = mysqli_query($conn, $query);
 										$row = [];
 
@@ -538,8 +544,6 @@
                                                 <td><?php echo $rows['EmailAddress']; ?></td>
                                             </tr>
                                             <?php } ?>
-
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -622,11 +626,16 @@
                                 require_once "assets/php/config.php";
 
                                 //pull the required data from the database
-                                $query = "SELECT booking.BookingCode,DoctorCode, PatientCode, StartDate, 
+                                $query = "SELECT booking.BookingCode,DoctorCode, FirstName, LastName, StartDate, 
                                             EndDate, BookingStatus, Payment.PaymentAmount 
                                             FROM Booking 
                                             INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode 
-                                            INNER JOIN Payment ON Invoice.InvoiceCode = Payment.InvoiceCode";
+                                            INNER JOIN Payment ON Invoice.InvoiceCode = Payment.InvoiceCode
+                                            INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode
+                                            INNER JOIN User ON Patient.UserCode = User.UserCode
+                                            WHERE BookingStatus = 'Active'"
+                                            ;
+
                                 $result = mysqli_query($conn, $query);
                                 $row = [];
 
@@ -642,7 +651,7 @@
                                             <tr>
                                                 <th>Booking Code</th>
                                                 <th>Doctor Code</th>
-                                                <th>Patient Code</th>
+                                                <th>Patient Name</th>
                                                 <th>Apointment Time</th>
                                                 <th>Status</th>
                                                 <th>Amount</th>
@@ -657,15 +666,21 @@
                                             <tr>
                                                 <td><?php echo $rows['BookingCode']; ?></td>
                                                 <td><?php echo $rows['DoctorCode']; ?></td>
-                                                <td><?php echo $rows['PatientCode']; ?></td>
+                                                <td><?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?>
+                                                </td>
                                                 <td><?php
                                                         $time = new DateTime($rows['StartDate']);
                                                         $date = $time->format('Y-M-d'); 
                                                  echo $date ?>
                                                     <span class="text-primary d-block">
-                                                        <?php 
+                                                        <?php
+                                                                $startdate = new DateTime($rows['StartDate']);
+                                                                $st = $startdate->format('H:m');
 
-                                                        echo "{$rows['StartTime']} - {$rows['EndTime']}";?>
+                                                                $enddate = new DateTime($rows['EndDate']);
+                                                                $et = $enddate->format('H:m');
+
+                                                        echo "{$st} - {$et}";?>
                                                     </span>
                                                 </td>
                                                 <?php if($rows['BookingStatus'] == "Active"){ ?>
