@@ -40,7 +40,7 @@ if ($answer->num_rows > 0) {
     }
 } else {
     //if you arent a doctor see this
-    $query = "SELECT * FROM booking ";
+    $query = "SELECT * FROM `booking` Where BookingStatus = 'Active'";
     $result = mysqli_query($conn, $query);
     if ($result->num_rows > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
