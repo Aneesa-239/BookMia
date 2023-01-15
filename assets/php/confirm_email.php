@@ -2,63 +2,63 @@
 
 require_once "config.php";
 
-        ini_set('display_errors', '1');
-		ini_set('display_startup_errors', '1');
-		error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 
 if (isset($_POST['submit'])) {
 
-    $radioValue = $_POST['radiobtn'];
+	$radioValue = $_POST["radiobtn"];
 
-    if ($radioValue == "1") {
+	if ($radioValue == "1") {
 
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
+		if (isset($_GET['id']) && !empty($_GET['id'])) {
 
-            $book = $_GET['id'];
+			$book = $_GET['id'];
 
-            $pat = "SELECT * FROM User INNER JOIN Patient ON Patient.UserCode = User.UserCode INNER JOIN Booking ON Booking.PatientCode = Patient.PatientCode WHERE Booking.BookingCode = '$book'";
+			$pat = "SELECT * FROM User INNER JOIN Patient ON Patient.UserCode = User.UserCode INNER JOIN Booking ON Booking.PatientCode = Patient.PatientCode WHERE Booking.BookingCode = '$book'";
 
-            $result = mysqli_query($conn, $pat);
-            $data = mysqli_fetch_assoc($result);
+			$result = mysqli_query($conn, $pat);
+			$data = mysqli_fetch_assoc($result);
 
-            $name = $data['FirstName'];
-            $lastname = $data['LastName'];
-            $patemail = $data['EmailAddress'];
+			$name = $data['FirstName'];
+			$lastname = $data['LastName'];
+			$patemail = $data['EmailAddress'];
 
-            $doc = "SELECT * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode WHERE Booking.BookingCode = '$book'";
+			$doc = "SELECT * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode WHERE Booking.BookingCode = '$book'";
 
-            $res = mysqli_query($conn, $doc);
-            $info = mysqli_fetch_assoc($res);
+			$res = mysqli_query($conn, $doc);
+			$info = mysqli_fetch_assoc($res);
 
-            $d_name = $info['FirstName'];
-            $d_lastname = $info['LastName'];
-            $d_cost = $info['Fees'];
+			$d_name = $info['FirstName'];
+			$d_lastname = $info['LastName'];
+			$d_cost = $info['Fees'];
 
-            $b_detail = "SELECT * FROM Booking INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode WHERE Booking.BookingCode = '$book'";
+			$b_detail = "SELECT * FROM Booking INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode WHERE Booking.BookingCode = '$book'";
 
-            $resul = mysqli_query($conn, $b_detail);
-            $b_data = mysqli_fetch_assoc($resul);
+			$resul = mysqli_query($conn, $b_detail);
+			$b_data = mysqli_fetch_assoc($resul);
 
-            $d_numinv = $b_data['InvoiceCode'];
+			$d_numinv = $b_data['InvoiceCode'];
 
-            $time = new DateTime(["StartDate"]);
-            $date = $time->format('d-M-Y');
+			$time = new DateTime($b_data["StartDate"]);
+			$date = $time->format('d-M-Y');
 
-            $time = new DateTime(["StartDate"]);
-            $start = $time->format('H:m');
+			$time = new DateTime($b_data["StartDate"]);
+			$start = $time->format('H:m');
 
-            $time = new DateTime(["EndDate"]);
-            $end = $time->format('H:m');
+			$time = new DateTime($b_data["EndDate"]);
+			$end = $time->format('H:m');
 
 
-            // generate a unique random token of length 100
-            $token = bin2hex(random_bytes(50));
+			// generate a unique random token of length 100
+			$token = bin2hex(random_bytes(50));
 
-            $to = $patemail;
-            $subject = "BookMia Booking Confirmation";
+			$to = $patemail;
+			$subject = "BookMia Booking Confirmation";
 
-            $msg = "
+			$msg = "
     <!DOCTYPE html>
 <html>
 	<head>
@@ -171,68 +171,66 @@ if (isset($_POST['submit'])) {
 	</body>
 </html>
     ";
-        }
+		}
+
+		// To send HTML mail, the Content-type header must be set
+		$headers = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		//$headers .= 'info@examplesite.com';
 
 
 
-        // To send HTML mail, the Content-type header must be set
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        //$headers .= 'info@examplesite.com';
+		if (mail($to, $subject, $msg, $headers)) {
+			header("Location: ../../booking-success.php"); // takes user to next page - end of patient experience    
+			echo "Your Password has been sent to your email id";
+		}
+
+	} else if ($radioValue == "2") {
+		if (isset($_GET['id']) && !empty($_GET['id'])) {
+
+			$book = $_GET['id'];
+
+			$pat = "SELECT * FROM User INNER JOIN Patient ON Patient.UserCode = User.UserCode INNER JOIN Booking ON Booking.PatientCode = Patient.PatientCode WHERE Booking.BookingCode = '$book'";
+
+			$result = mysqli_query($conn, $pat);
+			$data = mysqli_fetch_assoc($result);
+
+			$name = $data['FirstName'];
+			$lastname = $data['LastName'];
+			$patemail = $data['EmailAddress'];
+
+			$doc = "SELECT * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode WHERE Booking.BookingCode = '$book'";
+
+			$res = mysqli_query($conn, $doc);
+			$info = mysqli_fetch_assoc($res);
+
+			$d_name = $info['FirstName'];
+			$d_lastname = $info['LastName'];
+
+			$b_detail = "SELECT * FROM Booking INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode WHERE Booking.BookingCode = '$book'";
+
+			$resul = mysqli_query($conn, $b_detail);
+			$b_data = mysqli_fetch_assoc($resul);
+
+			$d_name = $b_data['InvoiceCode'];
+
+			$time = new DateTime($b_data["StartDate"]);
+			$date = $time->format('d-M-Y');
+
+			$time = new DateTime($b_data["StartDate"]);
+			$start = $time->format('H:m');
+
+			$time = new DateTime($b_data["EndDate"]);
+			$end = $time->format('H:m');
 
 
+			// generate a unique random token of length 100
+			$token = bin2hex(random_bytes(50));
 
-        if (mail($to, $subject, $msg, $headers)) {
-            header("Location: ../../booking-success.php"); // takes user to next page - end of patient experience    
-            echo "Your Password has been sent to your email id";
-        }
+			$to = $patemail;
+			$subject = "BookMia Booking Confirmation";
 
-    } else if ($radioValue == "2") {
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
-
-            $book = $_GET['id'];
-
-            $pat = "SELECT * FROM User INNER JOIN Patient ON Patient.UserCode = User.UserCode INNER JOIN Booking ON Booking.PatientCode = Patient.PatientCode WHERE Booking.BookingCode = '$book'";
-
-            $result = mysqli_query($conn, $pat);
-            $data = mysqli_fetch_assoc($result);
-
-            $name = $data['FirstName'];
-            $lastname = $data['LastName'];
-            $patemail = $data['EmailAddress'];
-
-            $doc = "SELECT * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode WHERE Booking.BookingCode = '$book'";
-
-            $res = mysqli_query($conn, $doc);
-            $info = mysqli_fetch_assoc($res);
-
-            $d_name = $info['FirstName'];
-            $d_lastname = $info['LastName'];
-
-            $b_detail = "SELECT * FROM Booking INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode WHERE Booking.BookingCode = '$book'";
-
-            $resul = mysqli_query($conn, $b_detail);
-            $b_data = mysqli_fetch_assoc($resul);
-
-            $d_name = $b_data['InvoiceCode'];
-
-            $time = new DateTime(["StartDate"]);
-            $date = $time->format('d-M-Y');
-
-            $time = new DateTime(["StartDate"]);
-            $start = $time->format('H:m');
-
-            $time = new DateTime(["EndDate"]);
-            $end = $time->format('H:m');
-
-
-            // generate a unique random token of length 100
-            $token = bin2hex(random_bytes(50));
-
-            $to = $patemail;
-            $subject = "BookMia Booking Confirmation";
-
-            $msg = "
+			$msg = "
     <!DOCTYPE html>
 <html>
 	<head>
@@ -345,25 +343,25 @@ if (isset($_POST['submit'])) {
 	</body>
 </html>
     ";
-        }
+		}
 
-        // To send HTML mail, the Content-type header must be set
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        //$headers .= 'info@examplesite.com';
+		// To send HTML mail, the Content-type header must be set
+		$headers = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		//$headers .= 'info@examplesite.com';
 
 
 
-        if (mail($to, $subject, $msg, $headers)) {
-            header("Location: ../../booking-success.php"); // takes user to next page - end of patient experience    
-            echo "Your Password has been sent to your email id";
-        }
+		if (mail($to, $subject, $msg, $headers)) {
+			header("Location: ../../booking-success.php"); // takes user to next page - end of patient experience    
+			echo "Your Password has been sent to your email id";
+		}
 
-    } else {
-        header("Location: ../../checkout.php");
-        echo 'Please choose one of the radio buttons'; // keeps user on page
-    }
+	} else {
+		header("Location: ../../checkout.php");
+		echo 'Please choose one of the radio buttons'; // keeps user on page
+	}
 }
-            
-        
-?> 
+
+
+?>
