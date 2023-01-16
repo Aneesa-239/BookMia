@@ -336,7 +336,7 @@ $authsess = $_SESSION['name'];
                                         <div class="patient-details">
                                             <h5><i class="far fa-clock"></i>
                                                 <?php $time = new DateTime($rows["StartDate"]);
-                                                        $date = $time->format('D-M-Y');
+                                                        $date = $time->format('d-M-Y');
                                                         echo $date ?>, <?php $starttime = new DateTime($rows["StartDate"]);
                                                           $st = $starttime->format('H:m');
                                                           echo $st ?>
@@ -353,7 +353,7 @@ $authsess = $_SESSION['name'];
                                                 <?php echo $rows["PhoneNumber"] ?>
                                             </h5>
                                             <h5 class="mb-0" id="patient_code" hidden></h5><i></i>
-                                            <?php echo $rows["PatientCode"] ?>
+
                                             </h5>
                                         </div>
                                     </div>
@@ -362,7 +362,7 @@ $authsess = $_SESSION['name'];
                                     <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal"
                                         data-target="#appt_details">
                                         <i class="far fa-eye"></i> View
-                                    </a>>
+                                    </a>
                                     <a href="assets/php/send_request.php?id=<?php echo $bookingcode ?>"
                                         class="btn btn-sm bg-danger-light">
                                         <i class="fas fa-times"></i> Cancel
