@@ -297,13 +297,13 @@ $authsess = $_SESSION['name'];
                             <?php
                             //pull the required data from the database	
                             $today = date("Y-m-d");
-                            $query = "SELECT * FROM Booking 
-									  INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode 
-									  INNER JOIN User ON User.UserCode = Patient.UserCode 
-									  INNER JOIN Invoice ON Booking.BookingCode = Invoice.BookingCode 
-									  INNER JOIN Invoice ON Invoice.InvoiceCode = Invoice.InvoiceCode
+                            $query = "SELECT * FROM `Booking` 
+									  INNER JOIN `Patient` ON `Patient`.PatientCode = `Booking`.PatientCode 
+									  INNER JOIN `User` ON `User`.UserCode = `Patient`.UserCode 
+									  INNER JOIN `Invoice` ON `Booking`.BookingCode = `Invoice`.BookingCode 
+									  INNER JOIN `Payment` ON `Payment`.InvoiceCode = `Invoice`.InvoiceCode
 									  WHERE DoctorCode = (Select DoctorCode From doctor 
-															  					  inner join User on doctor.UserCode = User.UserCode 
+															  					  inner join User on `doctor`.UserCode = User.UserCode 
 																				  WHERE User.EmailAddress = '$authsess')
 																				  AND Date(StartDate) >= '$today'
 															  ORDER BY StartDate ASC";
