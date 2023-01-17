@@ -144,7 +144,7 @@
 						    
 			<?php
 				//pull the required data from the database
-				$query = "SELECT User.FirstName, User.LastName, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.Services, image FROM User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode WHERE User.UserCode = Doctor.UserCode";
+				$query = "SELECT User.FirstName, User.EmailAddress, User.LastName, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.Services, image FROM User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode WHERE User.UserCode = Doctor.UserCode";
 					$result = mysqli_query($conn, $query);
 					$row = [];
 
@@ -154,7 +154,7 @@
 					}
 								
 					foreach ($row as $rows) {
-								    
+							$docE =$rows['EmailAddress'];	    
 				    ?> 			    
 
 							<!-- Doctor Widget -->
@@ -237,7 +237,7 @@
 											</div>
 											<div class="clinic-booking">
 												<a class="view-pro-btn" href="p_doctor-profile.php">View Profile</a>
-												<a class="apt-btn" href="booking.php">Book Appointment</a>
+												<a class="apt-btn" href="booking.php?id=<?=$docE;?>">Book Appointment</a>
 											</div>
 										</div>
 									</div>
