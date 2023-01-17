@@ -16,7 +16,7 @@ $authsess = $_SESSION['name'];
 <head>
     <meta charset="utf-8">
     <title>Doccure</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, User-scalable=0">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -78,10 +78,10 @@ $authsess = $_SESSION['name'];
                                 <li><a href="doctor-dashboard.php">Doctor Dashboard</a></li>
                                 <li href="appointments.php" class="active"><a href="">Appointments</a></li>
                                 <li><a href="schedule-timings.html">Schedule Timing</a></li>
-                                <li><a href="my-patients.html">Patients List</a></li>
-                                <li><a href="patient-profile.html">Patients Profile</a></li>
+                                <li><a href="my-Patients.html">Patients List</a></li>
+                                <li><a href="Patient-profile.html">Patients Profile</a></li>
                                 <li><a href="chat-doctor.html">Chat</a></li>
-                                <li><a href="invoices.html">Invoices</a></li>
+                                <li><a href="Invoices.html">Invoices</a></li>
                                 <li><a href="doctor-profile-settings.html">Profile Settings</a></li>
                                 <li><a href="reviews.html">Reviews</a></li>
                                 <li><a href="doctor-register.html">Doctor Register</a></li>
@@ -92,10 +92,10 @@ $authsess = $_SESSION['name'];
                             <ul class="submenu">
                                 <li><a href="search.html">Search Doctor</a></li>
                                 <li><a href="doctor-profile.html">Doctor Profile</a></li>
-                                <li><a href="booking.html">Booking</a></li>
+                                <li><a href="Booking.html">Booking</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="booking-success.html">Booking Success</a></li>
-                                <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+                                <li><a href="Booking-success.html">Booking Success</a></li>
+                                <li><a href="Patient-dashboard.html">Patient Dashboard</a></li>
                                 <li><a href="favourites.html">Favourites</a></li>
                                 <li><a href="chat.html">Chat</a></li>
                                 <li><a href="profile-settings.html">Profile Settings</a></li>
@@ -111,10 +111,10 @@ $authsess = $_SESSION['name'];
                                 <li><a href="calendar.html">Calendar</a></li>
                                 <li><a href="components.html">Components</a></li>
                                 <li class="has-submenu">
-                                    <a href="invoices.html">Invoices</a>
+                                    <a href="Invoices.html">Invoices</a>
                                     <ul class="submenu">
-                                        <li><a href="invoices.html">Invoices</a></li>
-                                        <li><a href="invoice-view.html">Invoice View</a></li>
+                                        <li><a href="Invoices.html">Invoices</a></li>
+                                        <li><a href="Invoice-view.html">Invoice View</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="blank-page.html">Starter Page</a></li>
@@ -145,18 +145,18 @@ $authsess = $_SESSION['name'];
                     <!-- User Menu -->
                     <li class="nav-item dropdown has-arrow logged-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <span class="user-img">
+                            <span class="User-img">
                                 <img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31"
                                     alt="Darren Elder">
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="user-header">
+                            <div class="User-header">
                                 <div class="avatar avatar-sm">
                                     <img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"
                                         class="avatar-img rounded-circle">
                                 </div>
-                                <div class="user-text">
+                                <div class="User-text">
                                     <h6>Darren Elder</h6>
                                     <p class="text-muted mb-0">Doctor</p>
                                 </div>
@@ -202,13 +202,13 @@ $authsess = $_SESSION['name'];
                         <div class="profile-sidebar">
                             <div class="widget-profile pro-widget-content">
                                 <div class="profile-info-widget">
-                                    <a href="#" class="booking-doc-img">
+                                    <a href="#" class="Booking-doc-img">
                                         <img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
                                     </a>
                                     <div class="profile-det-info">
                                         <h3>Dr. Darren Elder</h3>
 
-                                        <div class="patient-details">
+                                        <div class="Patient-details">
                                             <h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
                                         </div>
                                     </div>
@@ -230,8 +230,8 @@ $authsess = $_SESSION['name'];
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="my-patients.html">
-                                                <i class="fas fa-user-injured"></i>
+                                            <a href="my-Patients.html">
+                                                <i class="fas fa-User-injured"></i>
                                                 <span>My Patients</span>
                                             </a>
                                         </li>
@@ -242,8 +242,8 @@ $authsess = $_SESSION['name'];
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="invoices.html">
-                                                <i class="fas fa-file-invoice"></i>
+                                            <a href="Invoices.html">
+                                                <i class="fas fa-file-Invoice"></i>
                                                 <span>Invoices</span>
                                             </a>
                                         </li>
@@ -262,7 +262,7 @@ $authsess = $_SESSION['name'];
                                         </li>
                                         <li>
                                             <a href="doctor-profile-settings.html">
-                                                <i class="fas fa-user-cog"></i>
+                                                <i class="fas fa-User-cog"></i>
                                                 <span>Profile Settings</span>
                                             </a>
                                         </li>
@@ -297,14 +297,14 @@ $authsess = $_SESSION['name'];
                             <?php
                             //pull the required data from the database	
                             $today = date("Y-m-d");
-                            $query = "SELECT * FROM `booking` 
-									  INNER JOIN patient ON patient.PatientCode = booking.PatientCode 
-									  INNER JOIN user ON user.UserCode = patient.UserCode 
-									  INNER JOIN invoice ON booking.BookingCode = invoice.BookingCode 
-									  INNER JOIN payment ON payment.InvoiceCode = invoice.InvoiceCode
+                            $query = "SELECT * FROM Booking 
+									  INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode 
+									  INNER JOIN User ON User.UserCode = Patient.UserCode 
+									  INNER JOIN Invoice ON Booking.BookingCode = Invoice.BookingCode 
+									  INNER JOIN Invoice ON Invoice.InvoiceCode = Invoice.InvoiceCode
 									  WHERE DoctorCode = (Select DoctorCode From doctor 
-															  					  inner join user on doctor.UserCode = user.UserCode 
-																				  WHERE user.EmailAddress = '$authsess')
+															  					  inner join User on doctor.UserCode = User.UserCode 
+																				  WHERE User.EmailAddress = '$authsess')
 																				  AND Date(StartDate) >= '$today'
 															  ORDER BY StartDate ASC";
 
@@ -319,21 +319,21 @@ $authsess = $_SESSION['name'];
 
                             if (!empty($row))
                                 foreach ($row as $rows) {
-                                    $bookingcode = $rows["BookingCode"];
+                                    $Bookingcode = $rows["BookingCode"];
                                     ?>
 
                             <!-- Appointment List -->
                             <div class="appointment-list">
                                 <div class="profile-info-widget">
-                                    <a href="patient-profile.html" class="booking-doc-img">
+                                    <a href="Patient-profile.html" class="Booking-doc-img">
                                         <img src="assets/img/<?php echo $rows["image"] ?>" alt="User Image">
                                     </a>
                                     <div class="profile-det-info">
-                                        <h3><a id="Client name" href="patient-profile.html">
+                                        <h3><a id="Client name" href="Patient-profile.html">
                                                 <?php echo $rows["FirstName"] ?>
                                                 <?php echo $rows["LastName"] ?>
                                             </a></h3>
-                                        <div class="patient-details">
+                                        <div class="Patient-details">
                                             <h5><i class="far fa-clock"></i>
                                                 <?php $time = new DateTime($rows["StartDate"]);
                                                         $date = $time->format('d-M-Y');
@@ -352,7 +352,7 @@ $authsess = $_SESSION['name'];
                                             <h5 class="mb-0"><i id="" class="fas fa-phone"></i>
                                                 <?php echo $rows["PhoneNumber"] ?>
                                             </h5>
-                                            <h5 class="mb-0" id="patient_code" hidden></h5><i></i>
+                                            <h5 class="mb-0" id="Patient_code" hidden></h5><i></i>
 
                                             </h5>
                                         </div>
@@ -363,7 +363,7 @@ $authsess = $_SESSION['name'];
                                         data-target="#appt_details">
                                         <i class="far fa-eye"></i> View
                                     </a>
-                                    <a href="assets/php/send_request.php?id=<?php echo $bookingcode ?>"
+                                    <a href="assets/php/send_request.php?id=<?php echo $Bookingcode ?>"
                                         class="btn btn-sm bg-danger-light">
                                         <i class="fas fa-times"></i> Cancel
                                     </a>
