@@ -15,7 +15,7 @@ $authsess = $_SESSION['name'];
 <head>
     <meta charset="utf-8">
     <title>BookMia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, User-scalable=0">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -69,7 +69,7 @@ $authsess = $_SESSION['name'];
                                 <li class="active"><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
                                 <li><a href="appointments.php">Appointments</a></li>
                                 <li><a href="schedule-timings.html">Schedule Timing</a></li>
-                                <li><a href="my-patients.html">Patients List</a></li>
+                                <li><a href="my-Patients.html">Patients List</a></li>
                                 <li><a href="doctor-profile-settings.php">Profile Settings</a></li>
                             </ul>
                         </li>
@@ -94,15 +94,15 @@ $authsess = $_SESSION['name'];
                     <!-- User Menu -->
                     <li class="nav-item dropdown has-arrow logged-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <span class="user-img">
-                                <img class="rounded-circle" src="assets/img/patients/patient.jpg" width="31"
+                            <span class="User-img">
+                                <img class="rounded-circle" src="assets/img/Patients/Patient.jpg" width="31"
                                     alt="Name and Surname">
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="user-header">
+                            <div class="User-header">
                                 <div class="avatar avatar-sm">
-                                    <img src="assets/img/patients/patient.jpg" alt="Doc Image"
+                                    <img src="assets/img/Patients/Patient.jpg" alt="Doc Image"
                                         class="avatar-img rounded-circle">
                                 </div>
 
@@ -119,7 +119,7 @@ $authsess = $_SESSION['name'];
                                     $row = $result->fetch_all(MYSQLI_ASSOC);
                                 }
                                 ?>
-                                <div class="user-text">
+                                <div class="User-text">
                                     <h6>
                                         <?php if (!empty($row))
                                             foreach ($row as $rows) {
@@ -186,8 +186,8 @@ $authsess = $_SESSION['name'];
                         <div class="profile-sidebar">
                             <div class="widget-profile pro-widget-content">
                                 <div class="profile-info-widget">
-                                    <a href="#" class="booking-doc-img">
-                                        <img src="assets/img/patients/patient.jpg" alt="Doc Image">
+                                    <a href="#" class="Booking-doc-img">
+                                        <img src="assets/img/Patients/Patient.jpg" alt="Doc Image">
                                     </a>
                                     <div class="profile-det-info">
                                         <h3> Dr <?php if (!empty($row))
@@ -201,7 +201,7 @@ $authsess = $_SESSION['name'];
                                         </h3>
                                         </h3>
 
-                                        <div class="patient-details">
+                                        <div class="Patient-details">
                                             <h5 class="mb-0">
                                                 <?php if (!empty($row))
                                                     foreach ($row as $rows) {
@@ -228,8 +228,8 @@ $authsess = $_SESSION['name'];
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="my-patients.html">
-                                                <i class="fas fa-user-injured"></i>
+                                            <a href="my-Patients.html">
+                                                <i class="fas fa-User-injured"></i>
                                                 <span>My Patients</span>
                                             </a>
                                         </li>
@@ -240,14 +240,14 @@ $authsess = $_SESSION['name'];
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="invoices.html">
-                                                <i class="fas fa-file-invoice"></i>
+                                            <a href="Invoices.html">
+                                                <i class="fas fa-file-Invoice"></i>
                                                 <span>Invoices</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="doctor-profile-settings.php">
-                                                <i class="fas fa-user-cog"></i>
+                                                <i class="fas fa-User-cog"></i>
                                                 <span>Profile Settings</span>
                                             </a>
                                         </li>
@@ -283,7 +283,7 @@ $authsess = $_SESSION['name'];
                                                     <div class="circle-bar circle-bar1">
                                                         <div class="circle-graph1" data-percent="75">
                                                             <img src="assets/img/icon-01.png" class="img-fluid"
-                                                                alt="patient">
+                                                                alt="Patient">
                                                         </div>
                                                     </div>
                                                     <div class="dash-widget-info">
@@ -360,14 +360,14 @@ $authsess = $_SESSION['name'];
                                                     <?php
                                                     //pull the required data from the database	
                                                     $today = date("Y-m-d");
-                                                    $query = "SELECT * FROM `booking` 
-															  INNER JOIN patient ON patient.PatientCode = booking.PatientCode 
-															  INNER JOIN user ON user.UserCode = patient.UserCode 
-															  INNER JOIN invoice ON booking.BookingCode = invoice.BookingCode 
-															  INNER JOIN payment ON payment.InvoiceCode = invoice.InvoiceCode
-															  WHERE DoctorCode = (Select DoctorCode From doctor 
-															  					  inner join user on doctor.UserCode = user.UserCode 
-																				  WHERE user.EmailAddress = '$authsess')
+                                                    $query = "SELECT * FROM `Booking` 
+															  INNER JOIN `Patient` ON `Patient`.PatientCode = `Booking`.PatientCode 
+															  INNER JOIN `User` ON `User`.UserCode = Patient.UserCode 
+															  INNER JOIN `Invoice` ON `Booking`.BookingCode = Invoice.BookingCode 
+															  INNER JOIN `Payment` ON `Payment`.InvoiceCode = Invoice.InvoiceCode
+															  WHERE DoctorCode = (Select DoctorCode From `doctor` 
+															  					  inner join User on `doctor`.UserCode = `User`.UserCode 
+																				  WHERE `User`.EmailAddress = '$authsess')
 																				  AND Date(StartDate) >= '$today'
 															  ORDER BY StartDate ASC";
 
@@ -395,56 +395,56 @@ $authsess = $_SESSION['name'];
                                                                 if (!empty($row))
                                                                     foreach ($row as $rows) {
                                                                         ?>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h2 class="table-avatar">
-                                                                            <a href="patient-profile.html"
-                                                                                class="avatar avatar-sm mr-2"><img
-                                                                                    class="avatar-img rounded-circle"
-                                                                                    src="assets/img/<?php echo $rows["image"] ?>"
-                                                                                    alt="User Image"></a>
-                                                                            <a href="patient-profile.html">
-                                                                                <?php echo $rows["FirstName"] ?>
-                                                                                <?php echo $rows["LastName"] ?>
-                                                                                <span>
-                                                                                    <?php echo $rows["PatientCode"] ?>
-                                                                                </span>
-                                                                            </a>
-                                                                        </h2>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php $time = new DateTime($rows["StartDate"]);
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h2 class="table-avatar">
+                                                                                    <a href="Patient-profile.html"
+                                                                                        class="avatar avatar-sm mr-2"><img
+                                                                                            class="avatar-img rounded-circle"
+                                                                                            src="assets/img/<?php echo $rows["image"] ?>"
+                                                                                            alt="User Image"></a>
+                                                                                    <a href="Patient-profile.html">
+                                                                                        <?php echo $rows["FirstName"] ?>
+                                                                                        <?php echo $rows["LastName"] ?>
+                                                                                        <span>
+                                                                                            <?php echo $rows["PatientCode"] ?>
+                                                                                        </span>
+                                                                                    </a>
+                                                                                </h2>
+                                                                            </td>
+                                                                            <td>
+                                                                                <?php $time = new DateTime($rows["StartDate"]);
                                                                                 $date = $time->format('Y-M-d');
                                                                                 echo $date ?><span
-                                                                            class="d-block text-info">Time:
-                                                                            <?php $starttime = new DateTime($rows["StartDate"]);
+                                                                                    class="d-block text-info">Time:
+                                                                                    <?php $starttime = new DateTime($rows["StartDate"]);
                                                                                     $st = $starttime->format('H:m');
                                                                                     echo $st ?>-<?php $endtime = new DateTime($rows["EndDate"]);
                                                                                       $et = $endtime->format('H:m');
                                                                                       echo $et ?></span>
-                                                                    </td>
-                                                                    <td class="text-left">
-                                                                        #INV00<?php echo $rows["InvoiceCode"] ?></td>
-                                                                    <td class="text-center">
-                                                                        R<?php echo $rows["PaymentAmount"] ?></td>
-                                                                    <td class="text-right">
-                                                                        <div class="table-action">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-info-light">
-                                                                                <i class="far fa-eye"></i> View
-                                                                            </a>
+                                                                            </td>
+                                                                            <td class="text-left">
+                                                                                #INV00<?php echo $rows["InvoiceCode"] ?></td>
+                                                                            <td class="text-center">
+                                                                                R<?php echo $rows["PaymentAmount"] ?></td>
+                                                                            <td class="text-right">
+                                                                                <div class="table-action">
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="btn btn-sm bg-info-light">
+                                                                                        <i class="far fa-eye"></i> View
+                                                                                    </a>
 
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-danger-light">
-                                                                                <i class="fas fa-times"></i> Cancel
-                                                                            </a>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="btn btn-sm bg-danger-light">
+                                                                                        <i class="fas fa-times"></i> Cancel
+                                                                                    </a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
 
-                                                                </td>
-                                                                </tr>
-                                                                <?php } ?>
+                                                                        </td>
+                                                                        </tr>
+                                                                    <?php } ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -460,14 +460,14 @@ $authsess = $_SESSION['name'];
                                                     <?php
                                                     //pull the required data from the database	
                                                     $today = date("Y-m-d");
-                                                    $query = "SELECT * FROM `booking` 
-															  INNER JOIN patient ON patient.PatientCode = booking.PatientCode 
-															  INNER JOIN user ON user.UserCode = patient.UserCode 
-															  INNER JOIN invoice ON booking.BookingCode = invoice.BookingCode 
-															  INNER JOIN payment ON payment.InvoiceCode = invoice.InvoiceCode
-															  WHERE DoctorCode = (Select DoctorCode From doctor 
-															  					  inner join user on doctor.UserCode = user.UserCode 
-																				  WHERE user.EmailAddress = '$authsess')
+                                                    $query = "SELECT * FROM `Booking` 
+															  INNER JOIN `Patient` ON `Patient`.PatientCode = Booking.PatientCode 
+															  INNER JOIN `User` ON `User`.UserCode = Patient.UserCode 
+															  INNER JOIN `Invoice` ON Booking.BookingCode = Invoice.BookingCode 
+															  INNER JOIN `Payment` ON Payment.InvoiceCode = Invoice.InvoiceCode
+															  WHERE DoctorCode = (Select DoctorCode From `doctor` 
+															  					  inner join User on `doctor`.UserCode = `User`.UserCode 
+																				  WHERE `User`.EmailAddress = '$authsess')
 																				  AND Date(StartDate) = '$today'
 															  ORDER BY StartDate ASC";
 
@@ -479,98 +479,98 @@ $authsess = $_SESSION['name'];
                                                         $row = $result->fetch_all(MYSQLI_ASSOC);
 
                                                         ?>
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover table-center mb-0">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Patient Name</th>
-                                                                    <th>Appointment Date</th>
-
-                                                                    <th class="text-center">Paid Amount</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <?php
-                                                                    if (!empty($row))
-                                                                        foreach ($row as $rows) {
-                                                                            ?>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h2 class="table-avatar">
-                                                                            <a href="patient-profile.html"
-                                                                                class="avatar avatar-sm mr-2"><img
-                                                                                    class="avatar-img rounded-circle"
-                                                                                    src="assets/img/patients/patient6.jpg"
-                                                                                    alt="User Image"></a>
-                                                                            <a href="patient-profile.html">
-                                                                                <?php echo $rows["FirstName"] ?>
-                                                                                <?php echo $rows["LastName"] ?>
-                                                                                <span>#INV00<?php echo $rows["InvoiceCode"] ?></span>
-                                                                            </a>
-                                                                        </h2>
-                                                                    </td>
-                                                                    <td>
-                                                                        <?php $time = new DateTime($rows["StartDate"]);
-                                                                                    $date = $time->format('Y-M-d');
-                                                                                    echo $date ?><span
-                                                                            class="d-block text-info">Time:
-                                                                            <?php $starttime = new DateTime($rows["StartDate"]);
-                                                                                        $st = $starttime->format('H:m');
-                                                                                        echo $st ?>-<?php $endtime = new DateTime($rows["EndDate"]);
-                                                                                          $et = $endtime->format('H:m');
-                                                                                          echo $et ?></span>
-                                                                    </td>
-
-                                                                    <td class="text-center">
-                                                                        R<?php echo $rows["PaymentAmount"] ?></td>
-                                                                    <td class="text-right">
-                                                                        <div class="table-action">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-info-light">
-                                                                                <i class="far fa-eye"></i> View
-                                                                            </a>
-
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-danger-light">
-                                                                                <i class="fas fa-times"></i> Cancel
-                                                                            </a>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                </td>
-                                                                </tr>
-                                                                <?php } ?>
-                                                            </tbody>
-                                                        </table>
-                                                        <?php } else { ?>
                                                         <div class="table-responsive">
                                                             <table class="table table-hover table-center mb-0">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>Patient Name</th>
-                                                                        <th>Appt Date</th>
+                                                                        <th>Appointment Date</th>
 
                                                                         <th class="text-center">Paid Amount</th>
                                                                         <th></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td>
+                                                                    <?php
+                                                                    if (!empty($row))
+                                                                        foreach ($row as $rows) {
+                                                                            ?>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <h2 class="table-avatar">
+                                                                                        <a href="Patient-profile.html"
+                                                                                            class="avatar avatar-sm mr-2"><img
+                                                                                                class="avatar-img rounded-circle"
+                                                                                                src="assets/img/Patients/Patient6.jpg"
+                                                                                                alt="User Image"></a>
+                                                                                        <a href="Patient-profile.html">
+                                                                                            <?php echo $rows["FirstName"] ?>
+                                                                                            <?php echo $rows["LastName"] ?>
+                                                                                            <span>#INV00<?php echo $rows["InvoiceCode"] ?></span>
+                                                                                        </a>
+                                                                                    </h2>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <?php $time = new DateTime($rows["StartDate"]);
+                                                                                    $date = $time->format('Y-M-d');
+                                                                                    echo $date ?><span
+                                                                                        class="d-block text-info">Time:
+                                                                                        <?php $starttime = new DateTime($rows["StartDate"]);
+                                                                                        $st = $starttime->format('H:m');
+                                                                                        echo $st ?>-<?php $endtime = new DateTime($rows["EndDate"]);
+                                                                                          $et = $endtime->format('H:m');
+                                                                                          echo $et ?></span>
+                                                                                </td>
 
-                                                                        </td>
-                                                                        <td></td>
+                                                                                <td class="text-center">
+                                                                                    R<?php echo $rows["PaymentAmount"] ?></td>
+                                                                                <td class="text-right">
+                                                                                    <div class="table-action">
+                                                                                        <a href="javascript:void(0);"
+                                                                                            class="btn btn-sm bg-info-light">
+                                                                                            <i class="far fa-eye"></i> View
+                                                                                        </a>
 
-                                                                        <td class="text-center"></td>
-                                                                        <td class="text-right">
-
-                                                                        </td>
-                                                                    </tr>
-                                                                    </td>
-                                                                    </tr>
+                                                                                        <a href="javascript:void(0);"
+                                                                                            class="btn btn-sm bg-danger-light">
+                                                                                            <i class="fas fa-times"></i> Cancel
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </td>
+                                                                            </tr>
+                                                                        <?php } ?>
                                                                 </tbody>
                                                             </table>
+                                                        <?php } else { ?>
+                                                            <div class="table-responsive">
+                                                                <table class="table table-hover table-center mb-0">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Patient Name</th>
+                                                                            <th>Appt Date</th>
+
+                                                                            <th class="text-center">Paid Amount</th>
+                                                                            <th></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+
+                                                                            </td>
+                                                                            <td></td>
+
+                                                                            <td class="text-center"></td>
+                                                                            <td class="text-right">
+
+                                                                            </td>
+                                                                        </tr>
+                                                                        </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
                                                             <?php } ?>
                                                         </div>
                                                     </div>
