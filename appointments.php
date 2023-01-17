@@ -161,9 +161,9 @@ $authsess = $_SESSION['name'];
                                     <p class="text-muted mb-0">Doctor</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
-                            <a class="dropdown-item" href="login.html">Logout</a>
+                            <a class="dropdown-item" href="doctor-dashboard.php">Dashboard</a>
+                            <a class="dropdown-item" href="doctor-profile-settings.php">Profile Settings</a>
+                            <a class="dropdown-item" href="login.php">Logout</a>
                         </div>
                     </li>
                     <!-- /User Menu -->
@@ -580,7 +580,6 @@ $authsess = $_SESSION['name'];
 
                         <!-- Custom JS -->
                         <script src="assets/js/script.js"></script>
-                        <script src="assets/js/Doctor_Request.js"></script>
 
 
 </body>
