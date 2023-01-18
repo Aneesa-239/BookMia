@@ -11,7 +11,28 @@ $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
 $prev_date = date('Y-m-d', strtotime($date . ' -1 day'));
 $next_date = date('Y-m-d', strtotime($date . ' +1 day'));
 
+$final = "";
+$flag = "";
 $authsess = $_SESSION['name'];
+
+$query = "SELECT * FROM User 
+	        INNER JOIN Patient ON User.UserCode = Patient.UserCode 
+        	WHERE  User.EmailAddress = '$authsess'";
+
+$result = mysqli_query($conn, $query);
+$row = [];
+
+if ($result->num_rows > 0) {
+    // fetch all data from db into array 
+    $row = $result->fetch_all(MYSQLI_ASSOC);
+
+
+}
+foreach ($row as $rows) {
+    $patientcode = $rows['PatientCode'];
+}
+
+
 ?>
 
 
@@ -145,51 +166,52 @@ $authsess = $_SESSION['name'];
                                 <?php
 
 
-								if (isset($_GET['id']) && !empty($_GET['id'])) {
+                                if (isset($_GET['id']) && !empty($_GET['id'])) {
 
-									$doctorchoosen = $_GET['id'];
+                                    $doctorchoosen = $_GET['id'];
 
-									$query = "SELECT User.UserCode, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
+                                    $query = "SELECT User.UserCode, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
 	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode 
         	WHERE User.UserCode = Doctor.UserCode AND User.EmailAddress = '$doctorchoosen'";
 
-									$result = mysqli_query($conn, $query);
-									$row = [];
+                                    $result = mysqli_query($conn, $query);
+                                    $row = [];
 
-									if ($result->num_rows > 0) {
-										// fetch all data from db into array 
-										$row = $result->fetch_all(MYSQLI_ASSOC);
+                                    if ($result->num_rows > 0) {
+                                        // fetch all data from db into array 
+                                        $row = $result->fetch_all(MYSQLI_ASSOC);
 
-									}
+                                    }
 
 
-									foreach ($row as $rows) {
-										$doctorchose = $rows['EmailAddress'];
+                                    foreach ($row as $rows) {
+                                        $doctorchose = $rows['EmailAddress'];
+                                        $doctorcode = $rows['DoctorCode'];
 
-										?>
+                                        ?>
                                 <div class="booking-doc-info">
                                     <a href="doctor-profile.html" class="booking-doc-img">
                                         <img src="assets/img/<?php
-												echo $rows['image'];
-												?>" alt="User Image">
+                                                echo $rows['image'];
+                                                ?>" alt="User Image">
                                     </a>
                                     <div class="booking-info">
                                         <h4><a href="doctor-profile.html">Dr.<?php
-												echo $rows['FirstName'];
-												echo $rows['LastName'];
-												?></a></h4>
+                                                echo $rows['FirstName'];
+                                                echo $rows['LastName'];
+                                                ?></a></h4>
 
                                         <p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i>
                                             <?php
-													echo $rows['Location'];
-													?>
+                                                    echo $rows['Location'];
+                                                    ?>
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
                             <?php }
-								} ?>
+                                } ?>
                         </div>
 
                         <!-- Schedule Widget -->
@@ -208,70 +230,217 @@ $authsess = $_SESSION['name'];
                                         <div class="day-slot">
                                             <ul>
                                                 <li class="left-arrow">
-                                                    <a href="?date=<?= $prev_date; ?>">
+                                                    <a href="?id=<?= $doctorchoosen; ?>&date=<?= $prev_date; ?>">
                                                         <i class="fa fa-chevron-left"></i>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <span>
-                                                        <?php echo $day = date('D', strtotime($date . '+1 day')); ?>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+1 day'));
+                                                        $year = date('Y', strtotime($date . '+1 day'));
+                                                        $longdate = date('d M', strtotime($date . '+1 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?>
                                                     </span>
                                                     <span class="slot-date">
-                                                        <?php echo $day = date('d M', strtotime($date . '+1 day')); ?>
+                                                        <?php echo $longdate; ?>
                                                         <small class="slot-year">
-                                                            <?php echo $day = date('Y', strtotime($date . '+1 day')); ?>
+                                                            <?php echo $year ?>
                                                         </small>
                                                     </span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
                                                     <span>
-                                                        <?php echo $day = date('D', strtotime($date . '+2 day')); ?>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+2 day'));
+                                                        $year = date('Y', strtotime($date . '+2 day'));
+                                                        $longdate = date('d M', strtotime($date . '+2 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $$day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?>
                                                     </span>
-                                                    <span
-                                                        class="slot-date"><?php echo $day = date('d M', strtotime($date . '+2 day')); ?>
-                                                        <small
-                                                            class="slot-year"><?php echo $day = date('Y', strtotime($date . '+2 day')); ?></small></span>
+                                                    <span class="slot-date"><?php echo $longdate ?>
+                                                        <small class="slot-year"><?php echo $year ?></small>
+                                                    </span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
                                                     <span>
-                                                        <?php echo $day = date('D', strtotime($date . '+3 day')); ?></span>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+3 day'));
+                                                        $year = date('Y', strtotime($date . '+3 day'));
+                                                        $longdate = date('d M', strtotime($date . '+3 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?>
+                                                    </span>
                                                     <span class="slot-date">
-                                                        <?php echo $day = date('d M', strtotime($date . '+3 day')); ?><small
-                                                            class="slot-year">
-                                                            <?php echo $day = date('Y', strtotime($date . '+3 day')); ?></small></span>
+                                                        <?php echo $longdate; ?><small class="slot-year">
+                                                            <?php echo $year ?></small></span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
                                                     <span>
-                                                        <?php echo $day = date('D', strtotime($date . '+4 day')); ?></span>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+4 day'));
+                                                        $year = date('Y', strtotime($date . '+4 day'));
+                                                        $longdate = date('d M', strtotime($date . '+4 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?></span>
                                                     <span class="slot-date">
-                                                        <?php echo $day = date('d M', strtotime($date . '+4 day')); ?><small
-                                                            class="slot-year">
-                                                            <?php echo $day = date('Y', strtotime($date . '+4 day')); ?></small></span>
+                                                        <?php echo $longdate; ?><small class="slot-year">
+                                                            <?php echo $year; ?>
+                                                        </small></span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
                                                     <span>
-                                                        <?php echo $day = date('D', strtotime($date . '+5 day')); ?></span>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+5 day'));
+                                                        $year = date('Y', strtotime($date . '+5 day'));
+                                                        $longdate = date('d M', strtotime($date . '+5 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?>
+                                                    </span>
                                                     <span class="slot-date">
-                                                        <?php echo $day = date('d M', strtotime($date . '+5 day')); ?><small
-                                                            class="slot-year">
-                                                            <?php echo $day = date('Y', strtotime($date . '+5 day')); ?></small></span>
+                                                        <?php echo $longdate; ?><small class="slot-year">
+                                                            <?php echo $year; ?>
+                                                        </small></span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
-                                                    <span><?php echo $day = date('D', strtotime($date . '+6 day')); ?></span>
-                                                    <span
-                                                        class="slot-date"><?php echo $day = date('d M', strtotime($date . '+6 day')); ?><small
+                                                    <span>
+                                                        <?php
+                                                        $day = date('D', strtotime($date . '+6 day'));
+                                                        $year = date('Y', strtotime($date . '+6 day'));
+                                                        $longdate = date('d M', strtotime($date . '+6 day'));
+                                                        $weekday = false;
+                                                        if ($day == 'Sat') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else if ($day == 'Sun') {
+                                                            $day = "Weekend";
+                                                            $longdate = "Closed";
+                                                            $year = "";
+                                                            $weekday = true;
+                                                        } else {
+                                                            $weekday = true;
+                                                        }
+                                                        if ($weekday) {
+                                                            echo $day;
+                                                            ?>
+                                                    </span>
+                                                    <span class="slot-date"><?php echo $longdate; ?><small
                                                             class="slot-year">
-                                                            <?php echo $day = date('Y', strtotime($date . '+6 day')); ?></small></span>
+                                                            <?php echo $year; ?></small></span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
-                                                    <span><?php echo $day = date('D', strtotime($date . '+7 day')); ?></span>
-                                                    <span
-                                                        class="slot-date"><?php echo $day = date('d M', strtotime($date . '+7 day')); ?>
-                                                        <small
-                                                            class="slot-year"><?php echo $day = date('Y', strtotime($date . '+7 day')); ?></small></span>
+                                                    <span><?php
+                                                    $day = date('D', strtotime($date . '+7 day'));
+                                                    $year = date('Y', strtotime($date . '+7 day'));
+                                                    $longdate = date('d M', strtotime($date . '+7 day'));
+                                                    $weekday = false;
+                                                    if ($day == 'Sat') {
+                                                        $day = "Weekend";
+                                                        $longdate = "Closed";
+                                                        $year = "";
+                                                        $weekday = true;
+                                                    } else if ($day == 'Sun') {
+                                                        $day = "Weekend";
+                                                        $longdate = "Closed";
+                                                        $year = "";
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        echo $day;
+                                                        ?></span>
+                                                    <span class="slot-date"><?php echo $longdate; ?>
+                                                        <small class="slot-year">
+                                                            <?php echo $year; ?></small></span>
+                                                    <?php } ?>
                                                 </li>
                                                 <li class="right-arrow">
-                                                    <a href="?date=<?= $next_date; ?>">
+                                                    <a href="?id=<?= $doctorchoosen; ?>&date=<?= $next_date; ?>">
                                                         <i class="fa fa-chevron-right"></i>
                                                     </a>
                                                 </li>
@@ -293,157 +462,563 @@ $authsess = $_SESSION['name'];
                                         <div class="time-slot">
                                             <ul class="clearfix" id="slots">
                                                 <li>
-                                                    <a class="timing" id="slot" href="booking.php?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT9H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT10H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+
+                                                    $day = date('d-M-Y', strtotime($date . '+1 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+1 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . $doctorcode .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" id="slot_1" href="<?php echo $url ?>">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" id="slot" href="#?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT11H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT12H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+1 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+3 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . $doctorcode .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" id="slot_2" href="<?php echo $url ?>">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" id="slot" href="#?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT13H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+1 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT14H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+1 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+
+
+                                                    $day = date('d-M-Y', strtotime($date . '+1 day'));
+                                                    $enddatetime = new DateTime($day);
+                                                    $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                    $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                        "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                        "&doctorCode=" . urlencode($doctorcode) .
+                                                        "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen); ?>
+                                                        class="timing" id="slot_3" href="<?php echo $url ?>">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" id="slot" href="#?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT9H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT10H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $enddatetime = new DateTime($day);
+                                                    $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                    $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                        "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                        "&doctorCode=" . urlencode($doctorcode) .
+                                                        "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen); ?>
+                                                        class="timing" id="slot_4" href="<?php echo $url ?>">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" id="slot" href="#?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT11H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT12H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $startdatetime->add(new DateInterval('PT11H00M00S'));
+
+
+
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $enddatetime = new DateTime($day);
+                                                    $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                    $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                        "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                        "&doctorCode=" . urlencode($doctorcode) .
+                                                        "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen); ?>
+                                                        class="timing" id="slot_5" href="<?php echo $url ?>">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" id="slot" href="#?startdate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$startdatetime = new DateTime($day);
-													$startdatetime->add(new DateInterval('PT13H00M00S'));
-													// Getting the new date after addition
-													echo $startdatetime->format('Y-m-d H:i:s') . "\n";
-													?>?enddate= <?php
-													$day = date('d-M-Y', strtotime($date . '+2 day'));
-													$enddatetime = new DateTime($day);
-													$enddatetime->add(new DateInterval('PT14H30M00S'));
-													// Getting the new date after addition
-													echo $enddatetime->format('Y-m-d H:i:s') . "\n";
-													?>
-														">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+
+
+                                                    $day = date('d-M-Y', strtotime($date . '+2 day'));
+                                                    $enddatetime = new DateTime($day);
+                                                    $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                    $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                        "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                        "&doctorCode=" . urlencode($doctorcode) .
+                                                        "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen); ?>
+                                                        class="timing" id="slot_6" href="<?php echo $url ?>">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+3 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime = new DateTime($day);
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" id="slot_7" href="<?php echo $url ?>">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+3 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" id="slot_8" href="<?php echo $url ?>">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+3 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" id="slot_9" href="<?php echo $url ?>">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_10">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_11">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+4 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime = new DateTime($day);
+                                                        $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_12">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_13">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_14">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+5 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_15">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_16">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_17">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+6 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT13H00M00S'));
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_18">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+9 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT09H00M00S'));
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT10H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_19">
                                                         <span>09:00 - 10:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+9 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT11H00M00S'));
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT12H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_20">
                                                         <span>11:00 - 12:30</span> <span></span>
                                                     </a>
-                                                    <a class="timing" href="#">
+                                                    <a <?php
+                                                    $day = date('d-M-Y', strtotime($date . '+7 day'));
+                                                    $startdatetime = new DateTime($day);
+                                                    $weekday = false;
+                                                    if ($startdatetime->format('D') == 'Sat') {
+                                                        $day = date('d-M-Y', strtotime($date . '+9 day'));
+                                                        $weekday = true;
+                                                        $startdatetime = new DateTime($day);
+                                                    } else if ($startdatetime->format('D') == 'Sun') {
+                                                        $day = date('d-M-Y', strtotime($date . '+8 day'));
+                                                        $startdatetime = new DateTime($day);
+                                                        $weekday = true;
+                                                    } else {
+                                                        $weekday = true;
+                                                    }
+                                                    if ($weekday) {
+                                                        $startdatetime->add(new DateInterval('PT13H00M00S'));
+
+                                                        $enddatetime = new DateTime($day);
+                                                        $enddatetime->add(new DateInterval('PT14H30M00S'));
+
+                                                        $url = "assets/php/user_booking.php?startdate=" . urlencode($startdatetime->format('Y-m-d H:i:s')) .
+                                                            "&enddate=" . urlencode($enddatetime->format('Y-m-d H:i:s')) .
+                                                            "&doctorCode=" . urlencode($doctorcode) .
+                                                            "&patientCode=" . urlencode($patientcode) . "&email=" . urlencode($doctorchoosen);
+                                                    } ?> class="timing" href="<?php echo $url ?>" id="slot_21">
                                                         <span>13:00 - 14:30</span> <span></span>
                                                     </a>
                                                 </li>
@@ -460,9 +1035,24 @@ $authsess = $_SESSION['name'];
                         <!-- /Schedule Widget -->
 
                         <!-- Submit Section -->
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert1"
+                            style="visibility: hidden">
+                            <strong>Success!</strong> Your <a href="#" class="alert-link">Booking</a> has been placed
+                            successfully.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert2"
+                            style="visibility: hidden">
+                            <strong>Error!</strong> A <a href="#" class="alert-link">problem</a> has been occurred while
+                            submitting your data.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
                         <div class="submit-section proceed-btn text-right">
-                            <a href="checkout.php?start=<?php $_GET['startdate'] ?>"
-                                class="btn btn-primary submit-btn">Proceed to Pay</a>
+                            <a href="checkout.php" class="btn btn-primary submit-btn">Proceed to Pay</a>
                         </div>
                         <!-- /Submit Section -->
 
@@ -596,6 +1186,24 @@ $authsess = $_SESSION['name'];
 
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js"></script>
+    <?php if ($_GET['flag'] == "true") {
+        echo '<script>
+    window.onload = function () {
+    let element = document.getElementById("alert2");
+    element.style.visibility = "visible";
+    }
+  
+    </script>';
+    } else if ($_GET['flag'] == "false") {
+        echo '<script>
+    window.onload = function () {
+         let element = document.getElementById("alert1");
+        element.style.visibility = "visible";
+    }
+  
+    </script>';
+
+    } ?>
 
     <!-- Bootstrap Core JS -->
     <script src="assets/js/popper.min.js"></script>
@@ -604,23 +1212,8 @@ $authsess = $_SESSION['name'];
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
 
-    <script>
-    $("#slots a").click(function() {
 
-        $("#slots a").removeClass();
-        $("#slots a").addClass("timing");
-        // Removes existing classes
 
-        var linkid = $(this).attr("id");
-
-        if (linkid == "slot") {
-
-            $(this).addClass("timing selected"); // You can add the class to something else
-
-        }
-
-    });
-    </script>
 
 </body>
 
