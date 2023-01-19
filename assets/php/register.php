@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
             VALUES ('$Name', '$Surname', '$Email', '$Phone', '$Password', '0')";
     $string = "INSERT INTO Patient SET 
 
-                PatientCode = 'PT$number',UserCode = (SELECT UserCode
+                PatientCode = '#PT00$number',UserCode = (SELECT UserCode
          FROM User
         WHERE EmailAddress = '$Email')";
 
@@ -72,31 +72,31 @@ if (isset($_POST["submit"])) {
 
 // If upload button is clicked ...
 if (isset($_POST['upload'])) {
-
+    
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "../img/" . $filename;
-
+    $folder = "../img/".$filename;
+    
     ini_set('display_errors', '1');
-    ini_set('display_startup_errors', '1');
-    error_reporting(E_ALL);
-
+		ini_set('display_startup_errors', '1');
+		error_reporting(E_ALL);
+    
     $authsess = $_SESSION['name'];
     // Get all the submitted data from the form
-
+    
     $sql = "Update User SET image = '$filename' WHERE EmailAddress = '$authsess' ";
-
-
+ 
+ 
     // Execute query
     mysqli_query($conn, $sql);
-
+ 
     // Now let's move the uploaded image into the folder: image
     if (move_uploaded_file($tempname, $folder)) {
         header('Location: ../../profile-settings.php?message=Image uploaded successfully!');
         /*echo "<h3>  Image uploaded successfully!</h3>";
         echo print_r($_SESSION, TRUE);*/
     } else {
-        header('Location: ../../profile-settings.php?message=Image uploaded successfully!');
+         header('Location: ../../profile-settings.php?message=Image uploaded successfully!');
         /*echo "<h3>  Failed to upload image!</h3>";*/
     }
 }
