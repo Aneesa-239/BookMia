@@ -73,28 +73,12 @@
 	<li>
 								<a href="index-2.php">Home</a>
 							</li>
-							<li class="has-submenu active">
-								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li class="active"><a href="search.php">Search Doctor</a></li>
-									
-									<li><a href="patient-dashboard.php">Patient Dashboard</a></li>
-									
-									<li><a href="profile-settings.php">Profile Settings</a></li>
-								
-								</ul>
-							</li>	
-							<li class="has-submenu">
-								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-								
-									<li><a href="calendar.html">Calendar</a></li>
-								
-								</ul>
+							<li class="active"><a href="search.php">Search Doctor</a></li>
+							<li>
+								<a href="patient-dashboard.php">Patient Dashboard</a>
 							</li>
-							
-							<li class="login-link">
-								<a href="assets/php/logout.php">Logout</a>
+							<li>
+								<a href="profile-settings.php">Profile Settings</a>
 							</li>
 						</ul>
 					</div>		 
@@ -144,7 +128,7 @@
 						    
 			<?php
 				//pull the required data from the database
-				$query = "SELECT User.FirstName, User.EmailAddress, User.LastName, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.Services, image FROM User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode WHERE User.UserCode = Doctor.UserCode";
+				$query = "SELECT User.FirstName, User.EmailAddress, User.LastName, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.Services, image, DoctorType.DoctorTitle FROM User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode INNER JOIN DoctorType ON Doctor.DoctorType = DoctorType.DocTypeID WHERE User.UserCode = Doctor.UserCode";
 					$result = mysqli_query($conn, $query);
 					$row = [];
 
@@ -163,15 +147,18 @@
 									<div class="doctor-widget">
 										<div class="doc-info-left">
 											<div class="doctor-img">
-												<a href="doctor-profile.html">
-													<img src="assets/img/<?php 
-													
-														echo $rows['image'];
-													 ?> " class="img-fluid" alt="User Image">
+												<a href="p_doctor-profile.php">
+													<img src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
+													 ?>" class="img-fluid" alt="User Image">
 												</a>
 											</div>
 											<div class="doc-info-cont">
-												<h4 class="doc-name"><a href="doctor-profile.html">Dr <?php 
+												<h4 class="doc-name"><a href="p_doctor-profile.php">Dr <?php 
 													
 														echo $rows['FirstName'];
 													 ?> <?php 
@@ -181,15 +168,10 @@
 												<p class="doc-speciality"><?php 
 														echo $rows['Profession'];
 													?></p>
-												<h5 class="doc-department"><img src="assets/img/specialities/specialities-05.png" class="img-fluid" alt="Speciality">Dentist</h5>
-												<div class="rating">
-													<i class="fas fa-star filled"></i>
-													<i class="fas fa-star filled"></i>
-													<i class="fas fa-star filled"></i>
-													<i class="fas fa-star filled"></i>
-													<i class="fas fa-star"></i>
-													<span class="d-inline-block average-rating">(17)</span>
-												</div>
+												<h5 class="doc-department"><?php 
+														echo $rows['DoctorTitle'];
+													?></h5>
+											
 												<div class="clinic-details">
 													<p class="doc-location"><i class="fas fa-map-marker-alt"></i> <?php 
 														echo $rows['Location'];
@@ -230,9 +212,9 @@
 													<li><i class="fas fa-map-marker-alt"></i><?php 
 														echo $rows['Location'];
 													?></li>
-													<li><i class="far fa-money-bill-alt"></i><?php 
+													<li><i class="far fa-money-bill-alt"></i>R <?php 
 														echo $rows['Fees'];
-													?><i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i> </li>
+													?> per hour. </li>
 												</ul>
 											</div>
 											<div class="clinic-booking">

@@ -7,15 +7,15 @@ $isDoc = false;
 $eventsArr = array();
 //echo $userEmail;
 //if you are a doctor with bookings then show this calendar
-$check = "Select * from user INNER JOIN doctor ON user.UserCode = doctor.userCode
+$check = "Select * from User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode
           where EmailAddress = '$userEmail'";
 $answer = mysqli_query($conn, $check);
 if ($answer->num_rows > 0) {
     $isDoc = true;
     //if you are a doctor with bookings then show this calendar
-    $sql = "Select * from doctor
-    INNER JOIN user ON user.UserCode = doctor.userCode
-    INNER JOIN booking ON booking.DoctorCode = doctor.DoctorCode
+    $sql = "Select * from Doctor
+    INNER JOIN User ON User.UserCode = Doctor.UserCode
+    INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode
     where EmailAddress = '$userEmail'";
     //else change this
 //pull the required data from the database
@@ -40,7 +40,7 @@ if ($answer->num_rows > 0) {
     }
 } else {
     //if you arent a doctor see this
-    $query = "SELECT * FROM `booking` Where BookingStatus = 'Active'";
+    $query = "SELECT * FROM Booking Where BookingStatus = 'Active'";
     $result = mysqli_query($conn, $query);
     if ($result->num_rows > 0) {
         while ($row = mysqli_fetch_assoc($result)) {

@@ -19,7 +19,6 @@ $conn = mysqli_connect($servername, $username, $password, $db_name);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
 
 // Now we check if the data from the login form was submitted, isset() will check if the data exists.
 if ( !isset($_POST['p_email'], $_POST['p_password']) ) {
@@ -47,24 +46,58 @@ if ($stmt = $conn->prepare('SELECT EmailAddress, UserPassword FROM User WHERE Em
   session_regenerate_id(true);
   $_SESSION['loggedin'] = TRUE;
   $_SESSION['name'] = $email;
+  
   echo $_SESSION['loggedin'];
   echo print_r($_SESSION);
   
  if(isset($_SESSION['name'])) {
-    header("Location: ../../index-2.php");
-    exit;
-}
- } else {
+     
+     $check = $_SESSION['name'];
+    
+    $string = "Select * FROM User WHERE EmailAddress = '$check'"; 
+    $string1 = "Select * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode Where EmailAddress = '$check'";
+    
+    $result = mysqli_query($conn, $string);
+
+	$row = [];
+	
+	if ($result->num_rows > 0) {
+		// fetch all data from db into array 
+		$row = $result->fetch_all(MYSQLI_ASSOC); }
+		
+		if (!empty($row)){
+		foreach ($row as $rows){
+      $admin = $rows['IsAdmin'];
+
+    }
+		if ( $admin == 1){
+		        header("Location: ../../a.php");
+		        exit;
+		} else if ( $admin == 0){ 
+		        $result = mysqli_query($conn, $string1);
+		        	if ($result->num_rows > 0) {
+
+		 header("Location: ../../doctor-dashboard.php");
+		  exit;
+		 }else {
+		            header("Location: ../../index-2.php");
+		            exit; 
+		        }
+		        } }
+   
+} 
+    }else { echo "password is wrong";
   // Incorrect password
-  echo 'Incorrect username and/or password!';
- }
-} else {
- // Incorrect username
- echo 'Incorrect username and/or password!';
+  header("Location: ../../login.php");
+  echo '<script type="text/JavaScript">
+  window.onload = function(){
+    var x = document.getElementById("alert");
+    x.style.visibility ="visible";
+  }
+  </script>';
+        }
+}
 }
  $stmt->close();
- 
-
-}
 
 ?>

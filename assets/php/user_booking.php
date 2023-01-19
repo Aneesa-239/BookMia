@@ -21,7 +21,7 @@ $doc_email = $_GET['email'];
 
 
 if ($startdate != "" and $enddate != "") {
-    $string = "INSERT INTO booking SET 
+    $string = "INSERT INTO Booking SET 
 BookingCode = 'BC00$number',PatientCode = (SELECT PatientCode
 FROM Patient
 WHERE PatientCode = '$user'),DoctorCode =(SELECT DoctorCode
