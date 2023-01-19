@@ -1,4 +1,9 @@
 <?php require_once "assets/php/config.php";
+session_start();
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+$authsess = $_SESSION['name'];
 //pull the required data from the database
 $query = "SELECT * FROM Invoice 
                                 INNER JOIN Booking ON Booking.BookingCode = Invoice.BookingCode
@@ -132,66 +137,97 @@ if ($result->num_rows > 0) {
                                 if (!empty($arr))
                                     foreach ($arr as $rows) {
                                         ?>
-                                        <li class="notification-message">
-                                            <a href="#">
-                                                <div class="media">
-                                                    <span class="avatar avatar-sm">
-                                                        <img class="avatar-img rounded-circle" alt="User Image"
-                                                            src="a_assets/img/aneesa.jpg">
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="avatar avatar-sm">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                    src="a_assets/img/aneesa.jpg">
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                        Number
                                                     </span>
-                                                    <div class="media-body">
-                                                        <p class="noti-details"><span class="noti-title">Dr.
-                                                                <?php echo $rows['LastName'] ?> requests that Booking
-                                                                Number
-                                                            </span>
-                                                            <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-                                                                canceled
-                                                            </span>
-                                                        </p>
-                                                        <p class="noti-time"><span class="notification-time">
-                                                                <?php
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php
                                                                 $time = new DateTime($rows["DateOfCancellation"]);
                                                                 $date = $time->format('d-M-Y');
                                                                 echo $date ?>
-                                                            </span>
-                                                            <span>
-                                                                <?php
+                                                    </span>
+                                                    <span>
+                                                        <?php
                                                                 $time = new DateTime($rows["DateOfCancellation"]);
                                                                 $st = $time->format('H:m');
                                                                 echo $st;
 
                                                                 ?>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    <?php } ?>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="#">View all Notifications</a>
+                            <a href="#">Close Notifications</a>
                         </div>
                     </div>
                 </li>
                 <!-- User Menu -->
+
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
-                                width="31" alt="Ryan Taylor"></span>
+                        <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
+                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
+                                <?php echo $rows['image']; ?> width="31" alt="none"></span>
+                        <?php } ?>
                     </a>
                     <div class="dropdown-menu">
+                        <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                <img src="a_assets/img/<?php echo $rows['image']; ?>" alt="none"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
-                                <h6>Ryan Taylor</h6>
+                                <h6><?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?></h6>
                                 <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
+                        <?php } ?>
                         <a class="dropdown-item" href="a_profile.php">My Profile</a>
                         <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
                     </div>
@@ -231,6 +267,9 @@ if ($result->num_rows > 0) {
                         <li class="active">
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
+                        </li>
+                        <li>
+                            <a href="a_calendar.php"><i class="fe fe-table"></i> <span>Calendar</span></a>
                         </li>
                         <li class="menu-title">
                             <span>User Settings</span>
@@ -283,44 +322,44 @@ if ($result->num_rows > 0) {
                                             if (!empty($row))
                                                 foreach ($row as $rows) {
                                                     ?>
-                                                    <tr>
-                                                        <td><a href="invoice.html">#IN00<?php echo $rows["InvoiceCode"] ?></td>
-                                                        <td>
-                                                            <?php echo $rows["PatientCode"] ?>
-                                                        </td>
-                                                        <td>
-                                                            <h2 class="table-avatar">
-                                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                        class="avatar-img rounded-circle"
-                                                                        src="a_assets/img/<?php echo $rows["image"] ?>"
-                                                                        alt="User Image"></a>
-                                                                <a href="profile.html">
-                                                                    <?php echo $rows["FirstName"] ?>
-                                                                    <?php echo $rows["LastName"] ?>
-                                                                </a>
-                                                            </h2>
-                                                        </td>
-                                                        <td>R<?php echo $rows["PaymentAmount"] ?></td>
-                                                        <?php if ($rows["PaymentStatus"] == "Paid") { ?>
-                                                            <td class="text-center">
-                                                                <span class="badge badge-pill bg-success inv-badge">Paid</span>
-                                                            </td>
-                                                        <?php } else { ?>
-                                                            <td class="text-center">
-                                                                <span class="badge badge-pill bg-warning inv-badge">Pending</span>
-                                                            </td>
-                                                        <?php } ?>
-
-                                                        <td class="text-right">
-                                                            <div class="actions">
-                                                                <a class="btn btn-sm bg-danger-light" data-toggle="modal"
-                                                                    href="#delete_modal">
-                                                                    <i class="fe fe-trash"></i> Delete
-                                                                </a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                            <tr>
+                                                <td><a href="invoice.html">#IN00<?php echo $rows["InvoiceCode"] ?></td>
+                                                <td>
+                                                    <?php echo $rows["PatientCode"] ?>
+                                                </td>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                                                class="avatar-img rounded-circle"
+                                                                src="a_assets/img/<?php echo $rows["image"] ?>"
+                                                                alt="User Image"></a>
+                                                        <a href="profile.html">
+                                                            <?php echo $rows["FirstName"] ?>
+                                                            <?php echo $rows["LastName"] ?>
+                                                        </a>
+                                                    </h2>
+                                                </td>
+                                                <td>R<?php echo $rows["PaymentAmount"] ?></td>
+                                                <?php if ($rows["PaymentStatus"] == "Paid") { ?>
+                                                <td class="text-center">
+                                                    <span class="badge badge-pill bg-success inv-badge">Paid</span>
+                                                </td>
+                                                <?php } else { ?>
+                                                <td class="text-center">
+                                                    <span class="badge badge-pill bg-warning inv-badge">Pending</span>
+                                                </td>
                                                 <?php } ?>
+
+                                                <td class="text-right">
+                                                    <div class="actions">
+                                                        <a class="btn btn-sm bg-danger-light" data-toggle="modal"
+                                                            href="#delete_modal">
+                                                            <i class="fe fe-trash"></i> Delete
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

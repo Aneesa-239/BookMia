@@ -132,43 +132,43 @@ $authsess = $_SESSION['name'];
                                 if (!empty($row))
                                     foreach ($row as $rows) {
                                         ?>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/aneesa.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Dr.
-                                                        <?php echo $rows['LastName'] ?> requests that Booking
-                                                        Number</span>
-                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-                                                        canceled
-                                                    </span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">
-                                                        <?php
-                                                                $time = new DateTime($rows["DateOfCancellation"]);
-                                                                $date = $time->format('d-M-Y');
-                                                                echo $date ?>
-                                                    </span>
-                                                    <span> <?php
-                                                            $time = new DateTime($rows["DateOfCancellation"]);
-                                                            $st = $time->format('H:m');
-                                                            echo $st;
+                                                <li class="notification-message">
+                                                    <a href="#">
+                                                        <div class="media">
+                                                            <span class="avatar avatar-sm">
+                                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                                    src="a_assets/img/aneesa.jpg">
+                                                            </span>
+                                                            <div class="media-body">
+                                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                                        Number</span>
+                                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                                        canceled
+                                                                    </span>
+                                                                </p>
+                                                                <p class="noti-time"><span class="notification-time">
+                                                                        <?php
+                                                                        $time = new DateTime($rows["DateOfCancellation"]);
+                                                                        $date = $time->format('d-M-Y');
+                                                                        echo $date ?>
+                                                                    </span>
+                                                                    <span> <?php
+                                                                    $time = new DateTime($rows["DateOfCancellation"]);
+                                                                    $st = $time->format('H:m');
+                                                                    echo $st;
 
-                                                            ?></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <?php } ?>
+                                                                    ?></span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                        <?php } ?>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="#">View all Notifications</a>
+                            <a href="#">Close Notifications</a>
                         </div>
                     </div>
                 </li>
@@ -231,6 +231,8 @@ $authsess = $_SESSION['name'];
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
+                        </li><li>
+                            <a href="a_calendar.php"><i class="fe fe-table"></i> <span>Calendar</span></a>
                         </li>
                         <li class="menu-title">
                             <span>User Settings</span>
@@ -280,29 +282,29 @@ $authsess = $_SESSION['name'];
                             if (!empty($row))
                                 foreach ($row as $rows) {
                                     ?>
-                            <div class="row align-items-center">
-                                <div class="col-auto profile-image">
-                                    <a href="#">
-                                        <img class="rounded-circle" alt="User Image"
-                                            src="a_assets/img/profiles/avatar-01.jpg">
-                                    </a>
-                                </div>
-                                <div class="col ml-md-n2 profile-user-info">
-                                    <h4 class="user-name mb-0"><?php echo $rows['FirstName']; ?>
-                                        <?php echo $rows['LastName']; ?>
-                                    </h4>
-                                    <h6 class="text-muted">
-                                        <?php echo $rows['EmailAddress']; ?>
-                                    </h6>
-                                    <div class="user-Location"><i class="fa fa-map-marker"></i>
-                                        <?php echo $rows['province']; ?>, <?php echo $rows['country']; ?>
-                                    </div>
-                                    <div class="about-text">Admin.</div>
-                                </div>
-                                <div class="col-auto profile-btn">
-                                </div>
-                            </div>
-                            <?php } ?>
+                                            <div class="row align-items-center">
+                                                <div class="col-auto profile-image">
+                                                    <a href="#">
+                                                        <img class="rounded-circle" alt="User Image"
+                                                            src="a_assets/img/profiles/avatar-01.jpg">
+                                                    </a>
+                                                </div>
+                                                <div class="col ml-md-n2 profile-user-info">
+                                                    <h4 class="user-name mb-0"><?php echo $rows['FirstName']; ?>
+                                                        <?php echo $rows['LastName']; ?>
+                                                    </h4>
+                                                    <h6 class="text-muted">
+                                                        <?php echo $rows['EmailAddress']; ?>
+                                                    </h6>
+                                                    <div class="user-Location"><i class="fa fa-map-marker"></i>
+                                                        <?php echo $rows['province']; ?>, <?php echo $rows['country']; ?>
+                                                    </div>
+                                                    <div class="about-text">Admin.</div>
+                                                </div>
+                                                <div class="col-auto profile-btn">
+                                                </div>
+                                            </div>
+                                    <?php } ?>
                         </div>
                         <div class="profile-menu">
                             <ul class="nav nav-tabs nav-tabs-solid">
@@ -338,46 +340,46 @@ $authsess = $_SESSION['name'];
                                                 if (!empty($row))
                                                     foreach ($row as $rows) {
                                                         ?>
-                                                <h5 class="card-title d-flex justify-content-between">
-                                                    <span>Personal Details</span>
-                                                    <a href="#edit_personal_details" data-toggle="modal"
-                                                        class="btn btn-primary">
-                                                        Edit
-                                                    </a>
-                                                </h5>
-                                                <div class="row">
-                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
-                                                    <p class="col-sm-10"><?php echo $rows['FirstName']; ?>
-                                                        <?php echo $rows['LastName']; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row">
-                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Date of
-                                                        Birth</p>
-                                                    <p class="col-sm-10">
-                                                        <?php echo $rows['DateBirth']; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row">
-                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Email ID
-                                                    </p>
-                                                    <p class="col-sm-10"><?php echo $rows['EmailAddress']; ?></p>
-                                                </div>
-                                                <div class="row">
-                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
-                                                    <p class="col-sm-10">
-                                                        <?php echo $rows['PhoneNumber']; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row">
-                                                    <p class="col-sm-2 text-muted text-sm-right mb-0">Address</p>
-                                                    <p class="col-sm-10 mb-0"><?php echo $rows['country']; ?>,<br>
-                                                        <?php echo $rows['province']; ?>,<br>
-                                                        <?php echo $rows['city']; ?>,<br>
-                                                        <?php echo $rows['address']; ?>
-                                                    </p>
-                                                </div>
-                                                <?php } ?>
+                                                                <h5 class="card-title d-flex justify-content-between">
+                                                                    <span>Personal Details</span>
+                                                                    <a href="#edit_personal_details" data-toggle="modal"
+                                                                        class="btn btn-primary">
+                                                                        Edit
+                                                                    </a>
+                                                                </h5>
+                                                                <div class="row">
+                                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
+                                                                    <p class="col-sm-10"><?php echo $rows['FirstName']; ?>
+                                                                        <?php echo $rows['LastName']; ?>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Date of
+                                                                        Birth</p>
+                                                                    <p class="col-sm-10">
+                                                                        <?php echo $rows['DateBirth']; ?>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Email ID
+                                                                    </p>
+                                                                    <p class="col-sm-10"><?php echo $rows['EmailAddress']; ?></p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
+                                                                    <p class="col-sm-10">
+                                                                        <?php echo $rows['PhoneNumber']; ?>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p class="col-sm-2 text-muted text-sm-right mb-0">Address</p>
+                                                                    <p class="col-sm-10 mb-0"><?php echo $rows['country']; ?>,<br>
+                                                                        <?php echo $rows['province']; ?>,<br>
+                                                                        <?php echo $rows['city']; ?>,<br>
+                                                                        <?php echo $rows['address']; ?>
+                                                                    </p>
+                                                                </div>
+                                                        <?php } ?>
                                             </div>
                                         </div>
 
@@ -400,130 +402,130 @@ $authsess = $_SESSION['name'];
                                                     if (!empty($row))
                                                         foreach ($row as $rows) {
                                                             ?>
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Personal Details</h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form method="post" action="a_assets/php/update-Admin.php">
-                                                        </form>
-                                                        <div class="row form-row">
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>First Name</label>
-                                                                    <input type="text" name="f_name"
-                                                                        class="form-control"
-                                                                        value="<?php echo $rows['FirstName']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Last Name</label>
-                                                                    <input type="text" name="l_name"
-                                                                        class="form-control"
-                                                                        value="<?php echo $rows['LastName']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label>Date of Birth</label>
-                                                                    <div class="cal-icon">
-                                                                        <input type="date" name="DOB"
-                                                                            class="form-control" value="<?php if (!$rows['DateBirth'] == "") {
-                                                                                        echo $rows['DateBirth'];
-                                                                                    } else {
-                                                                                        echo "1983/02/03";
-                                                                                    }
-                                                                                    ?>">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Personal Details</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                            aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Email ID</label>
-                                                                    <input type="email" disabled class="form-control"
-                                                                        value="<?php echo $rows['EmailAddress']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Mobile</label>
-                                                                    <input type="text" name="phone_nr" value="<?php if (!$rows['PhoneNumber'] == "") {
-                                                                                echo $rows['PhoneNumber'];
-                                                                            } else {
-                                                                                echo "Not Set";
-                                                                            }
-                                                                            ?>" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <h5 class="form-title"><span>Address</span></h5>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label>Address</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="address" value="<?php if (!$rows['address'] == "") {
-                                                                                    echo $rows['address'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>City</label>
-                                                                    <input type="text" class="form-control" name="city"
-                                                                        value="<?php if (!$rows['city'] == "") {
-                                                                                    echo $rows['city'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Province</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="province" value="<?php if (!$rows['province'] == "") {
-                                                                                    echo $rows['province'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Zip Code</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="zipcode" value="<?php if (!$rows['zipcode'] == "") {
-                                                                                    echo $rows['zipcode'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label>Country</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="country" value="<?php if (!$rows['country'] == "") {
-                                                                                    echo $rows['country'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <?php } ?>
+                                                                    <div class="modal-body">
+                                                                        <form method="post" action="a_assets/php/update-Admin.php">
+                                                                        </form>
+                                                                        <div class="row form-row">
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>First Name</label>
+                                                                                    <input type="text" name="f_name"
+                                                                                        class="form-control"
+                                                                                        value="<?php echo $rows['FirstName']; ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Last Name</label>
+                                                                                    <input type="text" name="l_name"
+                                                                                        class="form-control"
+                                                                                        value="<?php echo $rows['LastName']; ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label>Date of Birth</label>
+                                                                                    <div class="cal-icon">
+                                                                                        <input type="date" name="DOB"
+                                                                                            class="form-control" value="<?php if (!$rows['DateBirth'] == "") {
+                                                                                                echo $rows['DateBirth'];
+                                                                                            } else {
+                                                                                                echo "1983/02/03";
+                                                                                            }
+                                                                                            ?>">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Email ID</label>
+                                                                                    <input type="email" disabled class="form-control"
+                                                                                        value="<?php echo $rows['EmailAddress']; ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Mobile</label>
+                                                                                    <input type="text" name="phone_nr" value="<?php if (!$rows['PhoneNumber'] == "") {
+                                                                                        echo $rows['PhoneNumber'];
+                                                                                    } else {
+                                                                                        echo "Not Set";
+                                                                                    }
+                                                                                    ?>" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12">
+                                                                                <h5 class="form-title"><span>Address</span></h5>
+                                                                            </div>
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label>Address</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        name="address" value="<?php if (!$rows['address'] == "") {
+                                                                                            echo $rows['address'];
+                                                                                        } else {
+                                                                                            echo "Not Set";
+                                                                                        }
+                                                                                        ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>City</label>
+                                                                                    <input type="text" class="form-control" name="city"
+                                                                                        value="<?php if (!$rows['city'] == "") {
+                                                                                            echo $rows['city'];
+                                                                                        } else {
+                                                                                            echo "Not Set";
+                                                                                        }
+                                                                                        ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Province</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        name="province" value="<?php if (!$rows['province'] == "") {
+                                                                                            echo $rows['province'];
+                                                                                        } else {
+                                                                                            echo "Not Set";
+                                                                                        }
+                                                                                        ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Zip Code</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        name="zipcode" value="<?php if (!$rows['zipcode'] == "") {
+                                                                                            echo $rows['zipcode'];
+                                                                                        } else {
+                                                                                            echo "Not Set";
+                                                                                        }
+                                                                                        ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <label>Country</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        name="country" value="<?php if (!$rows['country'] == "") {
+                                                                                            echo $rows['country'];
+                                                                                        } else {
+                                                                                            echo "Not Set";
+                                                                                        }
+                                                                                        ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                <?php } ?>
 
                                                         <input type="submit" name="submit"
                                                             class="btn btn-primary submit-btn"></input>

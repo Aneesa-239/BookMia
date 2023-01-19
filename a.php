@@ -49,10 +49,10 @@ $authsess = $_SESSION['name'];
             <!-- Logo -->
             <div class="header-left">
                 <a href="a.php" class="logo">
-                    <img src="" alt="Logo">
+                    <img src="assets/img/logo.png" alt="Logo">
                 </a>
                 <a href="a.php" class="logo logo-small">
-                    <img src="" alt="Logo" width="30" height="30">
+                    <img src="assets/img/logo.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -157,7 +157,7 @@ $authsess = $_SESSION['name'];
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="#">View all Notifications</a>
+                            <a href="#">Close Notifications</a>
                         </div>
                     </div>
                 </li>
@@ -167,20 +167,50 @@ $authsess = $_SESSION['name'];
 
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
-                                width="31" alt="Ryan Taylor"></span>
+                        <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
+                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
+                                <?php echo $rows['image']; ?> width="31" alt="none"></span>
+                        <?php } ?>
                     </a>
                     <div class="dropdown-menu">
+                        <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                <img src="a_assets/img/<?php echo $rows['image']; ?>" alt="none"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
-                                <h6>Ryan Taylor</h6>
+                                <h6><?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?></h6>
                                 <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
+                        <?php } ?>
                         <a class="dropdown-item" href="a_profile.php">My Profile</a>
                         <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
                     </div>
@@ -221,6 +251,9 @@ $authsess = $_SESSION['name'];
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
+                        </li>
+                        <li>
+                            <a href="a_calendar.php"><i class="fe fe-table"></i> <span>Calendar</span></a>
                         </li>
                         <li class="menu-title">
                             <span>User Settings</span>

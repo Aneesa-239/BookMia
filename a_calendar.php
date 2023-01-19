@@ -1,24 +1,19 @@
 <?php require_once "assets/php/config.php";
-
 session_start();
-
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
-
 $authsess = $_SESSION['name'];
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/patient-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Doccure - Patient List Page</title>
+	<title>Calendar</title>
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
@@ -32,15 +27,20 @@ $authsess = $_SESSION['name'];
 	<!-- Feathericon CSS -->
 	<link rel="stylesheet" href="a_assets/css/feathericon.min.css">
 
-	<!-- Datatables CSS -->
-	<link rel="stylesheet" href="a_assets/plugins/datatables/datatables.min.css">
+	<link rel="stylesheet" href="a_assets/plugins/morris/morris.css">
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="a_assets/css/style.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
+	<!-- Full Calander CSS -->
+	<link rel="stylesheet" href="a_assets/plugins/a-fullcalendar/fullcalendar.min.css">
+
+
 
 	<!--[if lt IE 9]>
-			<script src="a_assets/js/html5shiv.min.js"></script>
-			<script src="a_assets/js/respond.min.js"></script>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 </head>
 
@@ -67,13 +67,6 @@ $authsess = $_SESSION['name'];
 				<i class="fe fe-text-align-left"></i>
 			</a>
 
-			<div class="top-nav-search">
-				<form>
-					<input type="text" class="form-control" placeholder="Search here">
-					<button class="btn" type="submit"><i class="fa fa-search"></i></button>
-				</form>
-			</div>
-
 			<!-- Mobile Menu Toggle -->
 			<a class="mobile_btn" id="mobile_btn">
 				<i class="fa fa-bars"></i>
@@ -83,6 +76,7 @@ $authsess = $_SESSION['name'];
 			<!-- Header Right Menu -->
 			<ul class="nav user-menu">
 
+				<!-- Notifications -->
 				<!-- Notifications -->
 				<li class="nav-item dropdown noti-dropdown">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -147,14 +141,12 @@ $authsess = $_SESSION['name'];
 																Number</span>
 															<?php echo $rows['BookingCode'] ?> <span class="noti-title">be
 																canceled
-															</span>
-														</p>
+															</span></p>
 														<p class="noti-time"><span class="notification-time">
 																<?php
 																$time = new DateTime($rows["DateOfCancellation"]);
 																$date = $time->format('d-M-Y');
-																echo $date ?>
-															</span>
+																echo $date ?> </span>
 															<span> <?php
 															$time = new DateTime($rows["DateOfCancellation"]);
 															$st = $time->format('H:m');
@@ -175,16 +167,17 @@ $authsess = $_SESSION['name'];
 					</div>
 				</li>
 				<!-- /Notifications -->
+
 				<!-- User Menu -->
 				<li class="nav-item dropdown has-arrow">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
+						<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
 								width="31" alt="Ryan Taylor"></span>
 					</a>
 					<div class="dropdown-menu">
 						<div class="user-header">
 							<div class="avatar avatar-sm">
-								<img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
+								<img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
 									class="avatar-img rounded-circle">
 							</div>
 							<div class="user-text">
@@ -227,13 +220,14 @@ $authsess = $_SESSION['name'];
 								<li><a href="a_register_newdoc.php">Add Doctor</a></li>
 							</ul>
 						</li>
-						<li class="active">
+						<li>
 							<a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
 						</li>
 						<li>
 							<a href="a_transactions-list.php"><i class="fe fe-activity"></i>
 								<span>Transactions</span></a>
-						</li><li>
+						</li>
+						<li class="active">
 							<a href="a_calendar.php"><i class="fe fe-table"></i> <span>Calendar</span></a>
 						</li>
 						<li class="menu-title">
@@ -257,12 +251,10 @@ $authsess = $_SESSION['name'];
 				<div class="page-header">
 					<div class="row">
 						<div class="col-sm-12">
-							<h3 class="page-title">List of Patient</h3>
+							<h3 class="page-title">Calendar</h3>
 							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="a.php
-			">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
-								<li class="breadcrumb-item active">Patient</li>
+								<li class="breadcrumb-item"><a href="a.php">Dashboard</a></li>
+								<li class="breadcrumb-item active">Calendar</li>
 							</ul>
 						</div>
 					</div>
@@ -271,47 +263,15 @@ $authsess = $_SESSION['name'];
 
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="card">
-							<div class="card-body">
-								<div class="table-responsive">
-									<div class="table-responsive">
-										<table class="datatable table table-hover table-center mb-0">
-											<thead>
-												<tr>
-													<th>Patient ID</th>
-													<th>Patient Name</th>
-													<th>Age</th>
-													<th>Address</th>
-													<th>Phone</th>
-													<th>Last Visit</th>
-													<th class="text-right">Paid</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>#PT001</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile.html" class="avatar avatar-sm mr-2"><img
-																	class="avatar-img rounded-circle"
-																	src="a_assets/img/patients/patient1.jpg"
-																	alt="User Image"></a>
-															<a href="profile.html">Charlene Reed </a>
-														</h2>
-													</td>
-													<td>29</td>
-													<td>4417 Goosetown Drive, Taylorsville, North Carolina, 28681</td>
-													<td>8286329170</td>
-													<td>20 Oct 2019</td>
-													<td class="text-right">$100.00</td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
+						<!-- Calendar -->
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="card">
+								<div class="card-body">
+									<div id="calendar"></div>
 								</div>
 							</div>
 						</div>
+						<!-- /Calendar -->
 					</div>
 				</div>
 
@@ -323,7 +283,9 @@ $authsess = $_SESSION['name'];
 	<!-- /Main Wrapper -->
 
 	<!-- jQuery -->
-	<script src="a_assets/js/jquery-3.2.1.min.js"></script>
+
+	<script src="a_assets/js/jquery.min.js"></script>
+	<script src="a_assets/js/moment.min.js"></script>
 
 	<!-- Bootstrap Core JS -->
 	<script src="a_assets/js/popper.min.js"></script>
@@ -331,16 +293,25 @@ $authsess = $_SESSION['name'];
 
 	<!-- Slimscroll JS -->
 	<script src="a_assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-	<!-- Datatables JS -->
-	<script src="a_assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="a_assets/plugins/datatables/datatables.min.js"></script>
+	<!-- Full Calendar JS -->
+	<script src="a_assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="a_assets/plugins/a-fullcalendar/fullcalendar.min.js"></script>
+	<script src="a_assets/plugins/a-fullcalendar/jquery.fullcalendar.js"></script>
+	<script>
+	$(window).resize(function() {
+		if (window.innerWidth < 800) {
+			$('#calendar').fullCalendar('changeView', 'agendaDay');
+		} else {
+			$('#calendar').fullCalendar('changeView', 'month');
+		}
+	});
+	</script>
 
 	<!-- Custom JS -->
-	<script src="a_assets/js/script.js"></script>
+	<script src="assets/js/script.js"></script>
 
 </body>
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/patient-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:52 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
 
 </html>
