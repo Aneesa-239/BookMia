@@ -144,78 +144,20 @@ $authsess = $_SESSION['name'];
 
                     <!-- User Menu -->
                     <li class="nav-item dropdown has-arrow logged-item">
-                        <?php
-                        //pull the required data from the database
-                        $query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
-										  FROM User
-										  Where EmailAddress = '$authsess'";
-
-                        $result = mysqli_query($conn, $query);
-                        $row = [];
-
-                        if ($result->num_rows > 0) {
-                            // fetch all data from db into array 
-                            $row = $result->fetch_all(MYSQLI_ASSOC);
-                        }
-                        ?>
-
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <span class="user-img">
-                                <img class="rounded-circle" src="assets/img/<?php if (!empty($row))
-                                    foreach ($row as $rows) {
-                                        echo $rows['image'];
-                                    } ?>" width="31" alt="No pic">
+                            <span class="User-img">
+                                <img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31"
+                                    alt="Darren Elder">
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="user-header">
-                                <?php
-                                //pull the required data from the database
-                                $query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
-										  FROM User
-										  Where EmailAddress = '$authsess'";
-
-                                $result = mysqli_query($conn, $query);
-                                $row = [];
-
-                                $proimg = "SELECT image
-										  FROM User
-										  Where EmailAddress = '$authsess'";
-
-                                if ($result->num_rows > 0) {
-                                    // fetch all data from db into array 
-                                    $row = $result->fetch_all(MYSQLI_ASSOC);
-                                }
-                                ?>
+                            <div class="User-header">
                                 <div class="avatar avatar-sm">
-                                    <img src="assets/img/<?php if (!empty($row))
-                                        foreach ($row as $rows) {
-                                            echo $rows['image'];
-                                        } ?>" alt="User Image" class="avatar-img rounded-circle">
+                                    <img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"
+                                        class="avatar-img rounded-circle">
                                 </div>
-                                <?php
-                                //pull the required data from the database
-                                $query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
-										  FROM User
-										  Where EmailAddress = '$authsess'";
-                                $result = mysqli_query($conn, $query);
-                                $row = [];
-
-                                if ($result->num_rows > 0) {
-                                    // fetch all data from db into array 
-                                    $row = $result->fetch_all(MYSQLI_ASSOC);
-                                    if (!empty($row))
-                                        foreach ($row as $rows) {
-                                            ?>
-
-                                <div class="user-text">
-                                    <h6>Dr. <?php echo $rows['FirstName']; ?>
-                                        <?php echo $rows['LastName'];
-
-                                                    ?>
-                                    </h6>
-                                    <?php }
-                                } ?>
+                                <div class="User-text">
+                                    <h6>Darren Elder</h6>
                                     <p class="text-muted mb-0">Doctor</p>
                                 </div>
                             </div>
@@ -258,47 +200,16 @@ $authsess = $_SESSION['name'];
 
                         <!-- Profile Sidebar -->
                         <div class="profile-sidebar">
-
-                            <?php
-                            //pull the required data from the database
-                            $query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image, Doctor.Profession FROM User INNER JOIN Doctor ON User.UserCode = Doctor.UserCode WHERE User.UserCode = Doctor.UserCode AND EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
-
-                            $proimg = "SELECT image FROM User Where EmailAddress = '$authsess'";
-
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
-                            ?>
-
                             <div class="widget-profile pro-widget-content">
                                 <div class="profile-info-widget">
-                                    <a href="#" class="booking-doc-img">
-                                        <img src="assets/img/<?php if (!empty($row))
-                                            foreach ($row as $rows) {
-                                                echo $rows['image'];
-                                            } ?>" alt="User Image">
+                                    <a href="#" class="Booking-doc-img">
+                                        <img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
                                     </a>
                                     <div class="profile-det-info">
-                                        <h3>Dr. <?php if (!empty($row))
-                                            foreach ($row as $rows) {
-                                                echo $rows['FirstName'];
-                                            } ?>
-                                            <?php if (!empty($row))
-                                                foreach ($row as $rows) {
-                                                    echo $rows['LastName'];
-                                                } ?>
-                                        </h3>
+                                        <h3>Dr. Darren Elder</h3>
 
-                                        <div class="patient-details">
-                                            <h5 class="mb-0">
-                                                <?php if (!empty($row))
-                                                    foreach ($row as $rows) {
-                                                        echo $rows['Profession'];
-                                                    } ?>
-                                            </h5>
+                                        <div class="Patient-details">
+                                            <h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -307,49 +218,68 @@ $authsess = $_SESSION['name'];
                                 <nav class="dashboard-menu">
                                     <ul>
                                         <li>
-                                            <a href="doctor-dashboard.php">
+                                            <a href="doctor-dashboard.html">
                                                 <i class="fas fa-columns"></i>
                                                 <span>Dashboard</span>
                                             </a>
                                         </li>
                                         <li class="active">
-                                            <a href="appointments.php">
+                                            <a href="">
                                                 <i class="fas fa-calendar-check"></i>
                                                 <span>Appointments</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="my-patients.php">
-                                                <i class="fas fa-user-injured"></i>
+                                            <a href="my-Patients.html">
+                                                <i class="fas fa-User-injured"></i>
                                                 <span>My Patients</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="schedule-timings.php">
+                                            <a href="schedule-timings.html">
                                                 <i class="fas fa-hourglass-start"></i>
                                                 <span>Schedule Timings</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="invoices.php">
-                                                <i class="fas fa-file-invoice"></i>
+                                            <a href="Invoices.html">
+                                                <i class="fas fa-file-Invoice"></i>
                                                 <span>Invoices</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="doctor-profile-settings.php">
-                                                <i class="fas fa-user-cog"></i>
+                                            <a href="reviews.html">
+                                                <i class="fas fa-star"></i>
+                                                <span>Reviews</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="chat-doctor.html">
+                                                <i class="fas fa-comments"></i>
+                                                <span>Message</span>
+                                                <small class="unread-msg">23</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="doctor-profile-settings.html">
+                                                <i class="fas fa-User-cog"></i>
                                                 <span>Profile Settings</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="doctor-change-password.php">
+                                            <a href="social-media.html">
+                                                <i class="fas fa-share-alt"></i>
+                                                <span>Social Media</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="doctor-change-password.html">
                                                 <i class="fas fa-lock"></i>
                                                 <span>Change Password</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="assets/php/logout.php">
+                                            <a href="index-2.html">
                                                 <i class="fas fa-sign-out-alt"></i>
                                                 <span>Logout</span>
                                             </a>
@@ -359,6 +289,7 @@ $authsess = $_SESSION['name'];
                             </div>
                         </div>
                         <!-- /Profile Sidebar -->
+
                     </div>
 
                     <div class="col-md-7 col-lg-8 col-xl-9">
@@ -366,13 +297,13 @@ $authsess = $_SESSION['name'];
                             <?php
                             //pull the required data from the database	
                             $today = date("Y-m-d");
-                            $query = "SELECT * FROM Booking 
-									  INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode 
-									  INNER JOIN User ON User.UserCode = Patient.UserCode 
-									  INNER JOIN Invoice ON Booking.BookingCode = Invoice.BookingCode 
-									  INNER JOIN Payment ON Payment.InvoiceCode = Invoice.InvoiceCode
-									  WHERE DoctorCode = (Select DoctorCode From Doctor 
-															  					  Inner join User on Doctor.UserCode = User.UserCode 
+                            $query = "SELECT * FROM `Booking` 
+									  INNER JOIN `Patient` ON `Patient`.PatientCode = `Booking`.PatientCode 
+									  INNER JOIN `User` ON `User`.UserCode = `Patient`.UserCode 
+									  INNER JOIN `Invoice` ON `Booking`.BookingCode = `Invoice`.BookingCode 
+									  INNER JOIN `Payment` ON `Payment`.InvoiceCode = `Invoice`.InvoiceCode
+									  WHERE DoctorCode = (Select DoctorCode From doctor 
+															  					  inner join User on `doctor`.UserCode = User.UserCode 
 																				  WHERE User.EmailAddress = '$authsess')
 																				  AND Date(StartDate) >= '$today'
 															  ORDER BY StartDate ASC";
@@ -394,15 +325,15 @@ $authsess = $_SESSION['name'];
                             <!-- Appointment List -->
                             <div class="appointment-list">
                                 <div class="profile-info-widget">
-                                    <a href="Patient-profile.php" class="booking-doc-img">
-                                        <img src="assets/img/video-call.jpg" alt="User Image">
+                                    <a href="Patient-profile.html" class="Booking-doc-img">
+                                        <img src="assets/img/<?php echo $rows["image"] ?>" alt="User Image">
                                     </a>
                                     <div class="profile-det-info">
-                                        <h3><a id="Client name" href="Patient-profile.php">
+                                        <h3><a id="Client name" href="Patient-profile.html">
                                                 <?php echo $rows["FirstName"] ?>
                                                 <?php echo $rows["LastName"] ?>
                                             </a></h3>
-                                        <div class="patient-details">
+                                        <div class="Patient-details">
                                             <h5><i class="far fa-clock"></i>
                                                 <?php $time = new DateTime($rows["StartDate"]);
                                                         $date = $time->format('d-M-Y');
@@ -439,7 +370,6 @@ $authsess = $_SESSION['name'];
                                 </div>
                             </div>
                             <!-- /Appointment List -->
-
                             <?php } ?>
                         </div>
                     </div>

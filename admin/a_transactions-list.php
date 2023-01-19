@@ -25,26 +25,26 @@ if ($result->num_rows > 0) {
     <title>Doccure - Transactions List Page</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="a_assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <!-- Feathericon CSS -->
-    <link rel="stylesheet" href="a_assets/css/feathericon.min.css">
+    <link rel="stylesheet" href="assets/css/feathericon.min.css">
 
     <!-- Datatables CSS -->
-    <link rel="stylesheet" href="a_assets/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="a_assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!--[if lt IE 9]>
-            <script src="a_assets/js/html5shiv.min.js"></script>
-            <script src="a_assets/js/respond.min.js"></script>
+            <script src="assets/js/html5shiv.min.js"></script>
+            <script src="assets/js/respond.min.js"></script>
         <![endif]-->
 </head>
 
@@ -71,7 +71,12 @@ if ($result->num_rows > 0) {
                 <i class="fe fe-text-align-left"></i>
             </a>
 
-
+            <div class="top-nav-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
 
             <!-- Mobile Menu Toggle -->
             <a class="mobile_btn" id="mobile_btn">
@@ -132,42 +137,42 @@ if ($result->num_rows > 0) {
                                 if (!empty($arr))
                                     foreach ($arr as $rows) {
                                         ?>
-                                        <li class="notification-message">
-                                            <a href="#">
-                                                <div class="media">
-                                                    <span class="avatar avatar-sm">
-                                                        <img class="avatar-img rounded-circle" alt="User Image"
-                                                            src="a_assets/img/aneesa.jpg">
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="avatar avatar-sm">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                    src="assets/img/aneesa.jpg">
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                        Number
                                                     </span>
-                                                    <div class="media-body">
-                                                        <p class="noti-details"><span class="noti-title">Dr.
-                                                                <?php echo $rows['LastName'] ?> requests that Booking
-                                                                Number
-                                                            </span>
-                                                            <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-                                                                canceled
-                                                            </span>
-                                                        </p>
-                                                        <p class="noti-time"><span class="notification-time">
-                                                                <?php
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php
                                                                 $time = new DateTime($rows["DateOfCancellation"]);
                                                                 $date = $time->format('d-M-Y');
                                                                 echo $date ?>
-                                                            </span>
-                                                            <span>
-                                                                <?php
+                                                    </span>
+                                                    <span>
+                                                        <?php
                                                                 $time = new DateTime($rows["DateOfCancellation"]);
                                                                 $st = $time->format('H:m');
                                                                 echo $st;
 
                                                                 ?>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    <?php } ?>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
@@ -178,13 +183,13 @@ if ($result->num_rows > 0) {
                 <!-- User Menu -->
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
                                 width="31" alt="Ryan Taylor"></span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                <img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
@@ -192,8 +197,9 @@ if ($result->num_rows > 0) {
                                 <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="a_profile.php">My Profile</a>
-                        <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
+                        <a class="dropdown-item" href="settings.html">Settings</a>
+                        <a class="dropdown-item" href="login.html">Logout</a>
                     </div>
                 </li>
                 <!-- /User Menu -->
@@ -204,6 +210,7 @@ if ($result->num_rows > 0) {
         </div>
         <!-- /Header -->
 
+        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -212,37 +219,46 @@ if ($result->num_rows > 0) {
                             <span>Main</span>
                         </li>
                         <li>
-                            <a href="a.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                            <a href="index.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="a_appointment-list.php"><i class="fe fe-layout"></i> <span>Appointments</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fe fe-user-plus"></i> <span> Doctors</span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="a_doctor-list.php">Doctor List</a></li>
-                                <li><a href="a_register_newdoc.php">Add Doctor</a></li>
-                            </ul>
+                            <a href="appointment-list.php"><i class="fe fe-layout"></i> <span>Appointments</span></a>
                         </li>
                         <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
+                            <a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
+                        </li>
+                        <li>
+                            <a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+                        </li>
+                        <li>
+                            <a href="patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
+                        </li>
+                        <li>
+                            <a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
                         </li>
                         <li class="active">
-                            <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
+                            <a href="transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="invoice-report.html">Invoice Reports</a></li>
+                            </ul>
                         </li>
                         <li class="menu-title">
                             <span>User Settings</span>
                         </li>
                         <li>
-                            <a href="a_profile.php"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+                            <a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
                         </li>
 
                     </ul>
                 </div>
             </div>
         </div>
+        <!-- /Sidebar -->
 
         <!-- Page Wrapper -->
         <div class="page-wrapper">
@@ -283,44 +299,44 @@ if ($result->num_rows > 0) {
                                             if (!empty($row))
                                                 foreach ($row as $rows) {
                                                     ?>
-                                                    <tr>
-                                                        <td><a href="invoice.html">#IN00<?php echo $rows["InvoiceCode"] ?></td>
-                                                        <td>
-                                                            <?php echo $rows["PatientCode"] ?>
-                                                        </td>
-                                                        <td>
-                                                            <h2 class="table-avatar">
-                                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                        class="avatar-img rounded-circle"
-                                                                        src="a_assets/img/<?php echo $rows["image"] ?>"
-                                                                        alt="User Image"></a>
-                                                                <a href="profile.html">
-                                                                    <?php echo $rows["FirstName"] ?>
-                                                                    <?php echo $rows["LastName"] ?>
-                                                                </a>
-                                                            </h2>
-                                                        </td>
-                                                        <td>R<?php echo $rows["PaymentAmount"] ?></td>
-                                                        <?php if ($rows["PaymentStatus"] == "Paid") { ?>
-                                                            <td class="text-center">
-                                                                <span class="badge badge-pill bg-success inv-badge">Paid</span>
-                                                            </td>
-                                                        <?php } else { ?>
-                                                            <td class="text-center">
-                                                                <span class="badge badge-pill bg-warning inv-badge">Pending</span>
-                                                            </td>
-                                                        <?php } ?>
-
-                                                        <td class="text-right">
-                                                            <div class="actions">
-                                                                <a class="btn btn-sm bg-danger-light" data-toggle="modal"
-                                                                    href="#delete_modal">
-                                                                    <i class="fe fe-trash"></i> Delete
-                                                                </a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                            <tr>
+                                                <td><a href="invoice.html">#IN00<?php echo $rows["InvoiceCode"] ?></td>
+                                                <td>
+                                                    <?php echo $rows["PatientCode"] ?>
+                                                </td>
+                                                <td>
+                                                    <h2 class="table-avatar">
+                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                                                class="avatar-img rounded-circle"
+                                                                src="assets/img/<?php echo $rows["image"] ?>"
+                                                                alt="User Image"></a>
+                                                        <a href="profile.html">
+                                                            <?php echo $rows["FirstName"] ?>
+                                                            <?php echo $rows["LastName"] ?>
+                                                        </a>
+                                                    </h2>
+                                                </td>
+                                                <td>R<?php echo $rows["PaymentAmount"] ?></td>
+                                                <?php if ($rows["PaymentStatus"] == "Paid") { ?>
+                                                <td class="text-center">
+                                                    <span class="badge badge-pill bg-success inv-badge">Paid</span>
+                                                </td>
+                                                <?php } else { ?>
+                                                <td class="text-center">
+                                                    <span class="badge badge-pill bg-warning inv-badge">Pending</span>
+                                                </td>
                                                 <?php } ?>
+
+                                                <td class="text-right">
+                                                    <div class="actions">
+                                                        <a class="btn btn-sm bg-danger-light" data-toggle="modal"
+                                                            href="#delete_modal">
+                                                            <i class="fe fe-trash"></i> Delete
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -359,21 +375,21 @@ if ($result->num_rows > 0) {
     <!-- /Main Wrapper -->
 
     <!-- jQuery -->
-    <script src="a_assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->
-    <script src="a_assets/js/popper.min.js"></script>
-    <script src="a_assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Slimscroll JS -->
-    <script src="a_assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Datatables JS -->
-    <script src="a_assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="a_assets/plugins/datatables/datatables.min.js"></script>
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="a_assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 
