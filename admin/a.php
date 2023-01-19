@@ -1,4 +1,10 @@
-<?php require_once "assets/php/config.php";?>
+<?php require_once "assets/php/config.php";
+session_start();
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+$authsess = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,26 +16,26 @@
     <title>Doccure - Dashboard</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="a_assets/css/font-awesome.min.css">
 
     <!-- Feathericon CSS -->
-    <link rel="stylesheet" href="assets/css/feathericon.min.css">
+    <link rel="stylesheet" href="a_assets/css/feathericon.min.css">
 
-    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link rel="stylesheet" href="a_assets/plugins/morris/morris.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="a_assets/css/style.css">
 
     <!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+            <script src="a_assets/js/html5shiv.min.js"></script>
+            <script src="a_assets/js/respond.min.js"></script>
+        <![endif]-->
 </head>
 
 <body>
@@ -45,7 +51,7 @@
                 <a href="index.php" class="logo">
                     <img src="" alt="Logo">
                 </a>
-                <a href="index.php" class="logo logo-small">
+                <a href="a.php" class="logo logo-small">
                     <img src="" alt="Logo" width="30" height="30">
                 </a>
             </div>
@@ -55,12 +61,7 @@
                 <i class="fe fe-text-align-left"></i>
             </a>
 
-            <div class="top-nav-search">
-                <form>
-                    <input type="text" class="form-control" placeholder="Search here">
-                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+
 
             <!-- Mobile Menu Toggle -->
             <a class="mobile_btn" id="mobile_btn">
@@ -102,23 +103,23 @@
                             <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
                         </div>
                         <?php
-                            //pull the required data from the database
-                                $query = "SELECT * FROM cancellation 
+                        //pull the required data from the database
+                        $query = "SELECT * FROM cancellation 
                                 INNER JOIN doctor On cancellation.DoctorCode = doctor.DoctorCode
                                 INNER JOIN user ON doctor.UserCode = user.UserCode";
-                                                    $result = mysqli_query($conn, $query);
-                                                    $row = [];
+                        $result = mysqli_query($conn, $query);
+                        $row = [];
 
-                                                    if ($result->num_rows > 0) {
-                                                        // fetch all data from db into array 
-                                                        $row = $result->fetch_all(MYSQLI_ASSOC);
-                                                    }
-                                                    ?>
+                        if ($result->num_rows > 0) {
+                            // fetch all data from db into array 
+                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                        }
+                        ?>
                         <div class="noti-content">
 
 
                             <ul class="notification-list">
-                                <?php  
+                                <?php
                                 if (!empty($row))
                                     foreach ($row as $rows) {
                                         ?>
@@ -127,26 +128,26 @@
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/aneesa.jpg">
+                                                    src="a_assets/img/aneesa.jpg">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Dr.
-                                                        <?php echo $rows['LastName']?> requests that Booking
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
                                                         Number</span>
                                                     <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
                                                         canceled
                                                     </span></p>
                                                 <p class="noti-time"><span class="notification-time">
-                                                        <?php 
-                                                    $time = new DateTime($rows["DateOfCancellation"]);
-                                                        $date = $time->format('d-M-Y');
-                                                        echo $date ?> </span>
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $date = $time->format('d-M-Y');
+                                                                echo $date ?> </span>
                                                     <span> <?php
                                                             $time = new DateTime($rows["DateOfCancellation"]);
                                                             $st = $time->format('H:m');
-                                                    echo $st; 
+                                                            echo $st;
 
-                                                    ?></span>
+                                                            ?></span>
                                                 </p>
                                             </div>
                                         </div>
@@ -163,15 +164,16 @@
                 <!-- /Notifications -->
 
                 <!-- User Menu -->
+
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
+                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
                                 width="31" alt="Ryan Taylor"></span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                <img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
@@ -179,9 +181,8 @@
                                 <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="profile.html">My Profile</a>
-                        <a class="dropdown-item" href="settings.html">Settings</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="a_profile.php">My Profile</a>
+                        <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
                     </div>
                 </li>
                 <!-- /User Menu -->
@@ -201,61 +202,31 @@
                             <span>Main</span>
                         </li>
                         <li class="active">
-                            <a href="index.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+                            <a href="a.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="appointment-list.php"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+                            <a href="a_appointment-list.php"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fe fe-user-plus"></i> <span> Doctors</span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="a_doctor-list.php">Doctor List</a></li>
+                                <li><a href="a_register_newdoc.php">Add Doctor</a></li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a>
+                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
                         </li>
                         <li>
-                            <a href="Doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
-                        </li>
-                        <li>
-                            <a href="Patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
-                        <li>
-                            <a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
-                        </li>
-                        <li>
-                            <a href="transactions-list.html"><i class="fe fe-activity"></i>
+                            <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
                         </li>
-                        <li>
-                            <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="Invoice-report.html">Invoice Reports</a></li>
-                            </ul>
-                        </li>
                         <li class="menu-title">
-                            <span>Pages</span>
-                        </li>
-
-                        <li class="submenu">
-                            <a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="login.html"> Login </a></li>
-                                <li><a href="register.html"> Register </a></li>
-                                <li><a href="forgot-password.html"> Forgot Password </a></li>
-                                <li><a href="lock-screen.html"> Lock Screen </a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fe fe-warning"></i> <span> Error Pages </span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="error-404.html">404 Error </a></li>
-                                <li><a href="error-500.html">500 Error </a></li>
-                            </ul>
+                            <span>User Settings</span>
                         </li>
                         <li>
-                            <a href="blank-page.html"><i class="fe fe-file"></i> <span>Blank Page</span></a>
+                            <a href="a_profile.php"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
                         </li>
 
                     </ul>
@@ -292,34 +263,34 @@
                                     </span>
                                     <div class="dash-count">
                                         <?php
-										//connect to the database
-										require_once "assets/php/config.php";
+                                        //connect to the database
+                                        require_once "assets/php/config.php";
 
-										//pull the required data from the database
-										$query = "SELECT COUNT(*) FROM Doctor";
-										$result = mysqli_query($conn, $query);
-										$row = [];
+                                        //pull the required data from the database
+                                        $query = "SELECT COUNT(*) FROM Doctor";
+                                        $result = mysqli_query($conn, $query);
+                                        $row = [];
 
-										if ($result->num_rows > 0) {
-											// fetch all data from db into array 
-											$row = $result->fetch_all(MYSQLI_ASSOC);
-										}
-										?>
+                                        if ($result->num_rows > 0) {
+                                            // fetch all data from db into array 
+                                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                                        }
+                                        ?>
                                         <h3>
                                             <?php
 
-											if (!empty($row))
-												foreach ($row as $rows) {
-													echo $rows['COUNT(*)'];
-												}
-											?>
+                                            if (!empty($row))
+                                                foreach ($row as $rows) {
+                                                    echo $rows['COUNT(*)'];
+                                                }
+                                            ?>
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
                                     <h6 class="text-muted">Doctors</h6>
                                     <div class="progress progress-sm">
-                                        <div class="progress-bar bg-primary w-50"></div>
+                                        <div class="progress-bar bg-primary w-25"></div>
                                     </div>
                                 </div>
                             </div>
@@ -334,28 +305,28 @@
                                     </span>
                                     <div class="dash-count">
                                         <?php
-										//connect to the database
+                                        //connect to the database
                                         require_once "assets/php/config.php";
 
-										//pull the required data from the database
-										$query = "SELECT COUNT(*) FROM Patient";
-										$result = mysqli_query($conn, $query);
-										$row = [];
+                                        //pull the required data from the database
+                                        $query = "SELECT COUNT(*) FROM Patient";
+                                        $result = mysqli_query($conn, $query);
+                                        $row = [];
 
-										if ($result->num_rows > 0) {
-											// fetch all data from db into array 
-											$row = $result->fetch_all(MYSQLI_ASSOC);
-										}
-										?>
+                                        if ($result->num_rows > 0) {
+                                            // fetch all data from db into array 
+                                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                                        }
+                                        ?>
                                         <h3>
                                             <?php
 
-											if (!empty($row))
-												foreach ($row as $rows) {
-													echo $rows['COUNT(*)'];
-												}
+                                            if (!empty($row))
+                                                foreach ($row as $rows) {
+                                                    echo $rows['COUNT(*)'];
+                                                }
 
-											?>
+                                            ?>
 
 
                                         </h3>
@@ -380,29 +351,28 @@
                                     </span>
                                     <div class="dash-count">
                                         <?php
-										//connect to the database
+                                        //connect to the database
                                         require_once "assets/php/config.php";
 
-										//pull the required data from the database
-										$query = "SELECT COUNT(*) FROM Booking 
-                                                    Inner Join Cancellation On Booking.BookingCode = Cancellation.BookingCode
-                                                    Where isResolved = 0";
-										$result = mysqli_query($conn, $query);
-										$row = [];
+                                        //pull the required data from the database
+                                        $query = "SELECT COUNT(*) FROM Booking 
+                                                     Where BookingStatus = 'Active'";
+                                        $result = mysqli_query($conn, $query);
+                                        $row = [];
 
-										if ($result->num_rows > 0) {
-											// fetch all data from db into array 
-											$row = $result->fetch_all(MYSQLI_ASSOC);
-										}
-										?>
+                                        if ($result->num_rows > 0) {
+                                            // fetch all data from db into array 
+                                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                                        }
+                                        ?>
                                         <h3>
                                             <?php
 
-											if (!empty($row))
-												foreach ($row as $rows) {
-													echo $rows['COUNT(*)'];
-												}
-											?>
+                                            if (!empty($row))
+                                                foreach ($row as $rows) {
+                                                    echo $rows['COUNT(*)'];
+                                                }
+                                            ?>
                                         </h3>
                                     </div>
                                 </div>
@@ -425,27 +395,27 @@
                                     </span>
                                     <div class="dash-count">
                                         <?php
-										//connect to the database
+                                        //connect to the database
                                         require_once "assets/php/config.php";
 
-										//pull the required data from the database
-										$query = "SELECT SUM(PaymentAmount)From Payment where PaymentStatus ='Paid'";
-										$result = mysqli_query($conn, $query);
-										$row = [];
+                                        //pull the required data from the database
+                                        $query = "SELECT SUM(PaymentAmount)From Payment where PaymentStatus ='Paid'";
+                                        $result = mysqli_query($conn, $query);
+                                        $row = [];
 
-										if ($result->num_rows > 0) {
-											// fetch all data from db into array 
-											$row = $result->fetch_all(MYSQLI_ASSOC);
-										}
-										?>
+                                        if ($result->num_rows > 0) {
+                                            // fetch all data from db into array 
+                                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                                        }
+                                        ?>
                                         <h3>
                                             <?php
 
-											if (!empty($row))
-												foreach ($row as $rows) {
-													echo "R{$rows['SUM(PaymentAmount)']}";
-												}
-											?>
+                                            if (!empty($row))
+                                                foreach ($row as $rows) {
+                                                    echo "R{$rows['SUM(PaymentAmount)']}";
+                                                }
+                                            ?>
                                         </h3>
                                     </div>
                                 </div>
@@ -532,10 +502,9 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                 if(!empty($row))
-                                                foreach($row as $rows)
-                                                    { 
-                                            ?>
+                                            if (!empty($row))
+                                                foreach ($row as $rows) {
+                                                    ?>
                                             <tr>
                                                 <td><?php echo $rows['DoctorCode']; ?></td>
                                                 <td><?php echo $rows['FirstName']; ?></td>
@@ -591,17 +560,17 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                 if(!empty($row))
-                                                foreach($row as $rows)
-                                                    { 
-                                            ?>
+                                            if (!empty($row)) {
+                                                foreach ($row as $rows) {
+                                                    ?>
                                             <tr>
                                                 <td><?php echo $rows['PatientCode']; ?></td>
                                                 <td><?php echo $rows['FirstName']; ?></td>
                                                 <td><?php echo $rows['LastName']; ?></td>
                                                 <td><?php echo $rows['PhoneNumber']; ?></td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php }
+                                            } ?>
 
                                         </tbody>
                                     </table>
@@ -626,7 +595,7 @@
                                 require_once "assets/php/config.php";
 
                                 //pull the required data from the database
-                                $query = "SELECT booking.BookingCode,DoctorCode, FirstName, LastName, StartDate, 
+                                $query = "SELECT Booking.BookingCode,DoctorCode, FirstName, LastName, StartDate, 
                                             EndDate, BookingStatus, Payment.PaymentAmount 
                                             FROM Booking 
                                             INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode 
@@ -634,7 +603,7 @@
                                             INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode
                                             INNER JOIN User ON Patient.UserCode = User.UserCode
                                             WHERE BookingStatus = 'Active'"
-                                            ;
+                                ;
 
                                 $result = mysqli_query($conn, $query);
                                 $row = [];
@@ -659,10 +628,9 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                 if(!empty($row))
-                                                foreach($row as $rows)
-                                                    { 
-                                            ?>
+                                            if (!empty($row)) {
+                                                foreach ($row as $rows) {
+                                                    ?>
                                             <tr>
                                                 <td><?php echo $rows['BookingCode']; ?></td>
                                                 <td><?php echo $rows['DoctorCode']; ?></td>
@@ -670,8 +638,8 @@
                                                 </td>
                                                 <td><?php
                                                         $time = new DateTime($rows['StartDate']);
-                                                        $date = $time->format('Y-M-d'); 
-                                                 echo $date ?>
+                                                        $date = $time->format('Y-M-d');
+                                                        echo $date ?>
                                                     <span class="text-primary d-block">
                                                         <?php
                                                                 $startdate = new DateTime($rows['StartDate']);
@@ -680,10 +648,10 @@
                                                                 $enddate = new DateTime($rows['EndDate']);
                                                                 $et = $enddate->format('H:m');
 
-                                                        echo "{$st} - {$et}";?>
+                                                                echo "{$st} - {$et}"; ?>
                                                     </span>
                                                 </td>
-                                                <?php if($rows['BookingStatus'] == "Active"){ ?>
+                                                <?php if ($rows['BookingStatus'] == "Active") { ?>
                                                 <td>
                                                     <div class="status-toggle">
                                                         <input type="checkbox" id="status" class="check" checked
@@ -692,7 +660,7 @@
                                                     </div>
                                                 </td>
 
-                                                <?php }else{?>
+                                                <?php } else { ?>
 
                                                 <td>
                                                     <div class="status-toggle">
@@ -702,11 +670,12 @@
                                                     </div>
                                                 </td>
 
-                                                <?php }?>
+                                                <?php } ?>
                                                 <td><?php echo "R{$rows['PaymentAmount']}"; ?> </td>
 
                                             </tr>
-                                            <?php } ?>
+                                            <?php }
+                                            } ?>
 
                                         </tbody>
                                     </table>
@@ -726,21 +695,21 @@
     <!-- /Main Wrapper -->
 
     <!-- jQuery -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="a_assets/js/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="a_assets/js/popper.min.js"></script>
+    <script src="a_assets/js/bootstrap.min.js"></script>
 
     <!-- Slimscroll JS -->
-    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="a_assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <script src="assets/plugins/raphael/raphael.min.js"></script>
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/js/chart.morris.js"></script>
+    <script src="a_assets/plugins/raphael/raphael.min.js"></script>
+    <script src="a_assets/plugins/morris/morris.min.js"></script>
+    <script src="a_assets/js/chart.morris.js"></script>
 
     <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="a_assets/js/script.js"></script>
 
 </body>
 

@@ -131,6 +131,29 @@ input[type=password] {
 	-moz-appearance: none;
 	appearance: none;
 }
+input[type="date"]::-webkit-datetime-edit-year-field {
+	position: absolute !important;
+	border-left: 0px solid #8c8c8c;
+	padding: 4px;
+	color: #000;
+	left: 60px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+	position: absolute !important;
+	border-left: 0px solid #8c8c8c;
+	padding: 4px;
+	color: #000;
+	left: 30px;
+}
+
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+	position: absolute !important;
+	color: #000;
+	padding: 4px;
+	left: 10px;
+}
 textarea.form-control {
 	resize: vertical;
 }
