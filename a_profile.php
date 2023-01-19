@@ -6,7 +6,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-    $authsess = $_SESSION['name'];
+$authsess = $_SESSION['name'];
 
 
 ?>
@@ -84,81 +84,87 @@ error_reporting(E_ALL);
                 <!-- Notifications -->
                 <li class="nav-item dropdown noti-dropdown">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
+                            <?php
+                            //pull the required data from the database
+                            $query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+                            ?>
+                            <?php
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    echo $rows['COUNT(*)'];
+                                }
+                            ?>
+                        </span>
+
                     </a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span class="notification-title">Notifications</span>
                             <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
                         </div>
+                        <?php
+                        //pull the required data from the database
+                        $query = "SELECT * FROM Cancellation 
+                                INNER JOIN Doctor On Cancellation.DoctorCode = Doctor.DoctorCode
+                                INNER JOIN User ON Doctor.UserCode = User.UserCode";
+                        $result = mysqli_query($conn, $query);
+                        $row = [];
+
+                        if ($result->num_rows > 0) {
+                            // fetch all data from db into array 
+                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                        }
+                        ?>
                         <div class="noti-content">
+
+
                             <ul class="notification-list">
+                                <?php
+                                if (!empty($row))
+                                    foreach ($row as $rows) {
+                                        ?>
                                 <li class="notification-message">
                                     <a href="#">
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/doctors/doctor-thumb-01.jpg">
+                                                    src="a_assets/img/aneesa.jpg">
                                             </span>
                                             <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span>
-                                                    Schedule <span class="noti-title">her appointment</span></p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                        Number</span>
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $date = $time->format('d-M-Y');
+                                                                echo $date ?>
+                                                    </span>
+                                                    <span> <?php
+                                                            $time = new DateTime($rows["DateOfCancellation"]);
+                                                            $st = $time->format('H:m');
+                                                            echo $st;
+
+                                                            ?></span>
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/patients/patient1.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Charlene Reed</span>
-                                                    has booked her appointment to <span class="noti-title">Dr. Ruby
-                                                        Perrin</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/patients/patient2.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Travis Trimble</span>
-                                                    sent a amount of $210 for his <span
-                                                        class="noti-title">appointment</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/patients/patient3.jpg">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Carl Kelly</span> send
-                                                    a message <span class="noti-title"> to his doctor</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
@@ -260,6 +266,20 @@ error_reporting(E_ALL);
                 <div class="row">
                     <div class="col-md-12">
                         <div class="profile-header">
+                            <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>
                             <div class="row align-items-center">
                                 <div class="col-auto profile-image">
                                     <a href="#">
@@ -268,15 +288,21 @@ error_reporting(E_ALL);
                                     </a>
                                 </div>
                                 <div class="col ml-md-n2 profile-user-info">
-                                    <h4 class="user-name mb-0">Ryan Taylor</h4>
-                                    <h6 class="text-muted">ryantaylor@admin.com</h6>
-                                    <div class="user-Location"><i class="fa fa-map-marker"></i> Florida, United States
+                                    <h4 class="user-name mb-0"><?php echo $rows['FirstName']; ?>
+                                        <?php echo $rows['LastName']; ?>
+                                    </h4>
+                                    <h6 class="text-muted">
+                                        <?php echo $rows['EmailAddress']; ?>
+                                    </h6>
+                                    <div class="user-Location"><i class="fa fa-map-marker"></i>
+                                        <?php echo $rows['province']; ?>, <?php echo $rows['country']; ?>
                                     </div>
                                     <div class="about-text">Admin.</div>
                                 </div>
                                 <div class="col-auto profile-btn">
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                         <div class="profile-menu">
                             <ul class="nav nav-tabs nav-tabs-solid">
@@ -382,118 +408,125 @@ error_reporting(E_ALL);
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form>
-                                                            <div class="row form-row">
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>First Name</label>
-                                                                        <input type="text" class="form-control"
-                                                                            value="<?php echo $rows['FirstName']; ?>">
+                                                        <form method="post" action="a_assets/php/update-Admin.php">
+                                                        </form>
+                                                        <div class="row form-row">
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>First Name</label>
+                                                                    <input type="text" name="f_name"
+                                                                        class="form-control"
+                                                                        value="<?php echo $rows['FirstName']; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Last Name</label>
+                                                                    <input type="text" name="l_name"
+                                                                        class="form-control"
+                                                                        value="<?php echo $rows['LastName']; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label>Date of Birth</label>
+                                                                    <div class="cal-icon">
+                                                                        <input type="date" name="DOB"
+                                                                            class="form-control" value="<?php if (!$rows['DateBirth'] == "") {
+                                                                                        echo $rows['DateBirth'];
+                                                                                    } else {
+                                                                                        echo "1983/02/03";
+                                                                                    }
+                                                                                    ?>">
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Last Name</label>
-                                                                        <input type="text" class="form-control"
-                                                                            value="<?php echo $rows['LastName']; ?>">
-                                                                    </div>
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Email ID</label>
+                                                                    <input type="email" disabled class="form-control"
+                                                                        value="<?php echo $rows['EmailAddress']; ?>">
                                                                 </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Date of Birth</label>
-                                                                        <div class="cal-icon">
-                                                                            <input type="date" class="form-control"
-                                                                                value="<?php if (!$rows['DateBirth'] == "") {
-                                                                                            echo $rows['DateBirth'];
-                                                                                        } else {
-                                                                                            echo "24-07-1983";
-                                                                                        }
-                                                                                        ?>">
-                                                                        </div>
-                                                                    </div>
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Mobile</label>
+                                                                    <input type="text" name="phone_nr" value="<?php if (!$rows['PhoneNumber'] == "") {
+                                                                                echo $rows['PhoneNumber'];
+                                                                            } else {
+                                                                                echo "Not Set";
+                                                                            }
+                                                                            ?>" class="form-control">
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Email ID</label>
-                                                                        <input type="email" class="form-control"
-                                                                            value="<?php echo $rows['EmailAddress']; ?>">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Mobile</label>
-                                                                        <input type="text" value="<?php if (!$rows['PhoneNumber'] == "") {
-                                                                                    echo $rows['PhoneNumber'];
-                                                                                } else {
-                                                                                    echo "Not Set";
-                                                                                }
-                                                                                ?>" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <h5 class="form-title"><span>Address</span></h5>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Address</label>
-                                                                        <input type="text" class="form-control" value="<?php if (!$rows['address'] == "") {
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <h5 class="form-title"><span>Address</span></h5>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label>Address</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="address" value="<?php if (!$rows['address'] == "") {
                                                                                     echo $rows['address'];
                                                                                 } else {
                                                                                     echo "Not Set";
                                                                                 }
                                                                                 ?>">
-                                                                    </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>City</label>
-                                                                        <input type="text" class="form-control" value="<?php if (!$rows['city'] == "") {
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>City</label>
+                                                                    <input type="text" class="form-control" name="city"
+                                                                        value="<?php if (!$rows['city'] == "") {
                                                                                     echo $rows['city'];
                                                                                 } else {
                                                                                     echo "Not Set";
                                                                                 }
                                                                                 ?>">
-                                                                    </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Province</label>
-                                                                        <input type="text" class="form-control" value="<?php if (!$rows['province'] == "") {
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Province</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="province" value="<?php if (!$rows['province'] == "") {
                                                                                     echo $rows['province'];
                                                                                 } else {
                                                                                     echo "Not Set";
                                                                                 }
                                                                                 ?>">
-                                                                    </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Zip Code</label>
-                                                                        <input type="text" class="form-control" value="<?php if (!$rows['zipcode'] == "") {
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Zip Code</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="zipcode" value="<?php if (!$rows['zipcode'] == "") {
                                                                                     echo $rows['zipcode'];
                                                                                 } else {
                                                                                     echo "Not Set";
                                                                                 }
                                                                                 ?>">
-                                                                    </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label>Country</label>
-                                                                        <input type="text" class="form-control" value="<?php if (!$rows['country'] == "") {
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Country</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="country" value="<?php if (!$rows['country'] == "") {
                                                                                     echo $rows['country'];
                                                                                 } else {
                                                                                     echo "Not Set";
                                                                                 }
                                                                                 ?>">
-                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <?php } ?>
+                                                        </div>
+                                                        <?php } ?>
 
-                                                            <button type="submit" class="btn btn-primary btn-block"
-                                                                href="#">Save
-                                                                Changes</button>
+                                                        <input type="submit" name="submit"
+                                                            class="btn btn-primary submit-btn"></input>
                                                         </form>
                                                     </div>
                                                 </div>
