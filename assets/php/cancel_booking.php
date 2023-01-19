@@ -8,6 +8,8 @@ if (!empty($bookingcode)) {
     mysqli_query($conn, $sql);
     mysqli_query($conn, $query);
     header("Location: ../../appointment-list.php");
+} else {
+    echo "im empty";
 }
 
 ?>
