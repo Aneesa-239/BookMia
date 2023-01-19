@@ -9,7 +9,7 @@ var_dump($_GET["id"]);
 $bookingcode = $_REQUEST["id"];
 
 
-$sql = "Select * from doctor INNER JOIN user ON user.UserCode = doctor.userCode WHERE EmailAddress = '$doctor_email'";
+$sql = "Select * from Doctor INNER JOIN User ON User.UserCode = Doctor.UserCode WHERE EmailAddress = '$doctor_email'";
 $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows > 0) {
@@ -23,9 +23,9 @@ $date = date('Y-m-d H:i');
 
 if (!empty($bookingcode)) {
     echo "$bookingcode is not empty";
-    $query = "INSERT INTO `cancellation` SET  
-                DoctorCode = (SELECT DoctorCode FROM doctor WHERE DoctorCode = '$doctor_code') ,
-                BookingCode = (SELECT BookingCode FROM booking WHERE BookingCode = '$bookingcode'),
+    $query = "INSERT INTO Cancellation SET  
+                DoctorCode = (SELECT DoctorCode FROM Doctor WHERE DoctorCode = '$doctor_code') ,
+                BookingCode = (SELECT BookingCode FROM Booking WHERE BookingCode = '$bookingcode'),
                 DateOfCancellation = '$date', 
                 isResolved = 0";
     ;

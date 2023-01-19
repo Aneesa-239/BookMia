@@ -11,7 +11,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 	
-<!-- doccure/  30 Nov 2019 04:11:34 GMT -->
+
 <head>
 
         <meta charset="utf-8">
@@ -60,23 +60,19 @@
 						</div>
 						<ul class="main-nav">
 							<li class="active">
-								<a href="index-2.php">Home</a>
+								<a  href="index-2.php">Home</a>
 							</li>
-							<li class="has-submenu">
-								<a href="#">Patient<i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="search.php">Search Doctor</a></li>
-									<li><a href="patient-dashboard.php">Patient Dashboard</a></li>
-									<li><a href="profile-settings.php">Profile Settings</a></li>
-								</ul>
-							</li>	
-							<li class="has-submenu">
-								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="calendar.html">Calendar</a></li>
-									</li>
-								</ul>
+							<li >
+								<a href="search.php">Search Doctor</a>
 							</li>
+							<li >
+								<a href="patient-dashboard.php">Patient Dashboard</a>
+							</li>
+							<li >
+								<a href="profile-settings.php">Profile Settings</a>
+							</li>
+							
+							
 						</ul>		 
 					</div>		 
 					<ul class="nav header-navbar-rht">
@@ -108,7 +104,8 @@
 				<div class="container-fluid">
 					<div class="section-header text-center">
 						<h2>Clinic and Specialities</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p class="sub-title">There are a plethara of healthcare specialists, GP’s, therapists and psychiatrists in the BookMIa network through Mia hospitals, 
+						Medicross medical and dental centres and Akeso mental health facilities, ensuring that we can find the right care for YOU.</p>
 					</div>
 					<div class="row justify-content-center">
 						<div class="col-md-9">
@@ -171,11 +168,13 @@
 						<div class="col-lg-4">
 							<div class="section-header ">
 								<h2>Book Our Doctor</h2>
-								<p>Select the most relevant doctor for your appointment and book online.</p>
+								<p>Medical appointments tailor-made for YOU</p>
 							</div>
 							<div class="about-content">
-								<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
-								<p>web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes</p>					
+								<p>Helping you access the appropriate specialist, GP or dentist and minimise your out-of-pocket costs, through our extensive Mia network.</p>
+								<p>Medical appointments are made for YOU based on a number of criteria including your availability, medical aid plan cover, geographic location, doctors’ availability and consultation fee.
+								Mia BookMia™ is a convenient medical booking service designed to assist YOU with all your medical appointments. Get access to our extensive Mia network of healthcare professionals at Mia hospitals, Medicross medical and dental centres and Akeso mental health facilities.
+								</p>					
 							</div>
 						</div>
 						<div class="col-lg-8">
@@ -213,8 +212,12 @@
 									<div class="doc-img">
 							
 										<a href="p_doctor-profile.php?id=<?=$docE;?>">
-											<img class="img-fluid" alt="User Image" src="assets/img/<?php
-														echo $rows['image'];
+											  <img class="img-fluid" alt="User Image" src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
 													 ?>">
 										</a>
 										<a href="javascript:void(0)" class="fav-btn">
@@ -236,14 +239,7 @@
 										<p class="speciality"><?php 
 														echo $rows['Profession'];
 													?></p>
-										<div class="rating">
-											<i class="fas fa-star filled"></i>
-											<i class="fas fa-star filled"></i>
-											<i class="fas fa-star filled"></i>
-											<i class="fas fa-star filled"></i>
-											<i class="fas fa-star filled"></i>
-											<span class="d-inline-block average-rating">(17)</span>
-										</div>
+									
 										<ul class="available-info">
 											<li>
 												<i class="fas fa-map-marker-alt"></i><?php 
@@ -252,9 +248,9 @@
 											</li>
 											<li>
 											<li>
-												<i class="far fa-money-bill-alt"></i><?php 
+												<i class="far fa-money-bill-alt"></i>R <?php 
 														echo $rows['Fees'];
-													?> 
+													?> per hour.
 												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
 											</li>
 										</ul>
@@ -292,7 +288,7 @@
 						<div class="col-md-7">
 							<div class="section-header">	
 								<h2 class="mt-2">Availabe Features in Our Clinic</h2>
-								<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+								<p>Healthcare practitioners at our facilities have access to cutting edge medical equipment and treatment protocols, enabling them to provide the best and safest care to our patients.</p>
 							</div>	
 							<div class="features-slider slider">
 								<!-- Slider Item -->

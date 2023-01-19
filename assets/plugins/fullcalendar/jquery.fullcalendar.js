@@ -3,14 +3,14 @@
     "use strict";
 
     var CalendarApp = function() {
-        this.$body = $("body")
+        this.$body = $("body");
         this.$calendar = $('#calendar'),
         this.$event = ('#calendar-events div.calendar-events'),
         this.$categoryForm = $('#add_new_event form'),
         this.$extEvents = $('#calendar-events'),
         this.$modal = $('#my_event'),
         this.$saveCategoryBtn = $('.save-category'),
-        this.$calendarObj = null
+        this.$calendarObj = null;
     };
 
 
@@ -82,7 +82,7 @@
                 var beginning = form.find("input[name='beginning']").val();
                 var ending = form.find("input[name='ending']").val();
                 var categoryClass = form.find("select[name='category'] option:checked").val();
-                if (title !== null && title.length != 0) {
+                if (title !== null && title.length !== 0) {
                     $this.$calendarObj.fullCalendar('renderEvent', {
                         title: title,
                         start:start,
@@ -116,7 +116,7 @@
                 revertDuration: 0  //  original position after the drag
             });
         });
-    }
+    };
     /* Initializing */
     CalendarApp.prototype.init = function() {
         this.enableDrag();
@@ -178,8 +178,8 @@
         this.$saveCategoryBtn.on('click', function(){
             var categoryName = $this.$categoryForm.find("input[name='category-name']").val();
             var categoryColor = $this.$categoryForm.find("select[name='category-color']").val();
-            if (categoryName !== null && categoryName.length != 0) {
-                $this.$extEvents.append('<div class="calendar-events" data-class="bg-' + categoryColor + '" style="position: relative;"><i class="fa fa-circle text-' + categoryColor + '"></i>' + categoryName + '</div>')
+            if (categoryName !== null && categoryName.length !== 0) {
+                $this.$extEvents.append('<div class="calendar-events" data-class="bg-' + categoryColor + '" style="position: relative;"><i class="fa fa-circle text-' + categoryColor + '"></i>' + categoryName + '</div>');
                 $this.enableDrag();
             }
 
@@ -187,12 +187,13 @@
     },
 
    //init CalendarApp
-    $.CalendarApp = new CalendarApp, $.CalendarApp.Constructor = CalendarApp
+    $.CalendarApp = new CalendarApp(), $.CalendarApp.Constructor = CalendarApp;
     
 }(window.jQuery),
 
 //initializing CalendarApp
 function($) {
     "use strict";
-    $.CalendarApp.init()
+  
+    $.CalendarApp.init();
 }(window.jQuery);

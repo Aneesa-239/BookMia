@@ -112,7 +112,7 @@ error_reporting(E_ALL);
 										<form action="assets/php/authenDoc.php" method="post">
 																					   <div class="form-group card-label">
 														<label>Email</label>
-												<input type="text" name="d_email" placeholder="Email" id="username" class="form-control floating" required>
+												<input type="text" name="d_email" placeholder="name@gmail.com" id="username" class="form-control floating" required>
 											</div>
 																						   <div class="form-group card-label">
 														<label>Password</label>
@@ -275,4 +275,5 @@ error_reporting(E_ALL);
 		
 	</body>
 
+<!-- doccure/doctor-register.html  30 Nov 2019 04:12:16 GMT -->
 </html>
