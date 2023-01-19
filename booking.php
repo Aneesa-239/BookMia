@@ -10,9 +10,22 @@ date_default_timezone_set('Africa/Johannesburg');
 $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
 $prev_date = date('Y-m-d', strtotime($date . ' -1 day'));
 $next_date = date('Y-m-d', strtotime($date . ' +1 day'));
+if (isset($_GET['code'])) {
+    $final = $_GET['code'];
+} else {
+    $final = "BC00";
+}
+if (isset($_GET['flag'])) {
+    $flag = $_GET['flag'];
+} else {
+    $flag = "";
+}
+if (isset($_GET['choice'])) {
+    $choice = $_GET['choice'];
+} else {
+    $choice = "unknown";
+}
 
-$final = "";
-$flag = "";
 $authsess = $_SESSION['name'];
 
 $query = "SELECT * FROM User 
@@ -103,11 +116,8 @@ foreach ($row as $rows) {
                         <li>
                             <a href="profile-settings.php">Profile Settings</a>
                         </li>
-                        <
-                        
-
-                    </ul>
-                    </li>
+                        < </ul>
+                            </li>
 
                     </ul>
                 </div>
@@ -190,10 +200,10 @@ foreach ($row as $rows) {
                                     </a>
                                     <div class="booking-info">
                                         <h4><a href="doctor-profile.html">Dr. <?php
-                                                echo $rows['FirstName'];?>
-                                                
-                                              <?php  echo $rows['LastName'];
-                                                ?></a></h4>
+                                                echo $rows['FirstName']; ?>
+
+                                                <?php echo $rows['LastName'];
+                                                        ?></a></h4>
 
                                         <p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i>
                                             <?php
@@ -207,10 +217,17 @@ foreach ($row as $rows) {
                             <?php }
                                 } ?>
                         </div>
-
                         <!-- Schedule Widget -->
                         <div class="card booking-schedule schedule-widget">
-
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert2"
+                                style="visibility: hidden">
+                                <strong>Error!</strong> A <a href="#" class="alert-link">problem</a> has been occurred
+                                while
+                                submitting your data.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
 
 
 
@@ -1031,22 +1048,18 @@ foreach ($row as $rows) {
                         <!-- Submit Section -->
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert1"
                             style="visibility: hidden">
-                            <strong>Success!</strong> Your <a href="#" class="alert-link">Booking</a> has been placed
+                            <strong>Success!</strong> Your <a href="#" class="alert-link">Booking on
+                                <?php echo $choice ?></a> has
+                            been placed
                             successfully.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert2"
-                            style="visibility: hidden">
-                            <strong>Error!</strong> A <a href="#" class="alert-link">problem</a> has been occurred while
-                            submitting your data.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
+
                         <div class="submit-section proceed-btn text-right">
-                            <a href="checkout.php" class="btn btn-primary submit-btn">Proceed to Pay</a>
+                            <a href="checkout.php?id=<?= $final ?>" class="btn btn-primary submit-btn">Proceed to
+                                Pay</a>
                         </div>
                         <!-- /Submit Section -->
 
@@ -1057,14 +1070,14 @@ foreach ($row as $rows) {
         </div>
         <!-- /Page Content -->
 
-       
+
 
     </div>
     <!-- /Main Wrapper -->
 
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js"></script>
-    <?php if ($_GET['flag'] == "true") {
+    <?php if ($flag == "true") {
         echo '<script>
     window.onload = function () {
     let element = document.getElementById("alert2");
@@ -1072,7 +1085,7 @@ foreach ($row as $rows) {
     }
   
     </script>';
-    } else if ($_GET['flag'] == "false") {
+    } else if ($flag == "false") {
         echo '<script>
     window.onload = function () {
          let element = document.getElementById("alert1");
