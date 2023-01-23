@@ -43,7 +43,7 @@
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index.php" class="menu-logo">
-								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+								<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -51,7 +51,7 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index.php">Home</a>
+								<a href="index.php" style ="color: #fefefe">Home</a>
 							</li>
 						</ul>
 					</div>		 
@@ -92,23 +92,7 @@
 										<form action="assets/php/register.php" id="RegisterForm" method="post" onsubmit="">
 										    
 										    
-							                <div class="col-12 col-md-12">
-                                            <div class="form-group">
-                                                <div class="change-avatar">
-                                                    <div class="profile-img">
-                                                        <img src="assets/img/patients/patient.jpg" alt="User Image">
-                                                    </div>
-                                                    <div class="upload-img">
-                                                      
-                                                      <input type="file" name="uploadfile" id="file">  
-                                                        <input type="submit" value="upload" name="upload">  
-                                                        <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max
-                                                            size of 2MB</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>	    
-										    
+							           
 											   <div class="form-group card-label">
 														<label>Name</label>
 												<input type="text" name="name" class="form-control floating" required pattern="[a-zA-Z]+" title="Letters Only" >
@@ -137,13 +121,19 @@
 														<label>Confirm Password</label>
 												<input type="password" class="form-control floating" id="retype-password">
 											</div>
-											<div class="text-right">
-												<a class="forgot-link" href="login.php">Already have an account?</a>
+											<div >
+											     <div class=" text-right dont-have">Already have an account? <a href="login.php">Login Here</a></div>
+												
 											</div>
 											<button class="btn btn-primary btn-block btn-lg login-btn" name = "submit" type="submit">Signup</button>
 										</form>
 										<!-- /Register Form -->
-										
+	<?php if(!empty($response)) { ?>
+<div class="response <?php echo $response["type"]; ?>
+    ">
+    <?php echo $response["message"]; ?>
+</div>	
+<?php }?>
 									</div>
 								</div>
 							</div>
@@ -157,7 +147,7 @@
 			</div>		
 			<!-- /Page Content -->
    
-			<!-- Footer -->
+	<!-- Footer -->
 			<footer class="footer">
 				
 				<!-- Footer Top -->
@@ -172,24 +162,10 @@
 										<img src="assets/img/favicon.png" alt="logo">
 									</div>
 									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p> BookMia is owned by Mia. Mia is a fully licenced Medical service provider. BookMia was developed by Obakeng and Aneesa. </p>
 										<div class="social-icon">
 											<ul>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
-												</li>
+												
 											</ul>
 										</div>
 									</div>
@@ -257,8 +233,7 @@
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
 										<ul class="policy-menu">
-											<li><a href="term-condition.html">Terms and Conditions</a></li>
-											<li><a href="privacy-policy.html">Policy</a></li>
+										 <p> StratuSolve Internship 2022/2023 </p>	
 										</ul>
 									</div>
 									<!-- /Copyright Menu -->
@@ -267,7 +242,7 @@
 				</div>
 				<!-- /Footer Bottom -->
 				
-			 </footer>
+			</footer>
 			<!-- /Footer -->
 		  
 		</div>

@@ -73,23 +73,44 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="doctor-dashboard.php">Home</a>
+								<a href="doctor-dashboard.php" style="color: #fefefe">Home</a>
 							</li>
 							
 							<li>
-								<a href="calendar.php">Calendar</a>
+								<a href="calendar.php" style="color: #fefefe">Calendar</a>
 							</li>
 							
 							</li>
 							
 						</ul>
-					</div>		 
+				</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"><?php echo $_SESSION['name'] . '!'?></div>
+								<p class="contact-info-header"> Dr. <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
+							</div>
 						</li>
 						
 			<!-- User Menu -->
@@ -338,7 +359,7 @@
                                                 <?php echo $rows["FirstName"] ?>
                                                 <?php echo $rows["LastName"] ?>
                                             </a></h3>
-                                        <div class="Patient-details">
+                                        <div class="patient-details">
                                             <h5><i class="far fa-clock"></i>
                                                 <?php $time = new DateTime($rows["StartDate"]);
                                                         $date = $time->format('d-M-Y');

@@ -58,7 +58,7 @@
 						</div>
 						<ul class="main-nav">
 							<li class="active">
-								<a href="index.php">Home</a>
+								<a href="index.php" style="#fefefe">Home</a>
 							</li>
 							<li class="login-link">
 								<a href="login.php">Login / Signup</a>
@@ -362,7 +362,7 @@
 										<div class="footer-contact-info">
 											<div class="footer-address">
 												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
+												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0014 </p>
 											</div>
 											<p>
 												<i class="fas fa-phone-alt"></i>
@@ -383,8 +383,8 @@
 <!-- Footer Widget -->
 <div class="footer-widget footer-about">
 	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
+		<h3>Our location</h3>
+	
 
 		<!-- google maps location -->
 			 <div class="container-fluid">
@@ -411,7 +411,7 @@
 					<div class="container-fluid">				
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
-										<ul class="policy-menu">
+										<ul class="policy-menu" style="color: #fefefe">
 										 <p> StratuSolve Internship 2022/2023 </p>	
 										</ul>
 									</div>

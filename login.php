@@ -49,7 +49,7 @@ error_reporting(E_ALL);
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index.php" class="menu-logo">
-								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+								<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -57,7 +57,7 @@ error_reporting(E_ALL);
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index.php">Home</a>
+								<a href="index.php" style = "color: #fefefe">Home</a>
 							</li>
 							
 						</ul>
@@ -117,7 +117,7 @@ error_reporting(E_ALL);
 	
 
 	
-    <button class="btn btn-primary btn-block btn-lg login-btn" onclick="show()" type="submit" value="Login">Login</button>
+    <button class="btn btn-primary btn-block btn-lg login-btn" onclick="show()" type="submit" name="submit" value="Login">Login</button>
     
     <div class="text-center dont-have">Don’t have an account? <a href="p_register.php">Register</a></div>
     
@@ -142,7 +142,7 @@ error_reporting(E_ALL);
 			</div>		
 			<!-- /Page Content -->
    
-			<!-- Footer -->
+		<!-- Footer -->
 			<footer class="footer">
 				
 				<!-- Footer Top -->
@@ -157,24 +157,10 @@ error_reporting(E_ALL);
 										<img src="assets/img/favicon.png" alt="logo">
 									</div>
 									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p> BookMia is owned by Mia. Mia is a fully licenced Medical service provider. BookMia was developed by Obakeng and Aneesa. </p>
 										<div class="social-icon">
 											<ul>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
-												</li>
+												
 											</ul>
 										</div>
 									</div>
@@ -242,8 +228,7 @@ error_reporting(E_ALL);
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
 										<ul class="policy-menu">
-											<li><a href="term-condition.html">Terms and Conditions</a></li>
-											<li><a href="privacy-policy.html">Policy</a></li>
+										 <p> StratuSolve Internship 2022/2023 </p>	
 										</ul>
 									</div>
 									<!-- /Copyright Menu -->

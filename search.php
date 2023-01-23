@@ -6,6 +6,8 @@
 		ini_set('display_errors', '1');
 		ini_set('display_startup_errors', '1');
 		error_reporting(E_ALL);
+		
+		$authsess = $_SESSION['name'];
 	?>
 
 <!DOCTYPE html> 
@@ -71,22 +73,43 @@
 						</div>
 						<ul class="main-nav">
 	<li>
-								<a href="index-2.php">Home</a>
+								<a href="index-2.php" style="color: #fefefe">Home</a>
 							</li>
 							<li class="active"><a href="search.php">Search Doctor</a></li>
 							<li>
-								<a href="patient-dashboard.php">Patient Dashboard</a>
+								<a href="patient-dashboard.php" style="color: #fefefe">Patient Dashboard</a>
 							</li>
 							<li>
-								<a href="profile-settings.php">Profile Settings</a>
+								<a href="profile-settings.php" style="color: #fefefe">Profile Settings</a>
 							</li>
 						</ul>
 					</div>		 
-					<ul class="nav header-navbar-rht">
+					<<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-	<div class="header-contact-detail">
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
+							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"> <?php echo $_SESSION['name'] . '!'?></p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
 							</div>
 						</li>
 						<li class="nav-item">

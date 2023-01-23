@@ -63,35 +63,48 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.php">Home</a>
+								<a href="index-2.php" style="color: #fefefe" >Home</a>
 							</li>
-							<<li class="has-submenu active">
-                            <a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li><a href="search.php">Search Doctor</a></li>
-                                <li><a href="patient-dashboard.php">Patient Dashboard</a></li>
-                                <li class="active"><a href="profile-settings.php">Profile Settings</a></li>
-                            </ul>
-                        </li>
-							<li class="has-submenu">
-                            <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li><a href="calendar.html">Calendar</a></li>
-                            </ul>
-                        </li>
+								<li>
+								<a  href="search.php" style="color: #fefefe" >Search Doctor</a>
+							</li>
+								<li>
+								<a href="patient-dashboard.php" style="color: #fefefe" >Patient Dashboard</a>
+							</li>
+								<li class="active"><a href="profile-settings.php">Profile Settings</a></li>
+						
+                        
 
-                        <li class="login-link">
-                            <a href="login.php">Login / Signup</a>
-                        </li>
+                        
                     </ul>
                 </div>
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-						
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
-                            <p class="contact-header">Welcome</p>
-                            <p class="contact-info-header"><?php echo $_SESSION['name'] . '!'?></p>
-                        </div>
+								<p class="contact-header">Welcome</p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
+							</div>
 						</li>
 						
 						<!-- User Menu -->
@@ -305,16 +318,16 @@
 										
 											<!-- Change Password Form -->
 											<form>
-												<div class="form-group">
-													<label>Old Password</label>
+												<div class="form-group card-label">
+														<label>Current Password</label>
 													<input type="password" class="form-control">
 												</div>
-												<div class="form-group">
-													<label>New Password</label>
+											<div class="form-group card-label">
+														<label>New Password</label>
 													<input type="password" class="form-control">
 												</div>
-												<div class="form-group">
-													<label>Confirm Password</label>
+												<div class="form-group card-label">
+														<label>Confirm Password</label>
 													<input type="password" class="form-control">
 												</div>
 												<div class="submit-section">
@@ -334,119 +347,7 @@
 			</div>		
 			<!-- /Page Content -->
    
-			<!-- Footer -->
-			<footer class="footer">
-				
-				<!-- Footer Top -->
-				<div class="footer-top">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-3 col-md-6">
-							
-								<!-- Footer Widget -->
-								<div class="footer-widget footer-about">
-									<div class="footer-logo">
-										<img src="assets/img/favicon.png" alt="logo">
-									</div>
-									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-										<div class="social-icon">
-											<ul>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!-- /Footer Widget -->
-								<!-- /Footer Widget -->
-								
-							</div>
-							
-							<div class="col-lg-3 col-md-6">
-							
-								<!-- Footer Widget -->
-								<div class="footer-widget footer-menu">
-										<h2 class="footer-title">Contact Us</h2>
-										<div class="footer-contact-info">
-											<div class="footer-address">
-												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
-											</div>
-											<p>
-												<i class="fas fa-phone-alt"></i>
-												+27 15 369 5943
-											</p>
-											<p class="mb-0">
-												<i class="fas fa-envelope"></i>
-												bookmia.stratusolve@gmail.com
-											</p>
-										</div>
-									</div>
-								<!-- /Footer Widget -->
-								
-							</div>
-							
-							<div class="col-lg-3 col-md-6">
-							
-<!-- Footer Widget -->
-<div class="footer-widget footer-about">
-	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
-
-		<!-- google maps location -->
-			 <div class="container-fluid">
-				<div class="row">
-					   <div class="col-md-6">
-					  <div class="map_main">
-					 <div class="map-responsive">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14360.984391829074!2d28.256738442065434!3d-25.861376505012544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9567b26fcc118f%3A0x164a9f8a696b5813!2sRoute%2021%20Business%20Park%2C%20Centurion%2C%200178!5e0!3m2!1sen!2sza!4v1671531637140!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				 </div>
-			  </div>
-		   </div>
-		<!-- google maps location -->
-<!-- /Footer Widget -->
-								
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- /Footer Top -->
-				
-				<!-- Footer Bottom -->
-                <div class="footer-bottom">
-					<div class="container-fluid">				
-									<!-- Copyright Menu -->
-									<div class="copyright-menu">
-										<ul class="policy-menu">
-											<li><a href="term-condition.html">Terms and Conditions</a></li>
-											<li><a href="privacy-policy.html">Policy</a></li>
-										</ul>
-									</div>
-									<!-- /Copyright Menu -->
-						
-					</div>
-				</div>
-				<!-- /Footer Bottom -->
-				
-			</footer>
-			<!-- /Footer -->
-		   
+	
 		</div>
 		<!-- /Main Wrapper -->
 	  

@@ -8,7 +8,7 @@ $authsess = $_SESSION['name'];
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
+<
 
 <head>
 	<meta charset="utf-8">
@@ -16,7 +16,7 @@ $authsess = $_SESSION['name'];
 	<title>Calendar</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -38,10 +38,7 @@ $authsess = $_SESSION['name'];
 
 
 
-	<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+
 </head>
 
 <body>
@@ -55,10 +52,10 @@ $authsess = $_SESSION['name'];
 			<!-- Logo -->
 			<div class="header-left">
 				<a href="a.php" class="logo">
-					<img src="assets/img/logo.png" alt="Logo">
+					<img src="assets/img/favicon.png" alt="Logo">
 				</a>
 				<a href="a.php" class="logo logo-small">
-					<img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+					<img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -171,13 +168,13 @@ $authsess = $_SESSION['name'];
 				<!-- User Menu -->
 				<li class="nav-item dropdown has-arrow">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
+						<span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
 								width="31" alt="Ryan Taylor"></span>
 					</a>
 					<div class="dropdown-menu">
 						<div class="user-header">
 							<div class="avatar avatar-sm">
-								<img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
+								<img src="assets/img/admin.jpg" alt="User Image"
 									class="avatar-img rounded-circle">
 							</div>
 							<div class="user-text">
@@ -185,9 +182,8 @@ $authsess = $_SESSION['name'];
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
 						</div>
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="settings.html">Settings</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="a_profile.php">My Profile
+						<a class="dropdown-item" href="assets/php/logout.php">Logout</a>
 					</div>
 				</li>
 				<!-- /User Menu -->

@@ -58,7 +58,7 @@
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index-2.php" class="menu-logo">
-								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+								<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -101,7 +101,7 @@
 			</div>
 			<!-- /Breadcrumb -->
 			
-			<!-- Page Content -->
+					<!-- Page Content -->
 			<div class="content">
 				<div class="container">
 
@@ -118,8 +118,8 @@
         
         $docE = $_GET['id'];
 
-	  $query = "SELECT User.UserCode, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
-	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode 
+	  $query = "SELECT User.UserCode, DoctorType.DoctorTitle, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Services, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
+	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode INNER JOIN DoctorType ON Doctor.DoctorType = DoctorType.DocTypeID 
         	WHERE User.UserCode = Doctor.UserCode AND User.EmailAddress = '$docE'";
 							
 	$result = mysqli_query($conn, $query);
@@ -133,24 +133,32 @@
 									
 						
                                 foreach ($row as $rows) {
+                                    $doctorchoosen = $rows['EmailAddress'];
 								    
 							?> 
 								<div class="doc-info-left">
 									<div class="doctor-img">
-										<img src="assets/img/<?php 
-														echo $rows['image'];
-													?>" class="img-fluid" alt="User Image">
+										<img src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
+													 ?>" class="img-fluid" alt="User Image">
 									</div>
 							
 									<div class="doc-info-cont">
-										<h4 class="doc-name">Dr.<?php 
-													echo $rows['FirstName'];
-													echo $rows['LastName'];
+										<h4 class="doc-name">Dr. <?php 
+													echo $rows['FirstName'];?> 
+													
+												<?php	echo $rows['LastName'];
 													?></h4>
 										<p class="doc-speciality"><?php 
 														echo $rows['Profession'];
 													?></p>
-										<p class="doc-department"><img src="assets/img/specialities/specialities-05.png" class="img-fluid" alt="Speciality">Dentist</p>
+										<p class="doc-department"><?php 
+														echo $rows['DoctorTitle'];
+													?></p>
 										<div class="clinic-details">
 											<p class="doc-location"><i class="fas fa-map-marker-alt"></i> <?php 
 														echo $rows['Location'];
@@ -178,10 +186,14 @@
 												</li>
 											</ul>
 										</div>
+							 				
 										<div class="clinic-services">
-											<span>Dental Fillings</span>
-											<span>Teeth Whitneing</span>
+											<span><?php 
+														echo $rows['Services'];
+													?></span>
+											
 										</div>
+								
 									</div>
 								</div>
 								<div class="doc-info-right">
@@ -190,27 +202,14 @@
 											<li><i class="fas fa-map-marker-alt"></i> <?php 
 														echo $rows['Location'];
 													?></li>
-											<li><i class="far fa-money-bill-alt"></i><?php 
+											<li><i class="far fa-money-bill-alt"></i>R <?php 
 														echo $rows['Fees'];
-													?> </li>
+													?> per hour. </li>
 										</ul>
 									</div>
-									<div class="doctor-action">
-										<a href="javascript:void(0)" class="btn btn-white fav-btn">
-											<i class="far fa-bookmark"></i>
-										</a>
-										<a href="chat.html" class="btn btn-white msg-btn">
-											<i class="far fa-comment-alt"></i>
-										</a>
-										<a href="javascript:void(0)" class="btn btn-white call-btn" data-toggle="modal" data-target="#voice_call">
-											<i class="fas fa-phone"></i>
-										</a>
-										<a href="javascript:void(0)" class="btn btn-white call-btn" data-toggle="modal" data-target="#video_call">
-											<i class="fas fa-video"></i>
-										</a>
-									</div>
+						
 									<div class="clinic-booking">
-										<a class="apt-btn" href="login.php">Book Appointment</a>
+										<a class="apt-btn" href="login.php" name = "submit" type ="submit" >Book Appointment</a>
 									</div>
 								</div>
 							</div>
@@ -246,162 +245,78 @@
 										
 											<!-- About Details -->
 											<div class="widget about-widget">
+										<?php
+						
+									
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        
+        $docE = $_GET['id'];
+
+	  $query = "SELECT User.UserCode, DoctorType.Description,  DoctorType.DoctorTitle, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Services, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
+	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode INNER JOIN DoctorType ON Doctor.DoctorType = DoctorType.DocTypeID 
+        	WHERE User.UserCode = Doctor.UserCode AND User.EmailAddress = '$docE'";
+							
+	$result = mysqli_query($conn, $query);
+	$row = [];
+	
+	if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+
+								}        
+									
+						
+                                foreach ($row as $rows) {
+                                    $doctorchoosen = $rows['EmailAddress'];
+								    
+							?>	
 												<h4 class="widget-title">About Me</h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												<p><?php 
+														echo $rows['Description'];
+													?></p>
 											</div>
 											<!-- /About Details -->
-										
-											<!-- Education Details -->
-											<div class="widget education-widget">
-												<h4 class="widget-title">Education</h4>
-												<div class="experience-box">
-													<ul class="experience-list">
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<a href="#/" class="name">American Dental Medical University</a>
-																	<div>BDS</div>
-																	<span class="time">1998 - 2003</span>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<a href="#/" class="name">American Dental Medical University</a>
-																	<div>MDS</div>
-																	<span class="time">2003 - 2005</span>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- /Education Details -->
-									
-											<!-- Experience Details -->
-											<div class="widget experience-widget">
-												<h4 class="widget-title">Work & Experience</h4>
-												<div class="experience-box">
-													<ul class="experience-list">
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<a href="#/" class="name">Glowing Smiles Family Dental Clinic</a>
-																	<span class="time">2010 - Present (5 years)</span>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<a href="#/" class="name">Comfort Care Dental Clinic</a>
-																	<span class="time">2007 - 2010 (3 years)</span>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<a href="#/" class="name">Dream Smile Dental Practice</a>
-																	<span class="time">2005 - 2007 (2 years)</span>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- /Experience Details -->
-								
-											<!-- Awards Details -->
-											<div class="widget awards-widget">
-												<h4 class="widget-title">Awards</h4>
-												<div class="experience-box">
-													<ul class="experience-list">
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<p class="exp-year">July 2019</p>
-																	<h4 class="exp-title">Humanitarian Award</h4>
-																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<p class="exp-year">March 2011</p>
-																	<h4 class="exp-title">Certificate for International Volunteer Service</h4>
-																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-																</div>
-															</div>
-														</li>
-														<li>
-															<div class="experience-user">
-																<div class="before-circle"></div>
-															</div>
-															<div class="experience-content">
-																<div class="timeline-content">
-																	<p class="exp-year">May 2008</p>
-																	<h4 class="exp-title">The Dental Professional of The Year Award</h4>
-																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- /Awards Details -->
-											
-											<!-- Services List -->
-											<div class="service-list">
-												<h4>Services</h4>
-												<ul class="clearfix">
-													<li>Tooth cleaning </li>
-													<li>Root Canal Therapy</li>
-													<li>Implants</li>
-													<li>Composite Bonding</li>
-													<li>Fissure Sealants</li>
-													<li>Surgical Extractions</li>
-												</ul>
-											</div>
-											<!-- /Services List -->
+										<?php } } ?>	
+
 											
 											<!-- Specializations List -->
 											<div class="service-list">
+							<div class="widget about-widget">
+										<?php
+						
+									
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        
+        $docE = $_GET['id'];
+
+	  $query = "SELECT User.UserCode, DoctorType.Description,  DoctorType.DoctorTitle, User.FirstName, User.LastName, User.EmailAddress, Doctor.Profession, Doctor.Services, Doctor.Location, Doctor.Fees, Doctor.DoctorCode, User.image FROM User 
+	        INNER JOIN Doctor ON User.UserCode = Doctor.UserCode INNER JOIN DoctorType ON Doctor.DoctorType = DoctorType.DocTypeID 
+        	WHERE User.UserCode = Doctor.UserCode AND User.EmailAddress = '$docE'";
+							
+	$result = mysqli_query($conn, $query);
+	$row = [];
+	
+	if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+
+								}        
+									
+						
+                                foreach ($row as $rows) {
+                                    $doctorchoosen = $rows['EmailAddress'];
+								    
+							?>			
 												<h4>Specializations</h4>
 												<ul class="clearfix">
-													<li>Children Care</li>
-													<li>Dental Care</li>	
-													<li>Oral and Maxillofacial Surgery </li>	
-													<li>Orthodontist</li>	
-													<li>Periodontist</li>	
-													<li>Prosthodontics</li>	
+													<li><?php 
+														echo $rows['Services'];
+													?></li>
+													
 												</ul>
 											</div>
 											<!-- /Specializations List -->
-
+		<?php } } ?>
 										</div>
 									</div>
 								</div>
@@ -420,43 +335,43 @@
 															<div class="day">Today <span>5 Nov 2019</span></div>
 															<div class="time-items">
 																<span class="open-status"><span class="badge bg-success-light">Open Now</span></span>
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 05:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Monday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 05:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Tuesday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 05:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Wednesday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 05:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Thursday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 05:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Friday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time">07:00 AM - 03:00 PM</span>
 															</div>
 														</div>
 														<div class="listing-day">
 															<div class="day">Saturday</div>
 															<div class="time-items">
-																<span class="time">07:00 AM - 09:00 PM</span>
+																<span class="time"><span class="badge bg-danger-light">Closed</span></span>
 															</div>
 														</div>
 														<div class="listing-day closed">
@@ -483,7 +398,6 @@
 				</div>
 			</div>		
 			<!-- /Page Content -->
-   
 			<!-- Footer -->
 			<footer class="footer">
 				
@@ -499,24 +413,10 @@
 										<img src="assets/img/favicon.png" alt="logo">
 									</div>
 									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p> BookMia is owned by Mia. Mia is a fully licenced Medical service provider. BookMia was developed by Obakeng and Aneesa. </p>
 										<div class="social-icon">
 											<ul>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
-												</li>
+												
 											</ul>
 										</div>
 									</div>
@@ -534,7 +434,7 @@
 										<div class="footer-contact-info">
 											<div class="footer-address">
 												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
+												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0014 </p>
 											</div>
 											<p>
 												<i class="fas fa-phone-alt"></i>
@@ -555,8 +455,8 @@
 <!-- Footer Widget -->
 <div class="footer-widget footer-about">
 	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
+		<h3>Our location</h3>
+	
 
 		<!-- google maps location -->
 			 <div class="container-fluid">
@@ -584,8 +484,7 @@
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
 										<ul class="policy-menu">
-											<li><a href="term-condition.html">Terms and Conditions</a></li>
-											<li><a href="privacy-policy.html">Policy</a></li>
+										 <p> StratuSolve Internship 2022/2023 </p>	
 										</ul>
 									</div>
 									<!-- /Copyright Menu -->
@@ -596,7 +495,6 @@
 				
 			</footer>
 			<!-- /Footer -->
-		   
 		</div>
 		<!-- /Main Wrapper -->
 		

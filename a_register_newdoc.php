@@ -103,28 +103,11 @@
                             
 
                                 <!-- Profile Settings Form -->
-                                <form method="post" action="assets/php/newdoc.php" enctype="multipart/form-data">
+                                <form method="post" action="assets/php/newdoc.php">
                                     <div class="row form-row">
                                         
             
 
-                                        <div class="col-12 col-md-12">
-                                            <div class="form-group">
-                                                <div class="change-avatar">
-                                                    <div class="profile-img">
-                                                        <img src="assets/img/patients/patient.jpg" alt="User Image">
-                                                    </div>
-                                                    <div class="upload-img">
-                                                      
-                                                      <input type="file" name="uploadfile" id="file">  
-                                                         
-                                                        <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max
-                                                            size of 2MB</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
                                         
                                         
                                         <div class="col-12 col-md-6">

@@ -7,7 +7,7 @@ $authsess = $_SESSION['name'];?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+
 
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@ $authsess = $_SESSION['name'];?>
     <title>Doccure - Doctor List Page</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -49,10 +49,10 @@ $authsess = $_SESSION['name'];?>
             <!-- Logo -->
             <div class="header-left">
                 <a href="a.php" class="logo">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="assets/img/favicon.png" alt="Logo">
                 </a>
                 <a href="a.php" class="logo logo-small">
-                    <img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+                    <img src="assets/img/favico.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -128,7 +128,7 @@ $authsess = $_SESSION['name'];?>
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/aneesa.jpg">
+                                                    src="assets/img/<?php echo $rows['image'] ?> ">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Dr.
@@ -247,9 +247,7 @@ $authsess = $_SESSION['name'];?>
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
+                        
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -280,7 +278,7 @@ $authsess = $_SESSION['name'];?>
                         <div class="col-sm-12">
                             <h3 class="page-title">List of Doctors</h3>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="a.php">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
                                 <li class="breadcrumb-item active">Doctor</li>
                             </ul>
@@ -320,7 +318,7 @@ $authsess = $_SESSION['name'];?>
                                                 <th>Member Since</th>
                                                 <th>Earned</th>
                                                 <th>Account Status</th>
-                                                <th>Actions</th>
+                                                
 
                                             </tr>
                                         </thead>
@@ -333,11 +331,7 @@ $authsess = $_SESSION['name'];?>
                                                 <td>
                                                     <h2 class="table-avatar">
                                                         <a href="profile.html" class="avatar avatar-sm mr-2"><img
-                                                                class="avatar-img rounded-circle" src="a_assets/img/<?php
-                                                                        if (!$rows['image'] == "") {
-                                                                            echo $rows['image'];
-                                                                        } else {
-                                                                            echo "aneesa.jpg";
+                                                                class="avatar-img rounded-circle" src="assets/img/<?php if (!$rows['image'] == "") {echo $rows['image'];  } else {                       echo "patients/patient.jpg";
                                                                         }
                                                                         ?>" alt="User Image"></a>
                                                         <a href="profile.html">Dr. <?php echo $rows['FirstName']; ?>
@@ -396,11 +390,11 @@ $authsess = $_SESSION['name'];?>
                                                         <span class="badge badge-pill bg-danger-light">Inactive</span>
                                                     </td>
                                                     <?php } ?>
-                                                    <td class="text-right">
+                                                   <!-- <td class="text-right">
                                                         <div class="actions">
                                                             <a data-toggle="modal" href="#delete_modal"
                                                                 class="btn btn-sm bg-danger-light">
-                                                                <i class="fe fe-trash"></i> Delete
+                                                                <i class="fe fe-trash"></i> Delete -->
                                                             </a>
                                                         </div>
                                                     </td>

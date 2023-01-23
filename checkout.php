@@ -10,6 +10,11 @@
 		error_reporting(E_ALL);
 		
 		$authsess = $_SESSION['name'];
+		
+		  if(isset($_GET['id']) && !empty($_GET['id'])){
+        
+        $book = $_GET['id'];
+		  }
 ?>
 
 <!DOCTYPE html> 
@@ -67,16 +72,16 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.php">Home</a>
+								<a href="index-2.php" style="color: #fefefe">Home</a>
 							</li>
 							<li>
-								<a href="search.php">Search Doctor</a>
+								<a href="search.php" style="color: #fefefe" >Search Doctor</a>
 							</li>
 							<li>
-								<a href="patient-dashboard.php">Patient Dashboard</a>
+								<a href="patient-dashboard.php" style="color: #fefefe">Patient Dashboard</a>
 							</li>
 							<li>
-								<a href="profile-settings.php">Profile Settings</a>
+								<a href="profile-settings.php" style="color: #fefefe">Profile Settings</a>
 							</li>
 							
 							
@@ -127,6 +132,9 @@
 							<div class="card">
 								<div class="card-body">
 								    <?php
+						
+		    
+								
 								//pull the required data from the database
 								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode
 										  FROM User
@@ -141,7 +149,7 @@
 								?>
 								
 									<!-- Checkout Form -->
-									<form action="assets/php/confirm_email.php" method="post">
+									<form action="assets/php/confirm_email.php?id=<?php echo $book; ?>" method="post">
 									    
 									
 										<!-- Personal Information -->
@@ -286,9 +294,9 @@
 <div class="submit-section proceed-btn text-right">
     
 								  
-								<button class="btn btn-primary submit-btn" type='submit' id='BC002' name='submit' value="submit">Confirm and Pay</button>
+								<button class="btn btn-primary submit-btn" type='submit' id='<?=$book ?>' name='submit' value="submit">Confirm and Pay</button>
 							</div>
-											<!-- /Submit Section<a href="booking-success.php?id=BC002" name ="submit" type="submit" class="btn btn-primary submit-btn">Confirm and Pay</a> -->
+										
 											
 										</div>
 									</form>
@@ -315,7 +323,7 @@
         
         $book = $_GET['id'];
 
-	  $query = "SELECT * FROM Doctor INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode INNER JOIN User ON Doctor.UserCode= User.UserCode WHERE BookingCode = 'BC002'";
+	  $query = "SELECT * FROM Doctor INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode INNER JOIN User ON Doctor.UserCode= User.UserCode WHERE BookingCode = '$book'";
 							
 	$result = mysqli_query($conn, $query);
 	$row = [];
@@ -340,7 +348,7 @@
 													?>" alt="User Image">
 										</a>
 										<div class="booking-info">
-											<h4><a href="p_doctor-profile.php">Dr.<?php 
+											<h4><a href="p_doctor-profile.php">Dr. <?php 
 														echo $rows['FirstName'];
 													?> <?php 
 														echo $rows['LastName'];
@@ -364,7 +372,7 @@
         
         $book = $_GET['id'];
 
-	  $query = "SELECT * FROM Doctor INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode INNER JOIN User ON Doctor.UserCode= User.UserCode WHERE BookingCode = 'BC002'";
+	  $query = "SELECT * FROM Doctor INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode INNER JOIN User ON Doctor.UserCode= User.UserCode WHERE BookingCode = '$book'";
 							
 	$result = mysqli_query($conn, $query);
 	$row = [];
@@ -392,10 +400,10 @@
 												<li>Time <span>
 												<?php 
 												        $time = new DateTime($rows["StartDate"]);
-												        $start= $time->format('H:m');
+												        $start= $time->format('H:i');
 														echo $start;?>- <?php 
 												        $time = new DateTime($rows["EndDate"]);
-												        $end = $time->format('H:m');
+												        $end = $time->format('H:i');
 														echo $end;?></span></li>
 											</ul>
 											<ul class="booking-fee">

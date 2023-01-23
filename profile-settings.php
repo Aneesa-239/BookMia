@@ -69,24 +69,44 @@
                     </div>
                     <ul class="main-nav">
                         <li>
-                            <a href="index-2.php">Home</a>
+                            <a href="index-2.php" style="color: #fefefe" >Home</a>
                         </li>
                         <li>
-                            <a href="search.php">Search Doctor</a>
+                            <a href="search.php" style="color: #fefefe" >Search Doctor</a>
                         </li>
                         <li>
-                            <a href="patient-dashboard.php">Patient Dashboard</a>
+                            <a href="patient-dashboard.php" style="color: #fefefe">Patient Dashboard</a>
                         </li>
                         <li class="active"><a href="profile-settings.php">Profile Settings</a></li>
                     </ul>
                 </div>
-                <ul class="nav header-navbar-rht">
-                    <li class="nav-item contact-item">
-                     
-                        <div class="header-contact-detail">
-                            <p class="contact-header">Welcome</p>
-                            <p class="contact-info-header"><?php echo $_SESSION['name'] . '!'?></p>
-                        </div>
+               <ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
+							<div class="header-contact-detail">
+								<p class="contact-header">Welcome</p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
+							</div>
                     </li>
 
                     <!-- User Menu -->
@@ -231,13 +251,13 @@
                             <div class="widget-profile pro-widget-content">
                                 <div class="profile-info-widget">
                                     <a href="#" class="booking-doc-img">
-                                     <img  alt="User Image" src="assets/img/<?php
+                                     <img class="rounded-circle" alt="User Image" src="assets/img/<?php
 											if (!empty($rows['image'])) {
 												echo $rows['image'];
 											}else{
 												echo 'patients/patient.jpg';
 											}
-													 ?>">  
+													 ?>">
                                     </a>
                                     <div class="profile-det-info">
                                         <h3><?php if (!empty($row))
@@ -333,13 +353,13 @@
 											}else{
 												echo 'patients/patient.jpg';
 											}
-													 ?>">  
+													 ?>">
                                                     </div>
                                                     <div class="upload-img">
                                                       
                                                       <input type="file" name="uploadfile" id="file">  
                                                         <input type="submit" value="upload" name="upload">  
-                                                        <small class="form-text text-muted">Allowed JPG, GIF or PNG. Max
+                                                        <small class="form-text text-muted">Allowed JPG, JPEG or PNG. Max
                                                             size of 2MB</small>
                                                     </div>
                                                 </div>

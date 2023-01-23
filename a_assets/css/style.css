@@ -1664,7 +1664,9 @@ html.menu-opened body {
 -----------------------*/
 
 .sidebar {
-    background-color: #1b5a90;
+    background: rgb(22,27,40);
+	background: linear-gradient(180deg, rgba(22,27,40,1) 2%, rgba(44,53,80,1) 73%, rgba(58,71,106,1) 100%);
+
    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
     bottom: 0;
     left: 0;
@@ -1710,7 +1712,7 @@ html.menu-opened body {
     color: #fff;
 }
 .sidebar-menu > ul > li.active > a:hover {
-    background-color: #19c1dc;
+    background-color: #06926d;
     color: #fff;
 }
 .sidebar-menu li.active a {

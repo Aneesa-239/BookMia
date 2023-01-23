@@ -8,15 +8,14 @@ $authsess = $_SESSION['name'];
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Dashboard</title>
+    <title>BookMia</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -32,10 +31,7 @@ $authsess = $_SESSION['name'];
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
-    <!--[if lt IE 9]>
-            <script src="a_assets/js/html5shiv.min.js"></script>
-            <script src="a_assets/js/respond.min.js"></script>
-        <![endif]-->
+  
 </head>
 
 <body>
@@ -49,10 +45,10 @@ $authsess = $_SESSION['name'];
             <!-- Logo -->
             <div class="header-left">
                 <a href="a.php" class="logo">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="assets/img/favicon.png" alt="Logo">
                 </a>
                 <a href="a.php" class="logo logo-small">
-                    <img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+                    <img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -128,7 +124,7 @@ $authsess = $_SESSION['name'];
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/aneesa.jpg">
+                                                    src="assets/img/<?php echo $rows['image']; ?>">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Dr.
@@ -181,8 +177,8 @@ $authsess = $_SESSION['name'];
                             if (!empty($row))
                                 foreach ($row as $rows) {
                                     ?>
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
-                                <?php echo $rows['image']; ?> width="31" alt="none"></span>
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/
+                                <?php echo $rows['image']; ?>" width="31" alt="none"></span>
                         <?php } ?>
                     </a>
                     <div class="dropdown-menu">
@@ -202,7 +198,7 @@ $authsess = $_SESSION['name'];
                                     ?>
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/<?php echo $rows['image']; ?>" alt="none"
+                                <img src="assets/img/<?php echo $rows['image']; ?>" alt="none"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
@@ -224,9 +220,9 @@ $authsess = $_SESSION['name'];
         <!-- /Header -->
 
         <!-- Sidebar -->
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar" id="sidebar" >
             <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
+                <div id="sidebar-menu" class="sidebar-menu" >
                     <ul>
                         <li class="menu-title">
                             <span>Main</span>
@@ -245,9 +241,7 @@ $authsess = $_SESSION['name'];
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
+                     
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -276,8 +270,22 @@ $authsess = $_SESSION['name'];
                 <!-- Page Header -->
                 <div class="page-header">
                     <div class="row">
+            <?php
+                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
+
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+
+
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    ?>     
                         <div class="col-sm-12">
-                            <h3 class="page-title">Welcome Admin!</h3>
+                            <h3 class="page-title">Welcome <?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?>!</h3><?php } ?>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ul>
@@ -466,30 +474,12 @@ $authsess = $_SESSION['name'];
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
 
-                        <!-- Sales Chart -->
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h4 class="card-title">Revenue</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="morrisArea"></div>
-                            </div>
-                        </div>
-                        <!-- /Sales Chart -->
+                       
 
                     </div>
                     <div class="col-md-12 col-lg-6">
 
-                        <!-- Invoice Chart -->
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h4 class="card-title">Status</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="morrisLine"></div>
-                            </div>
-                        </div>
-                        <!-- /Invoice Chart -->
+                    
 
                     </div>
                 </div>

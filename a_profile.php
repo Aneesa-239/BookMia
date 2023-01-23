@@ -14,15 +14,13 @@ $authsess = $_SESSION['name'];
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:46 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Profile</title>
+    <title>BookMia</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -36,10 +34,6 @@ $authsess = $_SESSION['name'];
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
-    <!--[if lt IE 9]>
-                    <script src="a_assets/js/html5shiv.min.js"></script>
-                    <script src="a_assets/js/respond.min.js"></script>
-                <![endif]-->
 </head>
 
 <body>
@@ -52,11 +46,11 @@ $authsess = $_SESSION['name'];
 
             <!-- Logo -->
             <div class="header-left">
-                <a href="index.html" class="logo">
-                    <img src="" alt="Logo">
+                <a href="a.php" class="logo">
+                    <img src="assets/img/favicon.png" alt="Logo">
                 </a>
-                <a href="index.html" class="logo logo-small">
-                    <img src="" alt="Logo" width="30" height="30">
+                <a href="a.php" class="logo logo-small">
+                    <img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -137,7 +131,7 @@ $authsess = $_SESSION['name'];
                                                         <div class="media">
                                                             <span class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                                    src="a_assets/img/aneesa.jpg">
+                                                                    src="assets/img/<?php echo $rows['image'] ?>">
                                                             </span>
                                                             <div class="media-body">
                                                                 <p class="noti-details"><span class="noti-title">Dr.
@@ -177,13 +171,13 @@ $authsess = $_SESSION['name'];
                 <!-- User Menu -->
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/profiles/avatar-01.jpg"
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
                                 width="31" alt="Ryan Taylor"></span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                <img src="assets/img/admin.jpg" alt="User Image"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
@@ -191,9 +185,9 @@ $authsess = $_SESSION['name'];
                                 <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="profile.html">My Profile</a>
-                        <a class="dropdown-item" href="settings.html">Settings</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="a_profile.html">My Profile</a>
+                        
+                        <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
                     </div>
                 </li>
                 <!-- /User Menu -->
@@ -225,18 +219,14 @@ $authsess = $_SESSION['name'];
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
+                       
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
                         </li><li>
                             <a href="a_calendar.php"><i class="fe fe-table"></i> <span>Calendar</span></a>
                         </li>
-                        <li class="menu-title">
-                            <span>User Settings</span>
-                        </li>
+                        
                         <li class="active">
                             <a href="a_profile.php"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
                         </li>
@@ -257,7 +247,7 @@ $authsess = $_SESSION['name'];
                         <div class="col">
                             <h3 class="page-title">Profile</h3>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="a.php">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Profile</li>
                             </ul>
                         </div>
@@ -286,7 +276,7 @@ $authsess = $_SESSION['name'];
                                                 <div class="col-auto profile-image">
                                                     <a href="#">
                                                         <img class="rounded-circle" alt="User Image"
-                                                            src="a_assets/img/profiles/avatar-01.jpg">
+                                                            src="assets/img/admin.jpg">
                                                     </a>
                                                 </div>
                                                 <div class="col ml-md-n2 profile-user-info">
@@ -311,9 +301,7 @@ $authsess = $_SESSION['name'];
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
-                                </li>
+                                
                             </ul>
                         </div>
                         <div class="tab-content profile-tab-cont">
@@ -410,7 +398,7 @@ $authsess = $_SESSION['name'];
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <form method="post" action="a_assets/php/update-Admin.php">
+                                                                        <form method="post" action="assets/php/update-Admin.php">
                                                                         </form>
                                                                         <div class="row form-row">
                                                                             <div class="col-12 col-sm-6">

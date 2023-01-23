@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     <title>Doccure - Appointment List Page</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -47,10 +47,7 @@ if ($result->num_rows > 0) {
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
-    <!--[if lt IE 9]>
-            <script src="a_assets/js/html5shiv.min.js"></script>
-            <script src="a_assets/js/respond.min.js"></script>
-        <![endif]-->
+ 
 </head>
 
 <body>
@@ -64,10 +61,10 @@ if ($result->num_rows > 0) {
             <!-- Logo -->
             <div class="header-left">
                 <a href="a.php" class="logo">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="assets/img/favicon.png" alt="Logo">
                 </a>
                 <a href="a.php" class="logo logo-small">
-                    <img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+                    <img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -131,7 +128,7 @@ if ($result->num_rows > 0) {
                                         <div class="media">
                                             <span class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="a_assets/img/aneesa.jpg">
+                                                    src="assets/img/<?php echo $rows['image'] ?>">
                                             </span>
                                             <div class="media-body">
                                                 <p class="noti-details"><span class="noti-title">Dr.
@@ -186,7 +183,7 @@ if ($result->num_rows > 0) {
                             if (!empty($row))
                                 foreach ($row as $rows) {
                                     ?>
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/"
                                 <?php echo $rows['image']; ?> width="31" alt="none"></span>
                         <?php } ?>
                     </a>
@@ -207,7 +204,7 @@ if ($result->num_rows > 0) {
                                     ?>
                         <div class="user-header">
                             <div class="avatar avatar-sm">
-                                <img src="a_assets/img/<?php echo $rows['image']; ?>" alt="none"
+                                <img src="assets/img/<?php echo $rows['image']; ?>" alt="none"
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
@@ -250,9 +247,7 @@ if ($result->num_rows > 0) {
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
+                       
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -298,7 +293,7 @@ if ($result->num_rows > 0) {
                             <div class="card-body">
                                 <?php
                                 $query = "SELECT Booking.BookingCode,Booking.DoctorCode, FirstName, LastName, StartDate, 
-                                            EndDate,Profession, BookingStatus, Payment.PaymentAmount 
+                                            EndDate,Profession, BookingStatus, Payment.PaymentAmount, User.image 
                                             FROM Booking 
                                             INNER JOIN Invoice ON Invoice.BookingCode = Booking.BookingCode 
                                             INNER JOIN Payment ON Invoice.InvoiceCode = Payment.InvoiceCode
@@ -338,7 +333,7 @@ if ($result->num_rows > 0) {
                                                     <h2 class="table-avatar">
                                                         <a href="profile.html" class="avatar avatar-sm mr-2"><img
                                                                 class="avatar-img rounded-circle"
-                                                                src="a_assets/img/doctors/doctor-thumb-01.jpg"
+                                                                src="assets/img/<?php echo $rows['image']; ?>"
                                                                 alt="User Image"></a>
                                                         <a href="profile.php">Dr. <?php echo $rows['FirstName']; ?>
                                                             <?php echo $rows['LastName']; ?>
@@ -376,11 +371,8 @@ if ($result->num_rows > 0) {
                                                 </td>
                                                 <td class="text-right">
                                                     <div class="actions">
-                                                        <a class="btn btn-sm bg-primary-light" data-toggle="modal"
-                                                            href="#send_mail">
-                                                            <i class="fe fe-mail"></i> Send
-                                                        </a>
-                                                        <a data-toggle="modal" href="#delete_modal"
+                                                        
+                                                        <a  href="assets/php/cancel_booking.php"
                                                             class="btn btn-sm bg-danger-light">
                                                             <i class="fe fe-trash"></i> Delete
                                                         </a>

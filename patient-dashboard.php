@@ -76,28 +76,66 @@ if ($result->num_rows > 0) {
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.php">Home</a>
+								<a href="index-2.php" style="color: #fefefe">Home</a>
 							</li>
 							<li>
-								<a href="search.php">Search Doctor</a>
+								<a href="search.php"style="color: #fefefe" >Search Doctor</a>
 							</li>
 							<li class="active"><a href="patient-dashboard.php">Patient Dashboard</a></li>
 							<li>
-								<a href="profile-settings.php">Profile Settings</a>
+								<a href="profile-settings.php" style="color: #fefefe">Profile Settings</a>
 							</li>
 						</ul>
 					</div>		 
-					<ul class="nav header-navbar-rht">
+				<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-						
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"> <?php echo $_SESSION['name'] . '!'?></p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
 							</div>
 						</li>
 						
 					                    <!-- User Menu -->
                     <li class="nav-item dropdown has-arrow logged-item">
+            <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+								$result = mysqli_query($conn, $query);
+								$row = [];
+								
+								$proimg = "SELECT image FROM User Where EmailAddress = '$authsess'";
+								
+								
+
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+						?>
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"/a>
                             <span class="user-img">
                                 <?php if (!empty($row))
@@ -113,6 +151,24 @@ if ($result->num_rows > 0) {
                                 <?php } ?>
                             </span>
                         </a>
+           <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+								$result = mysqli_query($conn, $query);
+								$row = [];
+								
+								$proimg = "SELECT image FROM User Where EmailAddress = '$authsess'";
+								
+								
+
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+								?>  
                         <div class="dropdown-menu dropdown-menu-right">
                             <?php if (!empty($row))
                                 foreach ($row as $rows) { ?>
@@ -196,10 +252,13 @@ if ($result->num_rows > 0) {
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img">
-											<img src="assets/img/<?php if (!empty($row))
-													foreach ($row as $rows) {
-														echo $rows['image'];
-													} ?>" alt="User Image">
+											<img src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
+													 ?>" alt="User Image">
 										</a>
 										<div class="profile-det-info">
 											<h3><?php if (!empty($row))
@@ -270,9 +329,9 @@ if ($result->num_rows > 0) {
 											<li class="nav-item">
 												<a class="nav-link active" href="#pat_appointments" data-toggle="tab">Appointments</a>
 											</li>
-											<li class="nav-item">
+											<!-- <li class="nav-item">
 												<a class="nav-link" href="#pat_billing" data-toggle="tab">Billing</a>
-											</li>
+											</li> -->
 										</ul>
 									</nav>
 									<!-- /Tab Menu -->
@@ -339,7 +398,13 @@ if ($result->num_rows > 0) {
                                                                         <a href="doctor-profile.html"
                                                                             class="avatar avatar-sm mr-2">
                                                                             <img class="avatar-img rounded-circle"
-                                                                                src="assets/img/doctors/doctor-thumb-01.jpg"
+                                                                                src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
+													 ?>"
                                                                                 alt="User Image">
                                                                         </a>
                                                                         <a href="doctor-profile.html">Dr.
@@ -404,7 +469,7 @@ if ($result->num_rows > 0) {
                                     </div>
                                     <!-- /Appointment Tab -->
 										
-										<!-- Billing Tab -->
+										<!-- Billing Tab 
                                     <div id="pat_billing" class="tab-pane fade">
                                         <div class="card card-table mb-0">
                                             <div class="card-body">

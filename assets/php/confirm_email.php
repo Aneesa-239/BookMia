@@ -7,9 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
     if(isset($_POST['submit']) && !empty($_POST['submit'])) {/* */
-    
-        $_GET['id'] = "BC001";
-        
+
         if(isset($_GET['id']) && !empty($_GET['id'])) {
 
 			$book = $_GET['id'];
@@ -134,7 +132,7 @@ error_reporting(E_ALL);
 			
 			<p>To reschedule or cancel your appointment before the scheduled time, please call our office at +27 15 369 5943 or email us at bookmia.stratusolve@gmail.com.</p>
 			
-			<p>Please refer to our cancellation and rescheduling policy [LINK] to see if you are eligible for a full refund.</p>
+			<p>Please refer to our cancellation and rescheduling policy to see if you are eligible for a full refund.</p>
 			
 			<p>Thanks for booking with Mia!</p>
 			
@@ -179,7 +177,7 @@ error_reporting(E_ALL);
 
 
 	 if(mail($to, $subject, $msg, $headers)){
-			header("Location: ../../booking-success.php?id=BC002"); // takes user to next page - end of patient experience    
+			header("Location: ../../booking-success.php?id=$book"); // takes user to next page - end of patient experience    
 			echo "Your Password has been sent to your email id";
 		}
 	 else {

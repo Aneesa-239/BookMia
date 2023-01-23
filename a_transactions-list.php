@@ -22,15 +22,15 @@ if ($result->num_rows > 0) {
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/transactions-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:52 GMT -->
+
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Transactions List Page</title>
+    <title>BookMia</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="a_assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="a_assets/css/bootstrap.min.css">
@@ -47,10 +47,7 @@ if ($result->num_rows > 0) {
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
-    <!--[if lt IE 9]>
-            <script src="a_assets/js/html5shiv.min.js"></script>
-            <script src="a_assets/js/respond.min.js"></script>
-        <![endif]-->
+
 </head>
 
 <body>
@@ -63,11 +60,11 @@ if ($result->num_rows > 0) {
 
             <!-- Logo -->
             <div class="header-left">
-                <a href="index.php" class="logo">
-                    <img src="" alt="Logo">
+                <a href="a.php" class="logo">
+                    <img src="assets/img/favicon.png" alt="Logo">
                 </a>
-                <a href="index.php" class="logo logo-small">
-                    <img src="" alt="Logo" width="30" height="30">
+                <a href="a.php" class="logo logo-small">
+                    <img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -185,18 +182,18 @@ if ($result->num_rows > 0) {
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+                            $query1 = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $ans = mysqli_query($conn, $query1);
+                            $row2 = [];
 
-                            if ($result->num_rows > 0) {
+                            if ($ans->num_rows > 0) {
                                 // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                                $row2 = $ans->fetch_all(MYSQLI_ASSOC);
                             }
 
 
                             if (!empty($row))
-                                foreach ($row as $rows) {
+                                foreach ($row2 as $rows) {
                                     ?>
                         <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
                                 <?php echo $rows['image']; ?> width="31" alt="none"></span>
@@ -204,18 +201,18 @@ if ($result->num_rows > 0) {
                     </a>
                     <div class="dropdown-menu">
                         <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+                            $query3 = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
+                            $results = mysqli_query($conn, $query3);
+                            $pull = [];
 
-                            if ($result->num_rows > 0) {
+                            if ($results->num_rows > 0) {
                                 // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                                $pull = $results->fetch_all(MYSQLI_ASSOC);
                             }
 
 
-                            if (!empty($row))
-                                foreach ($row as $rows) {
+                            if (!empty($pull))
+                                foreach ($pull as $rows) {
                                     ?>
                         <div class="user-header">
                             <div class="avatar avatar-sm">
@@ -261,9 +258,7 @@ if ($result->num_rows > 0) {
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-                        </li>
+                        
                         <li class="active">
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -293,7 +288,7 @@ if ($result->num_rows > 0) {
                         <div class="col-sm-12">
                             <h3 class="page-title">Transactions</h3>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="a.php">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Transactions</li>
                             </ul>
                         </div>
@@ -319,6 +314,7 @@ if ($result->num_rows > 0) {
                                         </thead>
                                         <tbody>
                                             <?php
+                                           
                                             if (!empty($row))
                                                 foreach ($row as $rows) {
                                                     ?>
@@ -416,6 +412,5 @@ if ($result->num_rows > 0) {
 
 </body>
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/transactions-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
 
 </html>

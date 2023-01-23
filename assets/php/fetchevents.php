@@ -25,7 +25,7 @@ if ($answer->num_rows > 0) {
 
         while ($row = mysqli_fetch_assoc($result)) {
             $eventsArr[] = array(
-                'title' => $row['PatientCode'],
+                'title' => $row['Description'],
                 'start' => $row['StartDate'],
                 'end' => $row['EndDate'],
                 'color' => '#' . substr(uniqid(), -6)

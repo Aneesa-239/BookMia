@@ -1832,7 +1832,7 @@ button.bg-danger:hover {
     padding: 10px 15px !important;
     text-align: center;
     font-size: 15px;
-    color: #e5090;
+    color: #09e5ab;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -5998,7 +5998,7 @@ html.menu-opened body {
 		z-index: 1060;
 		transform: translateX(-260px);
 		transition: all 0.4s;
-		background-color: #15558d;
+		background-color: #272b41;
 	}
 	.menu-header {
 		display: -webkit-box;

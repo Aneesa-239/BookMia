@@ -13,54 +13,61 @@ if (!empty($row))
     foreach ($row as $rows) {
         $number = $rows['COUNT(*)'] + 1;
     }
-$startdate = $_GET['startdate'];
-$enddate = $_GET['enddate'];
-$user = $_GET['patientCode'];
-$doctor = $_GET['doctorCode'];
-$doc_email = $_GET['email'];
+
+$startdate = $_POST['startdate'];
+$enddate = $_POST['enddate'];
+$user = $_POST['patientCode'];
+$doctor = $_POST['doctorCode'];
+$doc_email = $_POST['email'];
 
 
-if ($startdate != "" and $enddate != "") {
-    $string = "INSERT INTO Booking SET 
-BookingCode = 'BC00$number',PatientCode = (SELECT PatientCode
-FROM Patient
-WHERE PatientCode = '$user'),DoctorCode =(SELECT DoctorCode
-FROM Doctor
-WHERE DoctorCode = '$doctor'),StartDate ='$startdate', EndDate ='$enddate',BookingStatus = 'Active' ";
-    $string2 = "INSERT INTO Invoice SET BookingCode=(SELECT MAX( BookingCode ) FROM Booking); ";
-    $string3 = "INSERT INTO Payment SET PaymentAmount = 500,
-InvoiceCode=(SELECT MAX( InvoiceCode ) FROM Invoice), 
-PaymentStatus= 'Pending'";
-    $query = "SELECT MAX(BookingCode) AS BCode FROM Booking";
-    $result = mysqli_query($conn, $query);
-    $row = [];
+$BC = "BC00$number";
+$checkrow = [];
 
-    if ($result->num_rows > 0) {
-        // fetch all data from db into array 
-        $row = $result->fetch_all(MYSQLI_ASSOC);
-    }
-    ?>
-<?php
+$st = "SELECT * FROM Booking 
+          WHERE DoctorCode = '$doctor' AND StartDate ='$startdate';";
 
-    if (!empty($row))
-        foreach ($row as $rows) {
+$check = mysqli_query($conn, $st);
+if ($check->num_rows > 0) {
+    $data = array(
+        'status' => false,
+        'msg' => 'Sorry, Booking already exists'
+    );
 
-            $code = $rows['BCode'];
-        }
-    if (mysqli_query($conn, $string) and !empty($doc_email)) {
-        if (mysqli_query($conn, $string2)) {
-            if (mysqli_query($conn, $string3)) {
-                header("Location: ../../booking.php?id=$doc_email&flag=false&code=$code&choice=$startdate");
+} else {
+    $insert_invoice = "INSERT INTO Invoice SET BookingCode=(SELECT BookingCode  FROM Booking Where BookingCode = 'BC00$number'); ";
+    $insert_payment = "INSERT INTO Payment SET PaymentAmount = (SELECT Fees FROM Doctor Where DoctorCode = '$doctor'),
+    InvoiceCode=(SELECT MAX(InvoiceCode) FROM Invoice ORDER BY InvoiceCode), PaymentStatus= 'Pending'";
+    $insert_query = "INSERT INTO Booking SET 
+    BookingCode = 'BC00$number',PatientCode = (SELECT PatientCode
+    FROM Patient
+    WHERE PatientCode = '$user'),DoctorCode =(SELECT DoctorCode FROM Doctor WHERE DoctorCode = '$doctor'),StartDate ='$startdate', EndDate ='$enddate',BookingStatus = 'Active' ";
+    if (mysqli_query($conn, $insert_query)) {
+        if (mysqli_query($conn, $insert_invoice)) {
+            if (mysqli_query($conn, $insert_payment)) {
+                $data = array(
+                    'status' => true,
+                    'msg' => "BC00$number"
+                );
+            } else {
+                $data = array(
+                    'status' => false,
+                    'msg' => 'Sorry, Payment not added.'
+                );
             }
         } else {
-            header("Location: ../../booking.php?flag=true");
+            $data = array(
+                'status' => false,
+                'msg' => 'Sorry, Invoice not added.'
+            );
         }
     } else {
-        header("Location: ../../booking.php?flag=true");
+        $data = array(
+            'status' => false,
+            'msg' => 'Sorry, Booking not added.'
+        );
     }
-    //echo $startdate, $enddate, $doctor, $user;
-//write the code to add to the invoice and payments table
-//change the 
 }
 
+echo json_encode($data);
 ?>

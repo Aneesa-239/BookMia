@@ -74,11 +74,11 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="doctor-dashboard.php">Home</a>
+								<a href="doctor-dashboard.php" style="color: #fefefe">Home</a>
 							</li>
 							
 							<li>
-								<a href="calendar.php">Calendar</a>
+								<a href="calendar.php" style="color: #fefefe">Calendar</a>
 							</li>
 							
 							</li>
@@ -87,10 +87,31 @@
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"><?php echo $_SESSION['name'] . '!'?></div>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
+							</div>
 						</li>
 						
 						<!-- User Menu -->
@@ -185,23 +206,7 @@
 
 
 			
-			<!-- Breadcrumb -->
-			<div class="breadcrumb-bar">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<div class="col-md-12 col-12">
-							<nav aria-label="breadcrumb" class="page-breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="doctor-dashboard.php">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">My Patients</li>
-								</ol>
-							</nav>
-							<h2 class="breadcrumb-title">My Patients</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Breadcrumb -->
+
 			
 			<!-- Page Content -->
 			<div class="content">
@@ -341,7 +346,7 @@
 										<div class="card-body">
 											<div class="pro-widget-content">
 												<div class="profile-info-widget">
-													<a href="patient-profile.html" class="booking-doc-img">
+													<a href="#" class="booking-doc-img">
 														<img src="assets/img/<?php
 											if (!empty($rows['image'])) {
 												echo $rows['image'];
@@ -351,7 +356,7 @@
 													 ?>" alt="User Image">
 													</a>
 													<div class="profile-det-info">
-														<h3><a href="patient-profile.html"><?php echo $rows["FirstName"] ?> <?php echo $rows["LastName"] ?></a></h3>
+														<h3><a href="#"><?php echo $rows["FirstName"] ?> <?php echo $rows["LastName"] ?></a></h3>
 														
 														<div class="patient-details">
 															<h5><b>Patient ID :</b> #<?php echo $rows["PatientCode"] ?></h5>

@@ -36,11 +36,7 @@
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+	
 	
 	</head>
 	<body>
@@ -59,13 +55,13 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index-2.html" class="navbar-brand logo">
+						<a href="index-2.php" class="navbar-brand logo">
 							<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index-2.html" class="menu-logo">
+							<a href="index-2.php" class="menu-logo">
 								<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -74,25 +70,20 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index-2.php">Home</a>
+								<a href="index-2.php" style="color: #fefefe">Home</a>
 							</li>
-							<li class="has-submenu active">
-								<a href="#">Patients <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-									<li><a href="search.php">Search Doctor</a></li>
-									<li><a href="p_doctor-profile.php">Doctor Profile</a></li>
-									
-									<li><a href="patient-dashboard.php">Patient Dashboard</a></li>
-									
-								</ul>
-							</li>	
-							<li class="has-submenu">
-								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-								<ul class="submenu">
-								
-									<li><a href="p_calendar.php">Calendar</a></li>
-							    </ul>		
+							<li>
+								<a href="search.php" style="color: #fefefe">Search Doctor</a>
 							</li>
+							<li>
+								<a href="p_doctor-profile.php" style="color: #fefefe" >Doctor Profile</a>
+							</li>
+							<li>
+								<a href="patient-dashboard.php"style="color: #fefefe" >Patient Dashboard</a>
+							</li>
+							
+							
+						
 						
 						</ul>	 
 						</div>		 
@@ -163,12 +154,12 @@
 									
 						
                                 foreach ($row as $rows) {
-                                    $inv = $rows['BookingCode'];
+                                   
 								    
 							?>				
 									<div class="success-cont">
 										<i class="fas fa-check"></i>
-										<h3>Appointment booked Successfully!</h3>
+										<h3>Payment was Successful!</h3>
 										<p>Appointment booked with <strong>Dr. <?php 
 													echo $rows['FirstName'];
 												?> 	
@@ -185,7 +176,7 @@
 														echo $end;?></strong></p>
 												
 														
-										<a href="https://divblox-pdf.azurewebsites.net/?api_key=7Qq9cT2PAgWzSmi4FI0R&pdf_url=http://www.motseki.net.za/bookmia/user/assets/php/invoice-view.php?id=<?php echo $inv; ?>" name="submit" type="submit" class="btn btn-primary view-inv-btn">View Invoice</a>
+										<a href="https://divblox-pdf.azurewebsites.net/?api_key=7Qq9cT2PAgWzSmi4FI0R&pdf_url=http://www.motseki.net.za/bookmia/user/assets/php/invoice-view.php?id=<?php echo $app; ?>" name="submit" type="submit" class="btn btn-primary view-inv-btn">View Invoice</a>
 									
 									</div>
 									<?php } } ?>

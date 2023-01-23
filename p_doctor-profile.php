@@ -7,6 +7,8 @@
 		ini_set('display_errors', '1');
 		ini_set('display_startup_errors', '1');
 		error_reporting(E_ALL);
+
+    $authsess = $_SESSION['name'];
 ?>
 
 
@@ -52,7 +54,7 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index-2.html" class="navbar-brand logo">
+						<a href="index-2.php" class="navbar-brand logo">
 							<img src="assets/img/favicon.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
@@ -67,16 +69,16 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index.php">Home</a>
+								<a href="index.php" style="color: #fefefe" >Home</a>
 							</li>
 							<li>
-								<a href="search.php">Search Doctor</a>
+								<a href="search.php" style="color: #fefefe" >Search Doctor</a>
 							</li>
 							<li>
-								<a href="patient-dashboard.php">Patient Dashboard</a>
+								<a href="patient-dashboard.php" style="color: #fefefe"  >Patient Dashboard</a>
 							</li>
 							<li>
-								<a href="profile-settings.php">Profile Settings</a>
+								<a href="profile-settings.php"style="color: #fefefe"  >Profile Settings</a>
 							</li>
 						
 						
@@ -85,10 +87,30 @@
 					</div>		 
 		<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-						
+						<?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"> <?php echo $_SESSION['name'] . '!'?></p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -431,24 +453,10 @@
 										<img src="assets/img/favicon.png" alt="logo">
 									</div>
 									<div class="footer-about-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<p> BookMia is owned by Mia. Mia is a fully licenced Medical service provider. BookMia was developed by Obakeng and Aneesa. </p>
 										<div class="social-icon">
 											<ul>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-												</li>
-												<li>
-													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
-												</li>
+												
 											</ul>
 										</div>
 									</div>
@@ -466,7 +474,7 @@
 										<div class="footer-contact-info">
 											<div class="footer-address">
 												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
+												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0014 </p>
 											</div>
 											<p>
 												<i class="fas fa-phone-alt"></i>
@@ -487,8 +495,8 @@
 <!-- Footer Widget -->
 <div class="footer-widget footer-about">
 	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
+		<h3>Our location</h3>
+	
 
 		<!-- google maps location -->
 			 <div class="container-fluid">
@@ -516,8 +524,7 @@
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
 										<ul class="policy-menu">
-											<li><a href="term-condition.html">Terms and Conditions</a></li>
-											<li><a href="privacy-policy.html">Policy</a></li>
+										 <p> StratuSolve Internship 2022/2023 </p>	
 										</ul>
 									</div>
 									<!-- /Copyright Menu -->
@@ -525,9 +532,6 @@
 					</div>
 				</div>
 				<!-- /Footer Bottom -->
-				
-			</footer>
-			<!-- /Footer -->
 		   
 		</div>
 		<!-- /Main Wrapper -->

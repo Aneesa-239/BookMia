@@ -19,6 +19,8 @@ require_once('config.php');
   
         
       $app = $_GET['id'];
+      
+      $date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
         
       $doc = "SELECT * FROM User INNER JOIN Doctor ON Doctor.UserCode = User.UserCode INNER JOIN Booking ON Booking.DoctorCode = Doctor.DoctorCode WHERE Booking.BookingCode = '$app'";
 
@@ -183,7 +185,7 @@ echo("
                               <td>General Consultation</td>
                               <td class='text-center'>1</td>
                               <td class='text-center'>15%</td>
-                              <td class='text-right'>R500</td>
+                              <td class='text-right'>R " . $amount . "</td>
                             </tr>
                           </tbody>
                         </table>

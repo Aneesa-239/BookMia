@@ -6,6 +6,8 @@
 		ini_set('display_errors', '1');
 		ini_set('display_startup_errors', '1');
 		error_reporting(E_ALL);
+		
+		$authsess = $_SESSION['name'];
 	?>
 			 
 <!DOCTYPE html> 
@@ -63,13 +65,13 @@
 								<a  href="index-2.php">Home</a>
 							</li>
 							<li >
-								<a href="search.php">Search Doctor</a>
+								<a href="search.php" style="color: #fefefe">Search Doctor</a>
 							</li>
 							<li >
-								<a href="patient-dashboard.php">Patient Dashboard</a>
+								<a href="patient-dashboard.php" style="color: #fefefe">Patient Dashboard</a>
 							</li>
 							<li >
-								<a href="profile-settings.php">Profile Settings</a>
+								<a href="profile-settings.php" style="color: #fefefe">Profile Settings</a>
 							</li>
 							
 							
@@ -77,10 +79,30 @@
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-						
+						  <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode,image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+
+								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"> <?php echo $_SESSION['name'] . '!'?></p>
+								<p class="contact-info-header"> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?> !</p>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -375,7 +397,7 @@
 										<div class="footer-contact-info">
 											<div class="footer-address">
 												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
+												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0014 </p>
 											</div>
 											<p>
 												<i class="fas fa-phone-alt"></i>
@@ -396,8 +418,8 @@
 <!-- Footer Widget -->
 <div class="footer-widget footer-about">
 	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
+		<h3>Our location</h3>
+	
 
 		<!-- google maps location -->
 			 <div class="container-fluid">
@@ -424,7 +446,7 @@
 					<div class="container-fluid">				
 									<!-- Copyright Menu -->
 									<div class="copyright-menu">
-										<ul class="policy-menu">
+										<ul class="policy-menu" style="color: #fefefe">
 											<p> StratusSolve Intership 2022/2023</p>
 										</ul>
 									</div>
