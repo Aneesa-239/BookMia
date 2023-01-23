@@ -26,16 +26,16 @@ if (isset($_POST['submit'])) {
 	$password = trim($_POST['p_password']);
 
 	// echo $email;
-	$sql = "select * from User where EmailAddress = '$email' AND UserPassword = '$password'";
+	$sql = "select * from User where EmailAddress = '$email'";
 
 	$rs = mysqli_query($conn, $sql);
 	$numRows = mysqli_num_rows($rs);
-	$hash = password_hash($password, PASSWORD_DEFAULT);
+	//$hash = password_hash($password, PASSWORD_DEFAULT);
 
-	if ($numRows == 1 and $hash) {
+	if ($numRows == 1) {
 		$row = mysqli_fetch_assoc($rs);
 
-		if (password_verify($password, $hash)) {
+		if (password_verify($password, $row['UserPassword'])) {
 
 			session_regenerate_id(true);
 			$_SESSION['loggedin'] = TRUE;
@@ -78,9 +78,9 @@ if (isset($_POST['submit'])) {
 						}
 					}
 				}
-			}
-		}
-	}
-}
+			}else{ echo "idk";}
+		}else{echo "password is dizzy";}
+	}else{ echo "something smells";}
+}else{ echo"empty net";}
 
 ?>
