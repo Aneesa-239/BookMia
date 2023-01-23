@@ -68,150 +68,120 @@ $authsess = $_SESSION['name'];
             <!-- Header Right Menu -->
             <ul class="nav user-menu">
 
-                <!-- Notifications -->
-                <li class="nav-item dropdown noti-dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
-                            <?php
-                            //pull the required data from the database
-                            $query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+              	<!-- Notifications -->
+				<!-- Notifications -->
+				<li class="nav-item dropdown noti-dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<i class="fe fe-bell"></i> <span class="badge badge-pill">
+							<?php
+							//pull the required data from the database
+							$query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
+							$result = mysqli_query($conn, $query);
+							$row = [];
 
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
-                            ?>
-                            <?php
+							if ($result->num_rows > 0) {
+								// fetch all data from db into array 
+								$row = $result->fetch_all(MYSQLI_ASSOC);
+							}
+							?>
+							<?php
 
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    echo $rows['COUNT(*)'];
-                                }
-                            ?>
-                        </span>
+							if (!empty($row))
+								foreach ($row as $rows) {
+									echo $rows['COUNT(*)'];
+								}
+							?>
+						</span>
 
-                    </a>
-                    <div class="dropdown-menu notifications">
-                        <div class="topnav-dropdown-header">
-                            <span class="notification-title">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-                        </div>
-                        <?php
-                        //pull the required data from the database
-                        $query = "SELECT * FROM Cancellation 
+					</a>
+					<div class="dropdown-menu notifications">
+						<div class="topnav-dropdown-header">
+							<span class="notification-title">Notifications</span>
+							<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+						</div>
+						<?php
+						//pull the required data from the database
+						$query = "SELECT * FROM Cancellation 
                                 INNER JOIN Doctor On Cancellation.DoctorCode = Doctor.DoctorCode
                                 INNER JOIN User ON Doctor.UserCode = User.UserCode";
-                        $result = mysqli_query($conn, $query);
-                        $row = [];
+						$result = mysqli_query($conn, $query);
+						$row = [];
 
-                        if ($result->num_rows > 0) {
-                            // fetch all data from db into array 
-                            $row = $result->fetch_all(MYSQLI_ASSOC);
-                        }
-                        ?>
-                        <div class="noti-content">
-
-
-                            <ul class="notification-list">
-                                <?php
-                                if (!empty($row))
-                                    foreach ($row as $rows) {
-                                        ?>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/<?php echo $rows['image']; ?>">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Dr.
-                                                        <?php echo $rows['LastName'] ?> requests that Booking
-                                                        Number</span>
-                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-                                                        canceled
-                                                    </span></p>
-                                                <p class="noti-time"><span class="notification-time">
-                                                        <?php
-                                                                $time = new DateTime($rows["DateOfCancellation"]);
-                                                                $date = $time->format('d-M-Y');
-                                                                echo $date ?> </span>
-                                                    <span> <?php
-                                                            $time = new DateTime($rows["DateOfCancellation"]);
-                                                            $st = $time->format('H:m');
-                                                            echo $st;
-
-                                                            ?></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                        <div class="topnav-dropdown-footer">
-                            <a href="#">Close Notifications</a>
-                        </div>
-                    </div>
-                </li>
-                <!-- /Notifications -->
-
-                <!-- User Menu -->
-
-                <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
-
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
+						if ($result->num_rows > 0) {
+							// fetch all data from db into array 
+							$row = $result->fetch_all(MYSQLI_ASSOC);
+						}
+						?>
+						<div class="noti-content">
 
 
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    ?>
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/
-                                <?php echo $rows['image']; ?>" width="31" alt="none"></span>
-                        <?php } ?>
-                    </a>
-                    <div class="dropdown-menu">
-                        <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+							<ul class="notification-list">
+								<?php
+								if (!empty($row))
+									foreach ($row as $rows) {
+										?>
+										<li class="notification-message">
+											<a href="#">
+												<div class="media">
+													<span class="avatar avatar-sm">
+														<img class="avatar-img rounded-circle" alt="User Image"
+															src="a_assets/img/aneesa.jpg">
+													</span>
+													<div class="media-body">
+														<p class="noti-details"><span class="noti-title">Dr.
+																<?php echo $rows['LastName'] ?> requests that Booking
+																Number</span>
+															<?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+																canceled
+															</span></p>
+														<p class="noti-time"><span class="notification-time">
+																<?php
+																$time = new DateTime($rows["DateOfCancellation"]);
+																$date = $time->format('d-M-Y');
+																echo $date ?> </span>
+															<span> <?php
+															$time = new DateTime($rows["DateOfCancellation"]);
+															$st = $time->format('H:m');
+															echo $st;
 
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
+															?></span>
+														</p>
+													</div>
+												</div>
+											</a>
+										</li>
+									<?php } ?>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="#">Close Notifications</a>
+						</div>
+					</div>
+				</li>
+				<!-- /Notifications -->
 
-
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    ?>
-                        <div class="user-header">
-                            <div class="avatar avatar-sm">
-                                <img src="assets/img/<?php echo $rows['image']; ?>" alt="none"
-                                    class="avatar-img rounded-circle">
-                            </div>
-                            <div class="user-text">
-                                <h6><?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?></h6>
-                                <p class="text-muted mb-0">Administrator</p>
-                            </div>
-                        </div>
-                        <?php } ?>
-                        <a class="dropdown-item" href="a_profile.php">My Profile</a>
-                        <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
-                    </div>
-                </li>
-                <!-- /User Menu -->
+				<!-- User Menu -->
+				<li class="nav-item dropdown has-arrow">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
+								width="31" alt="Ryan Taylor"></span>
+					</a>
+					<div class="dropdown-menu">
+						<div class="user-header">
+							<div class="avatar avatar-sm">
+								<img src="assets/img/admin.jpg" alt="User Image"
+									class="avatar-img rounded-circle">
+							</div>
+							<div class="user-text">
+								<h6>Ryan Taylor</h6>
+								<p class="text-muted mb-0">Administrator</p>
+							</div>
+						</div>
+						<a class="dropdown-item" href="a_profile.php">My Profile
+						<a class="dropdown-item" href="assets/php/logout.php">Logout</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
 
             </ul>
             <!-- /Header Right Menu -->

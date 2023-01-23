@@ -317,24 +317,33 @@
 										<div class="col-md-12 col-lg-6">
 										
 											<!-- Change Password Form -->
-											<form>
-												<div class="form-group card-label">
-														<label>Current Password</label>
-													<input type="password" class="form-control">
+											 <form method="post" action="assets/php/cpassword.php">
+											     
+											     
+											  <div class="form-group card-label">
+														<label>Old Password</label>
+													<input name="old_pws" type="password" class="form-control" required>
 												</div>
-											<div class="form-group card-label">
+												
+												<div class="form-group card-label">
 														<label>New Password</label>
-													<input type="password" class="form-control">
+											<input type="password" id="password" name="new_pws" class="form-control floating" required 
+													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
+													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">		
+										
 												</div>
-												<div class="form-group card-label">
+												
+											<div class="form-group card-label">
 														<label>Confirm Password</label>
-													<input type="password" class="form-control">
+													<input type="password" class="form-control floating" id="retype-password">
 												</div>
+												
 												<div class="submit-section">
-													<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+													<button name="submit" type="submit" class="btn btn-primary submit-btn">Save Changes</button>
 												</div>
 											</form>
 											<!-- /Change Password Form -->
+
 											
 										</div>
 									</div>

@@ -283,12 +283,7 @@
 												</a>
 											</li>
 										
-											<li>
-												<a href="invoices.php">
-													<i class="fas fa-file-invoice"></i>
-													<span>Invoices</span>
-												</a>
-											</li>
+										
 											<li class="active">
 												<a href="doctor-profile-settings.php">
 													<i class="fas fa-user-cog"></i>
@@ -367,7 +362,7 @@
                                                 <input type="text" name="f_name" class="form-control" value="<?php if (!empty($row))
 													foreach ($row as $rows) {
 														echo $rows['FirstName'];
-													} ?>">
+													} ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">
@@ -376,7 +371,7 @@
                                                 <input type="text" name="l_name" class="form-control" value="<?php if (!empty($row))
 													foreach ($row as $rows) {
 														echo $rows['LastName'];
-													} ?>">
+													} ?>" required>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">

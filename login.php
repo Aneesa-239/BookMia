@@ -2,6 +2,12 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
+
+if (isset($_GET['flag'])) {
+    $flag = $_GET['flag'];
+} else {
+    $flag = "";
+}
 ?>
 
 <!DOCTYPE html> 
@@ -80,11 +86,6 @@ error_reporting(E_ALL);
 					<div class="row">
 						<div class="col-md-8 offset-md-2">
 
-		<?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
 							
 							<!-- Login Tab Content -->
 							<div class="account-content">
@@ -121,19 +122,15 @@ error_reporting(E_ALL);
     
     <div class="text-center dont-have">Don’t have an account? <a href="p_register.php">Register</a></div>
     
-    	<div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="visibility: hidden">
-	    <strong>Error!</strong>A <a herf="#" class="alert-link">problem</a> has been occured while submitting your data.
-	    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	        <span aria-hidden="true">&times;</span>
-	    </button>
-	</div>
+    	
     
 										<script src="assets/js/Login_validation.js"></script> <!--after form call the javascript stuff-->
 									</div>
 								</div>
 							</div>
 							<!-- /Login Tab Content -->
-								
+
+			
 						</div>
 					</div>
 
@@ -142,109 +139,33 @@ error_reporting(E_ALL);
 			</div>		
 			<!-- /Page Content -->
    
-		<!-- Footer -->
-			<footer class="footer">
-				
-				<!-- Footer Top -->
-				<div class="footer-top">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-3 col-md-6">
-							
-								<!-- Footer Widget -->
-								<div class="footer-widget footer-about">
-									<div class="footer-logo">
-										<img src="assets/img/favicon.png" alt="logo">
-									</div>
-									<div class="footer-about-content">
-										<p> BookMia is owned by Mia. Mia is a fully licenced Medical service provider. BookMia was developed by Obakeng and Aneesa. </p>
-										<div class="social-icon">
-											<ul>
-												
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!-- /Footer Widget -->
-								<!-- /Footer Widget -->
-								
-							</div>
-							
-							<div class="col-lg-3 col-md-6">
-							
-								<!-- Footer Widget -->
-								<div class="footer-widget footer-menu">
-										<h2 class="footer-title">Contact Us</h2>
-										<div class="footer-contact-info">
-											<div class="footer-address">
-												<span><i class="fas fa-map-marker-alt"></i></span>
-												<p> 39 Sovereign Dr, Route 21 Business Park,<br> Centurion, 0178 </p>
-											</div>
-											<p>
-												<i class="fas fa-phone-alt"></i>
-												+27 15 369 5943
-											</p>
-											<p class="mb-0">
-												<i class="fas fa-envelope"></i>
-												bookmia.stratusolve@gmail.com
-											</p>
-										</div>
-									</div>
-								<!-- /Footer Widget -->
-								
-							</div>
-							
-							<div class="col-lg-3 col-md-6">
-							
-<!-- Footer Widget -->
-<div class="footer-widget footer-about">
-	<div class="footer-about-content">
-		<h3>Our locations</h3>
-		<a href="#"> <i class="fas fa-map-marker-alt"></i> Mia </a>
-
-		<!-- google maps location -->
-			 <div class="container-fluid">
-				<div class="row">
-					   <div class="col-md-6">
-					  <div class="map_main">
-					 <div class="map-responsive">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14360.984391829074!2d28.256738442065434!3d-25.861376505012544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9567b26fcc118f%3A0x164a9f8a696b5813!2sRoute%2021%20Business%20Park%2C%20Centurion%2C%200178!5e0!3m2!1sen!2sza!4v1671531637140!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				 </div>
-			  </div>
-		   </div>
-		<!-- google maps location -->
-<!-- /Footer Widget -->
-								
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- /Footer Top -->
-				
-				<!-- Footer Bottom -->
-                <div class="footer-bottom">
-					<div class="container-fluid">				
-									<!-- Copyright Menu -->
-									<div class="copyright-menu">
-										<ul class="policy-menu">
-										 <p> StratuSolve Internship 2022/2023 </p>	
-										</ul>
-									</div>
-									<!-- /Copyright Menu -->
-						
-					</div>
-				</div>
-				<!-- /Footer Bottom -->
-				
-			</footer>
-			<!-- /Footer -->
+	
 		   
 		</div>
 		<!-- /Main Wrapper -->
 	  
 		<!-- jQuery -->
 		<script src="assets/js/jquery.min.js"></script>
+		
+		<?php 
+		
+		if ($flag == "true") {
+        echo '<script>
+    window.onload = function () {
+    let element = document.getElementById("alert2");
+    element.style.visibility = "visible";
+    }
+  
+    </script>';
+    } else if ($flag == "false") {
+        echo '<script>
+    window.onload = function () {
+         let element = document.getElementById("alert1");
+        element.style.visibility = "visible";
+    }
+  
+    </script>';
+  } ?>
 		
 		<!-- Bootstrap Core JS -->
 		<script src="assets/js/popper.min.js"></script>

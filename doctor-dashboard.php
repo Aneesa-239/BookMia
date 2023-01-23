@@ -84,7 +84,7 @@
 							
 						</ul>
 				</div>		 
-					<ul class="nav header-navbar-rht">
+		<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
 						  <?php
 								//pull the required data from the database
@@ -196,7 +196,7 @@
 								<a class="dropdown-item" href="doctor-profile-settings.php">Profile Settings</a>
 								<a class="dropdown-item" href="assets/php/logout.php">Logout </a>
 						</li>
-						<!-- /User Menu -->
+									<!-- /User Menu -->
 						
 					</ul>
 				</nav>
@@ -279,12 +279,7 @@
 												</a>
 											</li>
 									
-											<li>
-												<a href="invoices.php">
-													<i class="fas fa-file-invoice"></i>
-													<span>Invoices</span>
-												</a>
-											</li>
+										
 											<li >
 												<a href="doctor-profile-settings.php">
 													<i class="fas fa-user-cog"></i>
@@ -478,9 +473,7 @@
                                             <a class="nav-link active" href="#upcoming-appointments"
                                                 data-toggle="tab">Upcoming</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#today-appointments" data-toggle="tab">Today</a>
-                                        </li>
+                                      >
                                     </ul>
                                     <!-- /Appointment Tab -->
 
@@ -570,17 +563,7 @@
                                                                     <td class="text-center">
                                                                         R<?php echo $rows["PaymentAmount"] ?></td>
                                                                     <td class="text-right">
-                                                                        <div class="table-action">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-info-light">
-                                                                                <i class="far fa-eye"></i> View
-                                                                            </a>
-
-                                                                            <a href="javascript:void(0);"
-                                                                                class="btn btn-sm bg-danger-light">
-                                                                                <i class="fas fa-times"></i> Cancel
-                                                                            </a>
-                                                                        </div>
+                                                                       
                                                                     </td>
                                                                 </tr>
 

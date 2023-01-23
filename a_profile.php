@@ -302,12 +302,17 @@ $authsess = $_SESSION['name'];
                                     <a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a>
                                 </li>
                                 
+                            <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
+                                </li>    
+                                
                             </ul>
                         </div>
                         <div class="tab-content profile-tab-cont">
 
                             <!-- Personal Details Tab -->
                             <div class="tab-pane fade show active" id="per_details_tab">
+                                
 
                                 <!-- Personal Details -->
                                 <div class="row">
@@ -541,21 +546,25 @@ $authsess = $_SESSION['name'];
                                         <h5 class="card-title">Change Password</h5>
                                         <div class="row">
                                             <div class="col-md-10 col-lg-6">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <label>Old Password</label>
-                                                        <input type="password" class="form-control">
+                                                <form method="post" action="assets/php/cpassword.php">
+                                                   <div class="form-group card-label">
+														<label>Old Password</label>
+                                                        <input name="old_pws" type="password" class="form-control" required>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>New Password</label>
-                                                        <input type="password" class="form-control">
+                                                    <div class="form-group card-label">
+														<label>New Password</label>
+                                                       <input type="password" id="password" name="new_pws" class="form-control floating" required 
+													   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" 
+													   title="Must contain 8 to 12 uppercase, lowercase letters, numbers and symbols">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Confirm Password</label>
-                                                        <input type="password" class="form-control">
+                                                   <div class="form-group card-label">
+														<label>Confirm Password</label>
+                                                        <input type="password" class="form-control floating" id="retype-password">
                                                     </div>
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
-                                                </form>
+                                                   <div class="submit-section">
+													<button name="submit" type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+												</div>
+											</form>
                                             </div>
                                         </div>
                                     </div>

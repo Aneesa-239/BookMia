@@ -12,7 +12,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 	
-<!-- doccure/my-patients.html  30 Nov 2019 04:12:09 GMT -->
+
 <head>
 		<meta charset="utf-8">
 		<title>BookMia</title>
@@ -283,12 +283,7 @@
 												</a>
 											</li>
 									
-											<li>
-												<a href="invoices.php">
-													<i class="fas fa-file-invoice"></i>
-													<span>Invoices</span>
-												</a>
-											</li>
+										
 											<li >
 												<a href="doctor-profile-settings.php">
 													<i class="fas fa-user-cog"></i>

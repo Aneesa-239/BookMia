@@ -1,1006 +1,234 @@
-[17-Jan-2023 17:14:58 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[17-Jan-2023 17:14:58 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 102
-[17-Jan-2023 17:15:03 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 87
-[17-Jan-2023 18:32:10 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[17-Jan-2023 18:32:10 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 102
-[17-Jan-2023 18:32:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[17-Jan-2023 18:32:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 102
-[17-Jan-2023 18:32:18 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 87
-[17-Jan-2023 18:58:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:417
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(417): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 417
-[17-Jan-2023 19:09:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:417
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(417): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 417
-[17-Jan-2023 19:10:46 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 382
-[17-Jan-2023 19:10:46 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 383
-[17-Jan-2023 19:10:46 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 383
-[17-Jan-2023 19:10:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:421
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(421): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 421
-[17-Jan-2023 19:12:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:12:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:21:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:22:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:24:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:52:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 19:53:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 20:26:48 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:425
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(425): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 425
-[17-Jan-2023 20:26:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:425
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(425): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 425
-[17-Jan-2023 20:27:48 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:27:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:29:12 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:29:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:29:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:29:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:30:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:30:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:31:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:32:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:427
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(427): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 427
-[17-Jan-2023 20:33:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 20:35:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:419
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(419): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 419
-[17-Jan-2023 20:36:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:420
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(420): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 420
-[17-Jan-2023 20:36:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:422
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(422): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 422
-[17-Jan-2023 20:38:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:426
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(426): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 426
-[17-Jan-2023 20:38:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[17-Jan-2023 20:42:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[17-Jan-2023 20:52:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Doctor.DoctorType' in 'on clause' in /home/motsekinet/public_html/bookmia/user/search.php:132
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/search.php(132): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/search.php on line 132
-[17-Jan-2023 21:10:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[17-Jan-2023 21:30:58 UTC] PHP Parse error:  Unclosed '{' on line 134 in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 693
-[17-Jan-2023 21:38:01 UTC] PHP Parse error:  Unclosed '{' on line 282 in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 716
-[18-Jan-2023 06:09:45 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[18-Jan-2023 06:09:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.user' doesn't exist in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[18-Jan-2023 06:14:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`.DoctorCode = Doctor.DoctorCode 
-                                          ...' at line 4 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php:416
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/patient-dashboard.php(416): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 416
-[18-Jan-2023 07:21:08 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 226
-[18-Jan-2023 07:21:11 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 226
-[18-Jan-2023 08:30:56 UTC] PHP Warning:  Undefined variable $Bookingcode in /home/motsekinet/public_html/bookmia/user/appointments.php on line 377
-[18-Jan-2023 08:31:33 UTC] PHP Warning:  Undefined variable $Bookingcode in /home/motsekinet/public_html/bookmia/user/appointments.php on line 377
-[18-Jan-2023 08:32:00 UTC] PHP Warning:  Undefined variable $Bookingcode in /home/motsekinet/public_html/bookmia/user/appointments.php on line 377
-[18-Jan-2023 08:33:11 UTC] PHP Warning:  Undefined variable $Bookingcode in /home/motsekinet/public_html/bookmia/user/appointments.php on line 372
-[18-Jan-2023 08:33:26 UTC] PHP Warning:  Undefined variable $Bookingcode in /home/motsekinet/public_html/bookmia/user/appointments.php on line 372
-[18-Jan-2023 08:41:07 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 8
-[18-Jan-2023 08:41:07 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 88
-[18-Jan-2023 08:44:46 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 419
-[18-Jan-2023 08:59:33 UTC] PHP Warning:  Undefined variable $message in /home/motsekinet/public_html/bookmia/user/register_newdoc.php on line 160
-[18-Jan-2023 09:27:49 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 419
-[18-Jan-2023 11:35:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:35:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:35:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:35:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:35:46 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:35:46 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:35:49 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:35:49 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:37:27 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:37:27 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:37:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 11:37:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 11:49:25 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-profile-settings.php on line 49
-[18-Jan-2023 11:49:25 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-profile-settings.php on line 99
-[18-Jan-2023 12:03:11 UTC] PHP Warning:  Undefined variable $today in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 317
-[18-Jan-2023 12:34:08 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 419
-[18-Jan-2023 12:35:45 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 8
-[18-Jan-2023 12:35:45 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 48
-[18-Jan-2023 12:35:45 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 93
-[18-Jan-2023 12:36:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 8
-[18-Jan-2023 12:36:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 48
-[18-Jan-2023 12:36:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 93
-[18-Jan-2023 14:47:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[18-Jan-2023 14:47:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 88
-[18-Jan-2023 18:11:28 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[18-Jan-2023 18:11:28 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[18-Jan-2023 19:06:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'User.BirthDate' in 'field list' in /home/motsekinet/public_html/bookmia/user/my-patients.php:329
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/my-patients.php(329): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 329
-[18-Jan-2023 19:07:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'User.Date.Birth' in 'field list' in /home/motsekinet/public_html/bookmia/user/my-patients.php:329
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/my-patients.php(329): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 329
-[18-Jan-2023 19:08:00 UTC] PHP Warning:  Undefined array key "BookingCode" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 340
-[18-Jan-2023 19:08:00 UTC] PHP Warning:  Undefined array key "BookingCode" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 340
-[18-Jan-2023 19:25:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
-																				  
-															  ORDER BY StartDate ASC' at line 6 in /home/motsekinet/public_html/bookmia/user/my-patients.php:325
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/my-patients.php(325): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 325
-[18-Jan-2023 19:25:47 UTC] PHP Warning:  Undefined array key "country" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 358
-[18-Jan-2023 19:25:47 UTC] PHP Warning:  Undefined array key "country" in /home/motsekinet/public_html/bookmia/user/my-patients.php on line 358
-[18-Jan-2023 22:16:05 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:16:05 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:16:33 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:16:33 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:17:00 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:17:00 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:18:51 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:18:51 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:20:43 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:20:43 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:23:26 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:23:26 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:25:54 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:25:54 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:25:59 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1189
-[18-Jan-2023 22:25:59 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1197
-[18-Jan-2023 22:27:42 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1182
-[18-Jan-2023 22:27:42 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1190
-[18-Jan-2023 22:28:14 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1183
-[18-Jan-2023 22:28:14 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1191
-[18-Jan-2023 22:28:25 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1183
-[18-Jan-2023 22:28:25 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1191
-[18-Jan-2023 22:30:23 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[18-Jan-2023 22:30:23 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[18-Jan-2023 22:35:08 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/invoices.php on line 390
-[18-Jan-2023 22:35:08 UTC] PHP Warning:  Undefined array key "Fees" in /home/motsekinet/public_html/bookmia/user/invoices.php on line 396
-[18-Jan-2023 22:35:08 UTC] PHP Warning:  Undefined array key "StartDate" in /home/motsekinet/public_html/bookmia/user/invoices.php on line 400
-[19-Jan-2023 07:20:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[19-Jan-2023 07:20:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[19-Jan-2023 07:43:46 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 431
-[19-Jan-2023 07:45:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.cancellation' doesn't exist in /home/motsekinet/public_html/bookmia/user/a.php:82
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a.php(82): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a.php on line 82
-[19-Jan-2023 07:46:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.doctor' doesn't exist in /home/motsekinet/public_html/bookmia/user/a.php:110
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a.php(110): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a.php on line 110
-[19-Jan-2023 07:49:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'user.FirstName' in 'field list' in /home/motsekinet/public_html/bookmia/user/a.php:484
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a.php(484): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a.php on line 484
-[19-Jan-2023 07:50:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'user.FirstName' in 'field list' in /home/motsekinet/public_html/bookmia/user/a.php:543
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a.php(543): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a.php on line 543
-[19-Jan-2023 07:50:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.cancellation' doesn't exist in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php:7
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_appointment-list.php(7): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 7
-[19-Jan-2023 07:52:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'booking.BookingCode' in 'field list' in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php:272
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_appointment-list.php(272): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 272
-[19-Jan-2023 07:54:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'motsekinet_bookmia_db.cancellation' doesn't exist in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php:77
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_doctor-list.php(77): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 77
-[19-Jan-2023 07:56:20 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 07:56:20 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 07:56:20 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 07:56:20 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 07:57:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'patient.PatientCode' in 'on clause' in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php:8
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_transactions-list.php(8): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 8
-[19-Jan-2023 08:00:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'patient.PatientCode' in 'on clause' in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php:8
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_transactions-list.php(8): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 8
-[19-Jan-2023 08:00:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'patient.PatientCode' in 'on clause' in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php:8
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/a_transactions-list.php(8): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 8
-[19-Jan-2023 10:07:10 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 10:07:10 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 08:13:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[19-Jan-2023 08:15:14 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 08:15:14 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 08:15:14 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 08:15:14 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 313
-[19-Jan-2023 09:20:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 9
-[19-Jan-2023 09:20:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 89
-[19-Jan-2023 10:06:47 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/invoices.php on line 9
-[19-Jan-2023 10:06:47 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/invoices.php on line 89
-[19-Jan-2023 11:28:31 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 440
-[19-Jan-2023 11:29:12 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 440
-[19-Jan-2023 11:31:25 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 458
-[19-Jan-2023 11:32:18 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 478
-[19-Jan-2023 11:34:09 UTC] PHP Parse error:  Unclosed '{' on line 154 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 572
-[19-Jan-2023 11:34:55 UTC] PHP Parse error:  Unclosed '{' on line 154 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 572
-[19-Jan-2023 11:34:57 UTC] PHP Parse error:  Unclosed '{' on line 154 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 572
-[19-Jan-2023 11:36:14 UTC] PHP Parse error:  Unclosed '{' on line 154 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 572
-[19-Jan-2023 11:36:35 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 477
-[19-Jan-2023 11:37:32 UTC] PHP Parse error:  Unclosed '{' on line 118 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 569
-[19-Jan-2023 11:38:44 UTC] PHP Parse error:  Unclosed '{' on line 118 in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 569
-[19-Jan-2023 11:38:54 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 119
-[19-Jan-2023 11:38:56 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 119
-[19-Jan-2023 11:39:16 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 476
-[19-Jan-2023 14:50:50 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 14:50:50 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 14:53:18 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 14:53:18 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 14:53:20 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 14:53:20 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 14:53:21 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 14:53:21 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 13:22:03 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 476
-[19-Jan-2023 13:22:45 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 476
-[19-Jan-2023 15:11:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 83
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:22:28 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:23:52 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:24:13 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:35:58 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:35:58 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:36:10 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:36:10 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:36:56 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:36:56 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:38:45 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:38:45 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 17:39:43 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 17:39:43 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 16:06:08 UTC] PHP Warning:  Undefined variable $authsess in /home/motsekinet/public_html/bookmia/user/index-2.php on line 84
-[19-Jan-2023 18:10:08 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 18:10:08 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 18:11:50 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 18:11:50 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 18:11:52 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 18:11:52 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 16:15:44 UTC] PHP Warning:  Undefined variable $authsess in /home/motsekinet/public_html/bookmia/user/search.php on line 91
-[19-Jan-2023 16:15:50 UTC] PHP Warning:  Undefined variable $authsess in /home/motsekinet/public_html/bookmia/user/search.php on line 91
-[19-Jan-2023 16:16:26 UTC] PHP Warning:  Undefined variable $authsess in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 91
-[19-Jan-2023 19:33:10 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:35:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:38:01 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 11
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 21:39:51 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 19:42:11 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/checkout.php on line 12
-[19-Jan-2023 19:42:11 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/checkout.php on line 92
-[19-Jan-2023 19:43:51 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[19-Jan-2023 19:43:51 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 94
-[19-Jan-2023 19:43:54 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/checkout.php on line 12
-[19-Jan-2023 19:43:54 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/checkout.php on line 92
-[19-Jan-2023 19:44:06 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[19-Jan-2023 19:44:06 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 94
-[19-Jan-2023 19:45:48 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 12
-[19-Jan-2023 19:45:48 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 94
-[19-Jan-2023 19:45:52 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 9
-[19-Jan-2023 19:45:52 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 19:47:31 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 19:49:32 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 483
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 511
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 529
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 529
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 547
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 547
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 565
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 565
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 583
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 583
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 615
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 615
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 643
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 643
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 671
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 671
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 701
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 701
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 729
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 729
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 758
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 758
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 788
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 788
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 816
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 816
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 844
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 844
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 874
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 874
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 902
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 902
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 929
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 929
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 958
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 958
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 985
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 985
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1013
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1013
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 21:52:57 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 19:53:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 19:53:34 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 19:54:42 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 19:55:00 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 19:55:03 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/change-password.php on line 37
-[19-Jan-2023 19:55:21 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/change-password.php on line 37
-[19-Jan-2023 19:55:31 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:55:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:56:57 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 19:57:08 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:57:38 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 19:57:40 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 11
-[19-Jan-2023 19:57:45 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 16
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 119
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 484
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 512
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 530
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 548
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 566
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 584
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 616
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 644
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 672
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 702
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 730
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 759
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 789
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 817
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 845
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 875
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 903
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 930
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 959
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 986
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1014
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1067
-[19-Jan-2023 21:57:49 Africa/Johannesburg] PHP Warning:  Undefined array key "flag" in /home/motsekinet/public_html/bookmia/user/booking.php on line 1075
-[19-Jan-2023 19:57:53 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 19:57:54 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 11
-[19-Jan-2023 19:58:06 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 19:58:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/p_doctor-profile.php on line 11
-[19-Jan-2023 19:58:57 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 19:59:00 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 19:59:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 9
-[19-Jan-2023 19:59:02 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 19:59:11 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 9
-[19-Jan-2023 19:59:11 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 20:03:37 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 20:03:46 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 20:04:39 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 20:04:47 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 9
-[19-Jan-2023 20:04:47 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 20:04:48 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 20:04:51 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 20:04:56 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/search.php on line 10
-[19-Jan-2023 20:04:58 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 9
-[19-Jan-2023 20:04:58 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 20:05:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/profile-settings.php on line 42
-[19-Jan-2023 20:41:27 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 20:41:45 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[19-Jan-2023 21:04:33 UTC] PHP Warning:  Undefined variable $authsess in /home/motsekinet/public_html/bookmia/user/calendar.php on line 88
-[19-Jan-2023 21:04:33 UTC] PHP Warning:  Undefined variable $conn in /home/motsekinet/public_html/bookmia/user/calendar.php on line 90
-[19-Jan-2023 21:04:33 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/motsekinet/public_html/bookmia/user/calendar.php:90
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/calendar.php(90): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/calendar.php on line 90
-[19-Jan-2023 21:05:28 UTC] PHP Warning:  Undefined variable $conn in /home/motsekinet/public_html/bookmia/user/calendar.php on line 92
-[19-Jan-2023 21:05:28 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/motsekinet/public_html/bookmia/user/calendar.php:92
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/calendar.php(92): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/calendar.php on line 92
-[19-Jan-2023 21:06:20 UTC] PHP Warning:  Undefined variable $con in /home/motsekinet/public_html/bookmia/user/calendar.php on line 92
-[19-Jan-2023 21:06:20 UTC] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/motsekinet/public_html/bookmia/user/calendar.php:92
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/calendar.php(92): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/calendar.php on line 92
-[19-Jan-2023 21:08:45 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:08:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:08:59 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:08:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:01 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:17 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:19 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:41 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:42 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:09:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:10:16 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:10:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:10:18 UTC] PHP Warning:  require_once(assets/php/config): Failed to open stream: No such file or directory in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 21:10:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'assets/php/config' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:2
-Stack trace:
-#0 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 2
-[19-Jan-2023 22:07:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) FROM Booking 
-				INNER JOIN Patient ON Patient.PatientCode = Booking.Pat...' at line 1 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:340
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(340): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 340
-[19-Jan-2023 22:12:26 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Distinct) * FROM Booking 
-				INNER JOIN Patient ON Patient.PatientCode = Bo...' at line 1 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:341
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(341): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 341
-[19-Jan-2023 22:17:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'PatientCode' in field list is ambiguous in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:339
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(339): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 339
-[19-Jan-2023 22:18:48 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/index-2.php on line 10
-[19-Jan-2023 22:20:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Doctor.UserCode' in 'on clause' in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:340
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(340): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 340
-[19-Jan-2023 22:27:47 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'DoctorCode' in field list is ambiguous in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:339
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(339): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 339
-[19-Jan-2023 22:27:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'DoctorCode' in field list is ambiguous in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php:339
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php(339): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 339
-[19-Jan-2023 22:28:23 UTC] PHP Warning:  Undefined array key "COUNT(*)" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 353
-[19-Jan-2023 22:35:21 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:35:27 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:35:58 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:36:00 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:37:06 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:37:09 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:38:17 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:38:19 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:40:08 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 22:40:11 UTC] PHP Parse error:  Unclosed '{' on line 386 in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 719
-[19-Jan-2023 23:47:59 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[19-Jan-2023 23:47:59 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[19-Jan-2023 23:47:59 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[19-Jan-2023 23:47:59 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 00:02:21 UTC] PHP Parse error:  Unclosed '{' on line 287 in /home/motsekinet/public_html/bookmia/user/a.php on line 761
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:08:55 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 341
-[20-Jan-2023 00:10:05 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 00:10:05 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 00:10:05 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 00:10:05 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 00:17:08 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[20-Jan-2023 00:42:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-dashboard.php on line 47
-[20-Jan-2023 00:45:58 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[20-Jan-2023 00:46:44 UTC] PHP Warning:  Undefined variable $BCode in /home/motsekinet/public_html/bookmia/user/patient-dashboard.php on line 496
-[20-Jan-2023 06:17:45 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:17:45 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:17:45 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:17:45 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:21:17 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:21:17 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:21:17 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:21:17 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 06:21:28 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 326
-[20-Jan-2023 06:21:28 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 328
-[20-Jan-2023 06:21:28 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 342
-[20-Jan-2023 06:21:28 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 343
-[20-Jan-2023 06:21:41 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 326
-[20-Jan-2023 06:21:41 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 328
-[20-Jan-2023 06:21:41 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 342
-[20-Jan-2023 06:21:41 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 343
-[20-Jan-2023 07:03:54 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:03:56 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:04:00 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_profile.php on line 9
-[20-Jan-2023 07:04:18 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_profile.php on line 9
-[20-Jan-2023 07:04:19 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_profile.php on line 9
-[20-Jan-2023 07:04:21 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:04:21 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_calendar.php on line 6
-[20-Jan-2023 07:04:22 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:04:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:04:25 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:04:28 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:04:32 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:06:36 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 6
-[20-Jan-2023 07:06:36 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:36 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:36 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:36 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:38 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:06:39 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_calendar.php on line 6
-[20-Jan-2023 07:06:42 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_profile.php on line 9
-[20-Jan-2023 07:06:43 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:06:44 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 6
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:06:46 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:06:52 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:07:00 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:08:14 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:08:16 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_calendar.php on line 6
-[20-Jan-2023 07:08:19 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:08:22 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:08:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 6
-[20-Jan-2023 07:08:23 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:08:23 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:08:23 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:08:23 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:08:25 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:08:29 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:08:30 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:08:32 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_calendar.php on line 6
-[20-Jan-2023 07:08:57 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
-[20-Jan-2023 07:09:00 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_patient-list.php on line 9
-[20-Jan-2023 07:09:02 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 6
-[20-Jan-2023 07:09:02 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:02 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:02 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:02 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:07 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 6
-[20-Jan-2023 07:09:07 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:07 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:07 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:07 UTC] PHP Warning:  Undefined array key "MemberSince" in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 352
-[20-Jan-2023 07:09:09 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:09:11 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:09:12 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_profile.php on line 9
-[20-Jan-2023 07:09:38 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:09:41 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:10:05 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
-[20-Jan-2023 07:10:31 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_calendar.php on line 6
-[20-Jan-2023 07:10:34 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 07:23:29 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:23:55 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:29:05 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:29:12 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:30:16 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:30:21 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:32:03 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:32:35 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:35:33 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:35:35 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:37:57 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:37:57 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:37:59 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:37:59 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:38:48 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:38:48 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:41:57 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:44:33 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:44:33 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:44:36 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:44:36 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:44:37 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 146
-[20-Jan-2023 07:44:37 UTC] PHP Warning:  Undefined variable $book in /home/motsekinet/public_html/bookmia/user/checkout.php on line 291
-[20-Jan-2023 07:49:05 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:49:51 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:50:20 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:51:00 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 07:52:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?BC008 ?>''' at line 1 in /home/motsekinet/public_html/bookmia/user/booking-success.php:144
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/booking-success.php(144): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 144
-[20-Jan-2023 07:53:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?php echo BC008 ?>''' at line 1 in /home/motsekinet/public_html/bookmia/user/booking-success.php:144
-Stack trace:
-#0 /home/motsekinet/public_html/bookmia/user/booking-success.php(144): mysqli_query()
-#1 {main}
-  thrown in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 144
-[20-Jan-2023 07:54:36 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 08:00:32 UTC] PHP Warning:  Undefined variable $inv in /home/motsekinet/public_html/bookmia/user/booking-success.php on line 185
-[20-Jan-2023 08:22:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 326
-[20-Jan-2023 08:22:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 328
-[20-Jan-2023 08:22:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 342
-[20-Jan-2023 08:22:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 343
-[20-Jan-2023 08:40:41 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a.php on line 6
-[20-Jan-2023 08:48:53 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 326
-[20-Jan-2023 08:48:53 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 328
-[20-Jan-2023 08:48:53 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 342
-[20-Jan-2023 08:48:53 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 343
+[22-Jan-2023 19:34:09 UTC] PHP Warning:  Undefined variable $flag in /home/motsekinet/public_html/bookmia/user/login.php on line 157
+[22-Jan-2023 19:34:09 UTC] PHP Warning:  Undefined variable $flag in /home/motsekinet/public_html/bookmia/user/login.php on line 165
+[22-Jan-2023 19:38:08 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:41:07 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:47:55 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:48:57 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:51:11 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:52:43 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:53:40 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:54:47 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:55:46 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 19:57:38 UTC] PHP Warning:  Undefined variable $choice in /home/motsekinet/public_html/bookmia/user/login.php on line 92
+[22-Jan-2023 22:30:23 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 6
+[22-Jan-2023 22:30:30 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 6
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 29
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/booking.php on line 129
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 500
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 501
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 501
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 528
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 529
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 529
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 546
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 546
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 547
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 547
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 564
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 564
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 565
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 565
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 582
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 582
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 583
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 583
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 600
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 600
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 601
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 601
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 632
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 632
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 633
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 633
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 660
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 660
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 661
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 661
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 688
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 688
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 689
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 689
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 718
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 718
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 719
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 719
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 746
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 746
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 747
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 747
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 775
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 775
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 776
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 776
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 805
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 805
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 806
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 806
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 833
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 833
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 834
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 834
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 861
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 861
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 862
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 862
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 891
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 891
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 892
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 892
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 919
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 919
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 920
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 920
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 946
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 946
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 947
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 947
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 975
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 975
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 976
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 976
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1002
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1002
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1003
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1003
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $doctorcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1030
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1030
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Warning:  Undefined variable $patientcode in /home/motsekinet/public_html/bookmia/user/booking.php on line 1031
+[23-Jan-2023 08:57:20 Africa/Johannesburg] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/motsekinet/public_html/bookmia/user/booking.php on line 1031
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:47:30 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:50:14 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "InvoiceCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 290
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "PatientCode" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 292
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "image" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 298
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "FirstName" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 301
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "LastName" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 302
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "PaymentAmount" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 306
+[23-Jan-2023 07:52:54 UTC] PHP Warning:  Undefined array key "PaymentStatus" in /home/motsekinet/public_html/bookmia/user/a_transactions-list.php on line 307
+[23-Jan-2023 08:00:46 UTC] PHP Parse error:  Unclosed '{' on line 292 in /home/motsekinet/public_html/bookmia/user/a_doctor-list.php on line 416
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 08:05:17 UTC] PHP Warning:  Undefined array key "DoctorTitle" in /home/motsekinet/public_html/bookmia/user/a_appointment-list.php on line 324
+[23-Jan-2023 09:58:52 UTC] PHP Warning:  Undefined array key "name" in /home/motsekinet/public_html/bookmia/user/doctor-change-password.php on line 49

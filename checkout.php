@@ -281,14 +281,6 @@
 
 													<!--/Radio buttons -->
 											
-											<!-- Terms Accept -->
-											<div class="terms-accept">
-												<div class="custom-checkbox">
-												   <input type="checkbox" id="terms_accept" required>
-												   <label for="terms_accept">I have read and accept <a href="#">Terms &amp; Conditions</a></label>
-												</div>
-											</div>
-											<!-- /Terms Accept -->
 											
 											<!-- Submit Section -->
 <div class="submit-section proceed-btn text-right">

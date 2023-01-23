@@ -12,7 +12,7 @@ $authsess = $_SESSION['name'];?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Doctor List Page</title>
+    <title>BookMia</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -32,10 +32,7 @@ $authsess = $_SESSION['name'];?>
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
-    <!--[if lt IE 9]>
-            <script src="a_assets/js/html5shiv.min.js"></script>
-            <script src="a_assets/js/respond.min.js"></script>
-        <![endif]-->
+    
 </head>
 
 <body>
@@ -52,7 +49,7 @@ $authsess = $_SESSION['name'];?>
                     <img src="assets/img/favicon.png" alt="Logo">
                 </a>
                 <a href="a.php" class="logo logo-small">
-                    <img src="assets/img/favico.png" alt="Logo" width="30" height="30">
+                    <img src="assets/img/favicon.png" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <!-- /Logo -->
@@ -72,153 +69,120 @@ $authsess = $_SESSION['name'];?>
             <!-- Header Right Menu -->
             <ul class="nav user-menu">
 
-                <!-- Notifications -->
-                <li class="nav-item dropdown noti-dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
-                            <?php
-                            //pull the required data from the database
-                            $query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+                	<!-- Notifications -->
+				<!-- Notifications -->
+				<li class="nav-item dropdown noti-dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<i class="fe fe-bell"></i> <span class="badge badge-pill">
+							<?php
+							//pull the required data from the database
+							$query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
+							$result = mysqli_query($conn, $query);
+							$row = [];
 
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
-                            ?>
-                            <?php
+							if ($result->num_rows > 0) {
+								// fetch all data from db into array 
+								$row = $result->fetch_all(MYSQLI_ASSOC);
+							}
+							?>
+							<?php
 
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    echo $rows['COUNT(*)'];
-                                }
-                            ?>
-                        </span>
+							if (!empty($row))
+								foreach ($row as $rows) {
+									echo $rows['COUNT(*)'];
+								}
+							?>
+						</span>
 
-                    </a>
-                    <div class="dropdown-menu notifications">
-                        <div class="topnav-dropdown-header">
-                            <span class="notification-title">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-                        </div>
-                        <?php
-                        //pull the required data from the database
-                        $query = "SELECT * FROM Cancellation 
+					</a>
+					<div class="dropdown-menu notifications">
+						<div class="topnav-dropdown-header">
+							<span class="notification-title">Notifications</span>
+							<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+						</div>
+						<?php
+						//pull the required data from the database
+						$query = "SELECT * FROM Cancellation 
                                 INNER JOIN Doctor On Cancellation.DoctorCode = Doctor.DoctorCode
                                 INNER JOIN User ON Doctor.UserCode = User.UserCode";
-                        $result = mysqli_query($conn, $query);
-                        $row = [];
+						$result = mysqli_query($conn, $query);
+						$row = [];
 
-                        if ($result->num_rows > 0) {
-                            // fetch all data from db into array 
-                            $row = $result->fetch_all(MYSQLI_ASSOC);
-                        }
-                        ?>
-                        <div class="noti-content">
-
-
-                            <ul class="notification-list">
-                                <?php
-                                if (!empty($row))
-                                    foreach ($row as $rows) {
-                                        ?>
-                                <li class="notification-message">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-circle" alt="User Image"
-                                                    src="assets/img/<?php echo $rows['image'] ?> ">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Dr.
-                                                        <?php echo $rows['LastName'] ?> requests that Booking
-                                                        Number</span>
-                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-                                                        canceled
-                                                    </span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">
-                                                        <?php
-                                                                $time = new DateTime($rows["DateOfCancellation"]);
-                                                                $date = $time->format('d-M-Y');
-                                                                echo $date ?>
-                                                    </span>
-                                                    <span> <?php
-                                                            $time = new DateTime($rows["DateOfCancellation"]);
-                                                            $st = $time->format('H:m');
-                                                            echo $st;
-
-                                                            ?></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                        <div class="topnav-dropdown-footer">
-                            <a href="#">Close Notifications</a>
-                        </div>
-                    </div>
-                </li>
-                <!-- /Notifications -->
-
-                <!-- User Menu -->
-
-                <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
-
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
+						if ($result->num_rows > 0) {
+							// fetch all data from db into array 
+							$row = $result->fetch_all(MYSQLI_ASSOC);
+						}
+						?>
+						<div class="noti-content">
 
 
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    ?>
-                        <span class="user-img"><img class="rounded-circle" src="a_assets/img/"
-                                <?php echo $rows['image']; ?> width="31" alt="none"></span>
-                        <?php } ?>
-                    </a>
-                    <div class="dropdown-menu">
-                        <?php
-                            $query = "SELECT * FROM User WHERE EmailAddress = '$authsess'";
-                            $result = mysqli_query($conn, $query);
-                            $row = [];
+							<ul class="notification-list">
+								<?php
+								if (!empty($row))
+									foreach ($row as $rows) {
+										?>
+										<li class="notification-message">
+											<a href="#">
+												<div class="media">
+													<span class="avatar avatar-sm">
+														<img class="avatar-img rounded-circle" alt="User Image"
+															src="a_assets/img/aneesa.jpg">
+													</span>
+													<div class="media-body">
+														<p class="noti-details"><span class="noti-title">Dr.
+																<?php echo $rows['LastName'] ?> requests that Booking
+																Number</span>
+															<?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+																canceled
+															</span></p>
+														<p class="noti-time"><span class="notification-time">
+																<?php
+																$time = new DateTime($rows["DateOfCancellation"]);
+																$date = $time->format('d-M-Y');
+																echo $date ?> </span>
+															<span> <?php
+															$time = new DateTime($rows["DateOfCancellation"]);
+															$st = $time->format('H:m');
+															echo $st;
 
-                            if ($result->num_rows > 0) {
-                                // fetch all data from db into array 
-                                $row = $result->fetch_all(MYSQLI_ASSOC);
-                            }
+															?></span>
+														</p>
+													</div>
+												</div>
+											</a>
+										</li>
+									<?php } ?>
+							</ul>
+						</div>
+						<div class="topnav-dropdown-footer">
+							<a href="#">Close Notifications</a>
+						</div>
+					</div>
+				</li>
+				<!-- /Notifications -->
 
-
-                            if (!empty($row))
-                                foreach ($row as $rows) {
-                                    ?>
-                        <div class="user-header">
-                            <div class="avatar avatar-sm">
-                                <img src="a_assets/img/<?php echo $rows['image']; ?>" alt="none"
-                                    class="avatar-img rounded-circle">
-                            </div>
-                            <div class="user-text">
-                                <h6><?php echo $rows['FirstName']; ?> <?php echo $rows['LastName']; ?></h6>
-                                <p class="text-muted mb-0">Administrator</p>
-                            </div>
-                        </div>
-                        <?php } ?>
-                        <a class="dropdown-item" href="a_profile.php">My Profile</a>
-                        <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
-                    </div>
-                </li>
-                <!-- /User Menu -->
-
+				<!-- User Menu -->
+				<li class="nav-item dropdown has-arrow">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
+								width="31" alt="Ryan Taylor"></span>
+					</a>
+					<div class="dropdown-menu">
+						<div class="user-header">
+							<div class="avatar avatar-sm">
+								<img src="assets/img/admin.jpg" alt="User Image"
+									class="avatar-img rounded-circle">
+							</div>
+							<div class="user-text">
+								<h6>Ryan Taylor</h6>
+								<p class="text-muted mb-0">Administrator</p>
+							</div>
+						</div>
+						<a class="dropdown-item" href="a_profile.php">My Profile
+						<a class="dropdown-item" href="assets/php/logout.php">Logout</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
             </ul>
             <!-- /Header Right Menu -->
 
@@ -317,7 +281,7 @@ $authsess = $_SESSION['name'];?>
                                                 <th>Speciality</th>
                                                 <th>Member Since</th>
                                                 <th>Earned</th>
-                                                <th>Account Status</th>
+                                             
                                                 
 
                                             </tr>
@@ -330,11 +294,11 @@ $authsess = $_SESSION['name'];?>
                                             <tr>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                                        <a href="#" class="avatar avatar-sm mr-2"><img
                                                                 class="avatar-img rounded-circle" src="assets/img/<?php if (!$rows['image'] == "") {echo $rows['image'];  } else {                       echo "patients/patient.jpg";
                                                                         }
                                                                         ?>" alt="User Image"></a>
-                                                        <a href="profile.html">Dr. <?php echo $rows['FirstName']; ?>
+                                                        <a href="#">Dr. <?php echo $rows['FirstName']; ?>
                                                             <?php echo $rows['DoctorTitle']; ?>
                                                         </a>
                                                     </h2>
@@ -378,17 +342,7 @@ $authsess = $_SESSION['name'];?>
                                                     <td>
                                                         <?php echo "R0" ?>
                                                     </td>
-                                                    <?php }
-
-                                                            if ($rows['status'] == "active") {
-                                                                ?>
-                                                    <td>
-                                                        <span class="badge badge-pill bg-success-light">Active</span>
-                                                    </td>
-                                                    <?php } else { ?>
-                                                    <td>
-                                                        <span class="badge badge-pill bg-danger-light">Inactive</span>
-                                                    </td>
+                                               
                                                     <?php } ?>
                                                    <!-- <td class="text-right">
                                                         <div class="actions">

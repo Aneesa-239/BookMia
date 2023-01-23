@@ -216,9 +216,7 @@ $authsess = $_SESSION['name'];
 								<li><a href="a_register_newdoc.php">Add Doctor</a></li>
 							</ul>
 						</li>
-						<li>
-							<a href="a_patient-list.php"><i class="fe fe-user"></i> <span>Patients</span></a>
-						</li>
+						
 						<li>
 							<a href="a_transactions-list.php"><i class="fe fe-activity"></i>
 								<span>Transactions</span></a>

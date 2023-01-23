@@ -83,7 +83,7 @@
 							
 						</ul>		 
 						</div>		 
-					<ul class="nav header-navbar-rht">
+						<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
 						  <?php
 								//pull the required data from the database
@@ -102,7 +102,7 @@
 								?>
 							<div class="header-contact-detail">
 								<p class="contact-header">Welcome</p>
-								<p class="contact-info-header"> <?php if (!empty($row))
+								<p class="contact-info-header">Dr. <?php if (!empty($row))
 													foreach ($row as $rows) {
 														echo $rows['FirstName'];
 													} ?> <?php if (!empty($row))
@@ -111,9 +111,92 @@
 													} ?> !</p>
 							</div>
 						</li>
-						<!--<li class="nav-item">
-							<a class="nav-link header-login" href="assets/php/logout.php">Logout</a>
-						</li> -->
+						
+			<!-- User Menu -->
+						<li class="nav-item dropdown has-arrow logged-item">
+<?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+								?>	
+								
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/<?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['image'];
+													} ?>" width="31" alt="Darren Elder">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+	<?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+										  
+								$result = mysqli_query($conn, $query);
+								$row = [];
+								
+								$proimg = "SELECT image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+								?>
+									<div class="avatar avatar-sm">
+										<img src="assets/img/<?php
+											if (!empty($rows['image'])) {
+												echo $rows['image'];
+											}else{
+												echo 'patients/patient.jpg';
+											}
+													 ?>"  alt="User Image" class="avatar-img rounded-circle">
+									</div>
+ <?php
+								//pull the required data from the database
+								$query = "SELECT FirstName,LastName,EmailAddress,PhoneNumber, DateBirth, address, city, province, country, zipcode, image
+										  FROM User
+										  Where EmailAddress = '$authsess'";
+								$result = mysqli_query($conn, $query);
+								$row = [];
+
+								if ($result->num_rows > 0) {
+									// fetch all data from db into array 
+									$row = $result->fetch_all(MYSQLI_ASSOC);
+								}
+								?>  
+								
+									<div class="user-text">
+										<h6>Dr. <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['FirstName'];
+													} ?> <?php if (!empty($row))
+													foreach ($row as $rows) {
+														echo $rows['LastName'];
+													} ?></h6>
+										<p class="text-muted mb-0">Doctor</p>
+									</div>
+								</div>
+								<a class="dropdown-item" href="doctor-dashboard.php">Dashboard</a>
+								<a class="dropdown-item" href="doctor-profile-settings.php">Profile Settings</a>
+								<a class="dropdown-item" href="assets/php/logout.php">Logout </a>
+						</li>
+									<!-- /User Menu -->
+						
 					</ul>
 				</nav>
 			</header>
@@ -296,7 +379,7 @@
             if (window.innerWidth < 800) {
                 $('#calendar').fullCalendar('changeView', 'agendaDay');
             } else {
-                $('#calendar').fullCalendar('changeView', 'month');
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
             }
         });
     </script>
