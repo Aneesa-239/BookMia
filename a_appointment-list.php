@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
     <!-- Main CSS -->
     <link rel="stylesheet" href="a_assets/css/style.css">
 
- 
+
 </head>
 
 <body>
@@ -84,120 +84,124 @@ if ($result->num_rows > 0) {
             <!-- Header Right Menu -->
             <ul class="nav user-menu">
 
-                	<!-- Notifications -->
-				<!-- Notifications -->
-				<li class="nav-item dropdown noti-dropdown">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<i class="fe fe-bell"></i> <span class="badge badge-pill">
-							<?php
-							//pull the required data from the database
-							$query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
-							$result = mysqli_query($conn, $query);
-							$row = [];
+                <!-- Notifications -->
+                <!-- Notifications -->
+                <li class="nav-item dropdown noti-dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
+                            <?php
+                            //pull the required data from the database
+                            $query = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
+                            $result = mysqli_query($conn, $query);
+                            $row = [];
 
-							if ($result->num_rows > 0) {
-								// fetch all data from db into array 
-								$row = $result->fetch_all(MYSQLI_ASSOC);
-							}
-							?>
-							<?php
+                            if ($result->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row = $result->fetch_all(MYSQLI_ASSOC);
+                            }
+                            ?>
+                            <?php
 
-							if (!empty($row))
-								foreach ($row as $rows) {
-									echo $rows['COUNT(*)'];
-								}
-							?>
-						</span>
+                            if (!empty($row))
+                                foreach ($row as $rows) {
+                                    echo $rows['COUNT(*)'];
+                                }
+                            ?>
+                        </span>
 
-					</a>
-					<div class="dropdown-menu notifications">
-						<div class="topnav-dropdown-header">
-							<span class="notification-title">Notifications</span>
-							<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-						</div>
-						<?php
-						//pull the required data from the database
-						$query = "SELECT * FROM Cancellation 
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <?php
+                        //pull the required data from the database
+                        $query = "SELECT * FROM Cancellation 
                                 INNER JOIN Doctor On Cancellation.DoctorCode = Doctor.DoctorCode
                                 INNER JOIN User ON Doctor.UserCode = User.UserCode";
-						$result = mysqli_query($conn, $query);
-						$row = [];
+                        $result = mysqli_query($conn, $query);
+                        $row = [];
 
-						if ($result->num_rows > 0) {
-							// fetch all data from db into array 
-							$row = $result->fetch_all(MYSQLI_ASSOC);
-						}
-						?>
-						<div class="noti-content">
+                        if ($result->num_rows > 0) {
+                            // fetch all data from db into array 
+                            $row = $result->fetch_all(MYSQLI_ASSOC);
+                        }
+                        ?>
+                        <div class="noti-content">
 
 
-							<ul class="notification-list">
-								<?php
-								if (!empty($row))
-									foreach ($row as $rows) {
-										?>
-										<li class="notification-message">
-											<a href="#">
-												<div class="media">
-													<span class="avatar avatar-sm">
-														<img class="avatar-img rounded-circle" alt="User Image"
-															src="assets/img/<?php echo $rows['image'] ?>">
-													</span>
-													<div class="media-body">
-														<p class="noti-details"><span class="noti-title">Dr.
-																<?php echo $rows['LastName'] ?> requests that Booking
-																Number</span>
-															<?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-																canceled
-															</span></p>
-														<p class="noti-time"><span class="notification-time">
-																<?php
-																$time = new DateTime($rows["DateOfCancellation"]);
-																$date = $time->format('d-M-Y');
-																echo $date ?> </span>
-															<span> <?php
-															$time = new DateTime($rows["DateOfCancellation"]);
-															$st = $time->format('H:m');
-															echo $st;
+                            <ul class="notification-list">
+                                <?php
+                                if (!empty($row))
+                                    foreach ($row as $rows) {
+                                        ?>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="avatar avatar-sm">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                    src="assets/img/<?php echo $rows['image'] ?>">
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                        Number
+                                                    </span>
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $date = $time->format('d-M-Y');
+                                                                echo $date ?>
+                                                    </span>
+                                                    <span>
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $st = $time->format('H:m');
+                                                                echo $st;
 
-															?></span>
-														</p>
-													</div>
-												</div>
-											</a>
-										</li>
-									<?php } ?>
-							</ul>
-						</div>
-						<div class="topnav-dropdown-footer">
-							<a href="#">Close Notifications</a>
-						</div>
-					</div>
-				</li>
-				<!-- /Notifications -->
+                                                                ?>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="#">Close Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- /Notifications -->
 
-				<!-- User Menu -->
-				<li class="nav-item dropdown has-arrow">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
-								width="31" alt="Ryan Taylor"></span>
-					</a>
-					<div class="dropdown-menu">
-						<div class="user-header">
-							<div class="avatar avatar-sm">
-								<img src="assets/img/admin.jpg" alt="User Image"
-									class="avatar-img rounded-circle">
-							</div>
-							<div class="user-text">
-								<h6>Ryan Taylor</h6>
-								<p class="text-muted mb-0">Administrator</p>
-							</div>
-						</div>
-						<a class="dropdown-item" href="a_profile.php">My Profile
-						<a class="dropdown-item" href="assets/php/logout.php">Logout</a>
-					</div>
-				</li>
-				<!-- /User Menu -->
+                <!-- User Menu -->
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg" width="31"
+                                alt="Ryan Taylor"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="user-header">
+                            <div class="avatar avatar-sm">
+                                <img src="assets/img/admin.jpg" alt="User Image" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="user-text">
+                                <h6>Ryan Taylor</h6>
+                                <p class="text-muted mb-0">Administrator</p>
+                            </div>
+                        </div>
+                        <a class="dropdown-item" href="a_profile.php">My Profile
+                            <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
+                    </div>
+                </li>
+                <!-- /User Menu -->
 
             </ul>
             <!-- /Header Right Menu -->
@@ -227,7 +231,7 @@ if ($result->num_rows > 0) {
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                       
+
                         <li>
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -271,6 +275,13 @@ if ($result->num_rows > 0) {
                         <!-- Recent Orders -->
                         <div class="card">
                             <div class="card-body">
+                                <div class="alert alert-primary alert-dismissible fade show" role="alert" id="alert"
+                                    hidden>
+                                    <strong>Success</strong> Appointment has been removed.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
                                 <?php
                                 $query = "SELECT Booking.BookingCode,Booking.DoctorCode, FirstName, LastName, StartDate, 
                                             EndDate,Profession, BookingStatus, Payment.PaymentAmount, DoctorType.DoctorTitle, User.image 
@@ -315,7 +326,8 @@ if ($result->num_rows > 0) {
                                                                 class="avatar-img rounded-circle"
                                                                 src="assets/img/<?php echo $rows['image']; ?>"
                                                                 alt="User Image"></a>
-                                                        <a href="profile.php">Dr. <?php echo $rows['FirstName']; ?>
+                                                        <a href="profile.php">Dr.
+                                                            <?php echo $rows['FirstName']; ?>
                                                             <?php echo $rows['LastName']; ?>
                                                         </a>
                                                     </h2>
@@ -347,13 +359,15 @@ if ($result->num_rows > 0) {
                                                     </span>
                                                 </td>
                                                 <td class="text-right">
-                                                    R<?php echo $rows['PaymentAmount']; ?>
+                                                    R
+                                                    <?php echo $rows['PaymentAmount']; ?>
                                                 </td>
                                                 <td class="text-right">
                                                     <div class="actions">
-                                                        
-                                                        <a  href="assets/php/cancel_booking.php?id=<?php echo $rows['BookingCode']; ?>"
-                                                            class="btn btn-sm bg-danger-light">
+
+                                                        <a href="#" data-toggle="modal"
+                                                            class="btn btn-sm bg-danger-light"
+                                                            id="<?php echo $rows['BookingCode']; ?>">
                                                             <i class="fe fe-trash"></i> Delete
                                                         </a>
                                                     </div>
@@ -374,10 +388,10 @@ if ($result->num_rows > 0) {
             </div>
         </div>
         <!-- /Page Wrapper -->
-        <!-- Delete Modal -->
-        <div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+        <!-- Send Mail Modal -->
+        <div class="modal fade" id="send_mail" aria-hidden="false" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+                <div class="modal-content" style="text-align: center">
                     <!--	<div class="modal-header">
                             <h5 class="modal-title">Delete</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -386,10 +400,10 @@ if ($result->num_rows > 0) {
                         </div>-->
                     <div class="modal-body">
                         <div class="form-content p-2">
-                            <h4 class="modal-title">Cancel</h4>
-                            <p class="mb-4">Are you sure want to delete?</p>
-                            <a class="btn btn-danger"
-                                href="a_assets/php/cancel_booking.php?id=<?php echo $rows['BookingCode']; ?>">Cancel</a>
+                            <h4 class="modal-title">Send</h4>
+                            <p class="mb-4">Are you sure want to notify the Patient?</p>
+                            <a class="btn btn-success"
+                                href="a_assets/php/cancel_booking.php?id=<?php echo $rows['BookingCode']; ?>">Send</a>
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
 
@@ -397,31 +411,6 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Delete Modal -->
-    <!-- Send Mail Modal -->
-    <div class="modal fade" id="send_mail" aria-hidden="true" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style="text-align: center">
-                <!--	<div class="modal-header">
-                            <h5 class="modal-title">Delete</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>-->
-                <div class="modal-body">
-                    <div class="form-content p-2">
-                        <h4 class="modal-title">Send</h4>
-                        <p class="mb-4">Are you sure want to notify the Patient?</p>
-                        <a class="btn btn-success"
-                            href="a_assets/php/cancel_booking.php?id=<?php echo $rows['BookingCode']; ?>">Send</a>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <!-- /Send Mail Modal -->
 
@@ -444,9 +433,31 @@ if ($result->num_rows > 0) {
 
     <!-- Custom JS -->
     <script src="a_assets/js/script.js"></script>
+    <script>
+    $(document).on("click", "a", function() {
+        var book_id = $(this).attr("id");
+        $.ajax({
+            url: 'assets/php/cancel_booking.php',
+            dataType: 'json',
+            data: {
+                "bookID": book_id
+            },
+            type: 'post',
+            success: function(result) {
+                if (result.msg == "Success") {
+                    $('#alert').removeAttr("hidden");
+                    console.console.log(result.msg);
+                } else {
+                    console.console.log(result.msg);
+                }
+            },
+            error: function(xhr, error) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
+    </script>
 
 </body>
-
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/a_appointment-list.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:49 GMT -->
 
 </html>

@@ -227,6 +227,17 @@ foreach ($row as $rows) {
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert1"
+                                hidden>
+                                <strong>Success!</strong> Your <a href="#" class="alert-link">Booking on
+                                    <?php echo $choice ?></a> has
+                                been placed
+                                successfully.
+                                <button onclick="reloadpage()" type="button" class="close" data-dismiss="alert"
+                                    aria-label="Close" id="alertclose">
+                                    <span aria-hidden="true" onclick="reloadpage()">×</span>
+                                </button>
+                            </div>
                             <!-- $pat_book=$rows['EmailAddress'] -->
 
                             <!-- Schedule Header -->
@@ -712,16 +723,7 @@ foreach ($row as $rows) {
                         <!-- /Schedule Widget -->
 
                         <!-- Submit Section -->
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert1" hidden>
-                            <strong>Success!</strong> Your <a href="#" class="alert-link">Booking on
-                                <?php echo $choice ?></a> has
-                            been placed
-                            successfully.
-                            <button onclick="reloadpage()" type="button" class="close" data-dismiss="alert"
-                                aria-label="Close" id="alertclose">
-                                <span aria-hidden="true" onclick="reloadpage()">×</span>
-                            </button>
-                        </div>
+
 
                         <div class="submit-section proceed-btn text-right">
                             <a id="proceed" href="checkout.php?id=" class="btn btn-primary submit-btn">Proceed to
