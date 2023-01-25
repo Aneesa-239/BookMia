@@ -9,7 +9,7 @@ $query = "SELECT * FROM Invoice
                                 INNER JOIN Booking ON Booking.BookingCode = Invoice.BookingCode
                                 INNER JOIN Patient ON Patient.PatientCode = Booking.PatientCode
 								INNER JOIN User ON User.UserCode = Patient.UserCode
-								INNER JOIN Payment ON Payment.InvoiceCode = Invoice.InvoiceCode";
+								INNER JOIN Payment ON Payment.InvoiceCode = Invoice.InvoiceCode ORDER BY Invoice.InvoiceCode ASC";
 $result = mysqli_query($conn, $query);
 $row = [];
 
@@ -84,120 +84,124 @@ if ($result->num_rows > 0) {
             <!-- Header Right Menu -->
             <ul class="nav user-menu">
 
- 	<!-- Notifications -->
-				<!-- Notifications -->
-				<li class="nav-item dropdown noti-dropdown">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<i class="fe fe-bell"></i> <span class="badge badge-pill">
-							<?php
-							//pull the required data from the database
-							$query1 = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
-							$res = mysqli_query($conn, $query1);
-							$row1 = [];
+                <!-- Notifications -->
+                <!-- Notifications -->
+                <li class="nav-item dropdown noti-dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="fe fe-bell"></i> <span class="badge badge-pill">
+                            <?php
+                            //pull the required data from the database
+                            $query1 = "SELECT COUNT(*) FROM Cancellation where isResolved = 0";
+                            $res = mysqli_query($conn, $query1);
+                            $row1 = [];
 
-							if ($res->num_rows > 0) {
-								// fetch all data from db into array 
-								$row1 = $res->fetch_all(MYSQLI_ASSOC);
-							}
-							?>
-							<?php
+                            if ($res->num_rows > 0) {
+                                // fetch all data from db into array 
+                                $row1 = $res->fetch_all(MYSQLI_ASSOC);
+                            }
+                            ?>
+                            <?php
 
-							if (!empty($row1))
-								foreach ($row1 as $rows) {
-									echo $rows['COUNT(*)'];
-								}
-							?>
-						</span>
+                            if (!empty($row1))
+                                foreach ($row1 as $rows) {
+                                    echo $rows['COUNT(*)'];
+                                }
+                            ?>
+                        </span>
 
-					</a>
-					<div class="dropdown-menu notifications">
-						<div class="topnav-dropdown-header">
-							<span class="notification-title">Notifications</span>
-							<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-						</div>
-						<?php
-						//pull the required data from the database
-						$query1 = "SELECT * FROM Cancellation 
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <?php
+                        //pull the required data from the database
+                        $query1 = "SELECT * FROM Cancellation 
                                 INNER JOIN Doctor On Cancellation.DoctorCode = Doctor.DoctorCode
                                 INNER JOIN User ON Doctor.UserCode = User.UserCode";
-						$res = mysqli_query($conn, $query1);
-						$canrow = [];
+                        $res = mysqli_query($conn, $query1);
+                        $canrow = [];
 
-						if ($res->num_rows > 0) {
-							// fetch all data from db into array 
-							$canrow = $res->fetch_all(MYSQLI_ASSOC);
-						}
-						?>
-						<div class="noti-content">
+                        if ($res->num_rows > 0) {
+                            // fetch all data from db into array 
+                            $canrow = $res->fetch_all(MYSQLI_ASSOC);
+                        }
+                        ?>
+                        <div class="noti-content">
 
 
-							<ul class="notification-list">
-								<?php
-								if (!empty($canrow))
-									foreach ($canrow as $rows) {
-										?>
-										<li class="notification-message">
-											<a href="#">
-												<div class="media">
-													<span class="avatar avatar-sm">
-														<img class="avatar-img rounded-circle" alt="User Image"
-															src="a_assets/img/aneesa.jpg">
-													</span>
-													<div class="media-body">
-														<p class="noti-details"><span class="noti-title">Dr.
-																<?php echo $rows['LastName'] ?> requests that Booking
-																Number</span>
-															<?php echo $rows['BookingCode'] ?> <span class="noti-title">be
-																canceled
-															</span></p>
-														<p class="noti-time"><span class="notification-time">
-																<?php
-																$time = new DateTime($rows["DateOfCancellation"]);
-																$date = $time->format('d-M-Y');
-																echo $date ?> </span>
-															<span> <?php
-															$time = new DateTime($rows["DateOfCancellation"]);
-															$st = $time->format('H:m');
-															echo $st;
+                            <ul class="notification-list">
+                                <?php
+                                if (!empty($canrow))
+                                    foreach ($canrow as $rows) {
+                                        ?>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="avatar avatar-sm">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                    src="a_assets/img/aneesa.jpg">
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Dr.
+                                                        <?php echo $rows['LastName'] ?> requests that Booking
+                                                        Number
+                                                    </span>
+                                                    <?php echo $rows['BookingCode'] ?> <span class="noti-title">be
+                                                        canceled
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $date = $time->format('d-M-Y');
+                                                                echo $date ?>
+                                                    </span>
+                                                    <span>
+                                                        <?php
+                                                                $time = new DateTime($rows["DateOfCancellation"]);
+                                                                $st = $time->format('H:m');
+                                                                echo $st;
 
-															?></span>
-														</p>
-													</div>
-												</div>
-											</a>
-										</li>
-									<?php } ?>
-							</ul>
-						</div>
-						<div class="topnav-dropdown-footer">
-							<a href="#">Close Notifications</a>
-						</div>
-					</div>
-				</li>
-				<!-- /Notifications -->
+                                                                ?>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="#">Close Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- /Notifications -->
 
-				<!-- User Menu -->
-				<li class="nav-item dropdown has-arrow">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg"
-								width="31" alt="Ryan Taylor"></span>
-					</a>
-					<div class="dropdown-menu">
-						<div class="user-header">
-							<div class="avatar avatar-sm">
-								<img src="assets/img/admin.jpg" alt="User Image"
-									class="avatar-img rounded-circle">
-							</div>
-							<div class="user-text">
-								<h6>Ryan Taylor</h6>
-								<p class="text-muted mb-0">Administrator</p>
-							</div>
-						</div>
-						<a class="dropdown-item" href="a_profile.php">My Profile
-						<a class="dropdown-item" href="assets/php/logout.php">Logout</a>
-					</div>
-				</li>
-				<!-- /User Menu -->
+                <!-- User Menu -->
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/admin.jpg" width="31"
+                                alt="Ryan Taylor"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="user-header">
+                            <div class="avatar avatar-sm">
+                                <img src="assets/img/admin.jpg" alt="User Image" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="user-text">
+                                <h6>Ryan Taylor</h6>
+                                <p class="text-muted mb-0">Administrator</p>
+                            </div>
+                        </div>
+                        <a class="dropdown-item" href="a_profile.php">My Profile
+                            <a class="dropdown-item" href="assets/php/logout.php">Logout</a>
+                    </div>
+                </li>
+                <!-- /User Menu -->
 
             </ul>
             <!-- /Header Right Menu -->
@@ -226,7 +230,7 @@ if ($result->num_rows > 0) {
                                 <li><a href="a_register_newdoc.php">Add Doctor</a></li>
                             </ul>
                         </li>
-                        
+
                         <li class="active">
                             <a href="a_transactions-list.php"><i class="fe fe-activity"></i>
                                 <span>Transactions</span></a>
@@ -272,22 +276,24 @@ if ($result->num_rows > 0) {
                                     <table class="datatable table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Invoice Number</th>
+                                                <th>Invoice Number(#IN00_)</th>
                                                 <th>Patient ID</th>
                                                 <th>Patient Name</th>
                                                 <th>Total Amount</th>
                                                 <th class="text-center">Status</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                           
+
                                             if (!empty($row))
                                                 foreach ($row as $rows) {
                                                     ?>
                                             <tr>
-                                                <td><a href="#">#IN00<?php echo $rows["InvoiceCode"] ?></td>
+                                                <td><a href="#">
+                                                        <?php echo $rows["InvoiceCode"] ?>
+                                                </td>
                                                 <td>
                                                     <?php echo $rows["PatientCode"] ?>
                                                 </td>
@@ -303,7 +309,9 @@ if ($result->num_rows > 0) {
                                                         </a>
                                                     </h2>
                                                 </td>
-                                                <td>R<?php echo $rows["PaymentAmount"] ?></td>
+                                                <td>R
+                                                    <?php echo $rows["PaymentAmount"] ?>
+                                                </td>
                                                 <?php if ($rows["PaymentStatus"] == "Paid") { ?>
                                                 <td class="text-center">
                                                     <span class="badge badge-pill bg-success inv-badge">Paid</span>
@@ -315,7 +323,7 @@ if ($result->num_rows > 0) {
                                                 <?php } ?>
 
                                                 <td class="text-right">
-                                                   
+
                                                 </td>
                                             </tr>
                                             <?php } ?>
