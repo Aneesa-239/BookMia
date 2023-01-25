@@ -8,35 +8,41 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
-if (isset($_POST["submit"])) {
-    $Name = $_POST['f_name'];
-    $Surname = $_POST['l_name'];
-    $Email = $_SESSION['name'];
-    $Phone = $_POST['phone_nr'];
-    $DOB = $_POST['DOB'];
-    $date = DateTime::createFromFormat('Y/m/d', "$DOB");
-    $ADD = $_POST['address'];
-    $City = $_POST['city'];
-    $Prov = $_POST['province'];
-    $Count = $_POST['country'];
-    $Zip = $_POST['zipcode'];
+$Name = $_POST['f_name'];
+$Surname = $_POST['l_name'];
+$Email = $_SESSION['name'];
+$Phone = $_POST['phone_nr'];
+$DOB = $_POST['DOB'];
+$date = DateTime::createFromFormat('Y/m/d', "$DOB");
+$insertdate = $date->format('Y-m-d');
+$ADD = $_POST['address'];
+$City = $_POST['city'];
+$Prov = $_POST['province'];
+$Count = $_POST['country'];
+$Zip = $_POST['zipcode'];
 
-    echo "$Name, $Email";
+// echo "$Name, $Email";
 
+//Add EmailAddress= $Email after session's update, else the person's email must not be changeable
+$query = "UPDATE User SET FirstName ='$Name', LastName= '$Surname', PhoneNumber= '$Phone', DateBirth = '$insertdate', address= '$ADD', city= '$City', province='$Prov', country='$Count', zipcode='$Zip'  WHERE EmailAddress= '$Email'";
 
-
-    //Add EmailAddress= $Email after session's update, else the person's email must not be changeable
-    $query = "UPDATE User SET FirstName ='$Name', LastName= '$Surname', PhoneNumber= '$Phone', DateBirth = '$date', address= '$ADD', city= '$City', province='$Prov', country='$Count', zipcode='$Zip'  WHERE EmailAddress= '$Email'";
-
-    if (mysqli_query($conn, $query)) {
-        echo "Record updated successfully";
-        header("Location: ../../a_profile.php");
-        exit;
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-    mysqli_close($conn);
+if (mysqli_query($conn, $query)) {
+    // echo "Record updated successfully";
+    //header("Location: ../../a_profile.php");
+    // exit;
+    $data = array(
+        'status' => true,
+        'msg' => 'success'
+    );
+} else {
+    // echo "Error updating record: " . mysqli_error($conn);
+    $data = array(
+        'status' => false,
+        'msg' => 'unsuccessful'
+    );
 }
+mysqli_close($conn);
+
 
 // If upload button is clicked ...
 if (isset($_POST['upload'])) {
@@ -71,5 +77,5 @@ if (isset($_POST['upload'])) {
 
 
 
-
+echo json_encode($data);
 ?>
